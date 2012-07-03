@@ -176,6 +176,7 @@ generateStylesheet = function(argv) {
 		if (typeof projectStyles[type] === 'undefined') continue;
 		switch (type) {
 			case 'less':
+			case 'css':
 				count += 1;
 
 				// Hackish? Sure. But it works.
@@ -190,9 +191,6 @@ generateStylesheet = function(argv) {
 						saveStylesheet(stylebuffer);
 					}
 				});
-			break;
-			case 'css':
-				stylebuffer += fs.readFileSync(projectStyles[Key]);
 			break;
 		}
 	}
