@@ -182,7 +182,7 @@ clear: both;
 
 #kss-content code,
 #kss-content pre {
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Courier New", Courier, monospace !important;
 }
 
 /* force styling rather than using inheritance via nested markup */
@@ -191,16 +191,16 @@ clear: both;
 .styleguide-example .styleguide-html h4,
 .styleguide-example .styleguide-description h4,
 .styleguide-example .styleguide-modifier-heading h4 {
- font-weight: normal;
-	font-family: Arial;
-	font-size: 16px;
-	line-height: 1.3;
-	margin-bottom: 10px;	
+	font-weight: normal !important;
+	font-family: Arial !important;
+	font-size: 16px !important;
+	line-height: 1.3 !important;
+	margin-bottom: 10px !important;	
 }
 .styleguide-example .styleguide-modifier-heading h4 {
 font-weight: normal;
-	font-size: 11px;
-	margin-bottom: 0;
+	font-size: 11px !important;
+	margin-bottom: 0 !important;
 }
 
 #kss-nav {
@@ -296,6 +296,10 @@ h2.kss-title,
 }
 #styleguide-markdown #kss-nav {
 	margin-left: 0;
+}
+
+.kss-clear {
+	clear: both;
 }
 
 
