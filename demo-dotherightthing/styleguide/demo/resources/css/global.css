@@ -1,0 +1,759 @@
+/*
+Global UI styles
+
+Styles used in the global site interface
+
+Styleguide 1.
+*/	
+
+/*  
+ * @@ LAYOUT  
+ * 
+ *  
+ */  
+
+html {
+	background: #2c2927;
+	}
+body {
+	/*background-color: #fcfcfc;*/
+	color: #303030;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 62.5%; 
+	background-color: #fcfcfc;
+	padding: 0;
+	margin: 0;
+	-webkit-text-size-adjust: none;
+	}	
+
+/*  
+Header
+
+Styled bar that runs across the top of the interface.
+
+Markup:
+<div id="header">
+  <div class="liner">
+    <p>Project header</p>  
+  </div>
+</div>
+
+Styleguide 1.1.
+*/ 
+
+#header {
+	border-bottom: 1px solid #ccc;
+	}
+#header .liner {
+	min-height: 60px;
+	height: 39px; /** ie6 **/
+	
+	/* START LINEAR GRADIENT */
+	background-color: #f9f9f9; /* msie */
+	background-image: -moz-linear-gradient(center bottom, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #e1e1e1), color-stop(45%, #f7f7f7), color-stop(80%, #f9f9f9));
+	background-image: -o-linear-gradient(bottom, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	background-image: linear-gradient(to top, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	/* END LINEAR GRADIENT */	
+	
+	text-align: center;
+	border-bottom: 1px solid #fff;
+	}	
+#header .liner p {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 1.5em; 
+	color: #333;
+	line-height: 60px;
+	}
+#header .liner p {
+	color: #333;
+	}
+
+/*  
+Footer
+
+Styled bar that runs across the bottom of the interface.
+
+Markup:
+<div id="footer">
+  <div class="liner">
+    <p>Project footer</p>  
+  </div>
+</div>
+
+Styleguide 1.2.
+*/ 
+
+#footer {
+	border-top: 1px solid #ccc;
+	}
+#footer .liner {
+	min-height: 60px;
+	height: 39px; /** ie6 **/
+	
+	/* START LINEAR GRADIENT */
+	background-color: #f9f9f9; /* msie */
+	background-image: -moz-linear-gradient(center bottom, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0%, #e1e1e1), color-stop(45%, #f7f7f7), color-stop(80%, #f9f9f9));
+	background-image: -o-linear-gradient(bottom, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	background-image: linear-gradient(to top, #e1e1e1 0%, #f7f7f7 45%, #f9f9f9 80%);
+	/* END LINEAR GRADIENT */	
+	
+	text-align: center;
+	border-top: 1px solid #fff;
+	}	
+#footer .liner p {
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: 1.5em; 
+	color: #333;
+	line-height: 60px;
+	}
+#footer .liner p {
+	color: #333;
+	}	
+
+/*  
+Breadcrumbs
+
+Navigation list.
+
+Markup:
+<div class="breadcrumb">
+  <h2 class="hidden">You are here:</h2>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/section">Section</a></li>
+    <li>Page</li>
+  </ul>
+</div>
+
+Styleguide 1.2.
+*/  
+	
+.breadcrumb {
+	width: 984px;
+	overflow: hidden;
+	text-align: left;
+	padding: 0 10px 23px 10px; /* 10px left and right padding provides outside gutter at narrow browser window widths */
+	margin: 0 auto;
+	}
+	
+.breadcrumb h2 { 
+	position: absolute; 
+	left: -10000px; 
+	width: 1px; 
+	height: 1px; 
+	overflow: hidden;
+	color: #363636;
+	}
+	
+.breadcrumb ul {
+	width: 928px;
+	padding: 0 0 0 56px;
+	margin: 0;
+	}
+	
+.breadcrumb ul li {
+	display: inline;
+	float: left;
+	font-family: "Bliss Light", "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	line-height: 1.2;
+	letter-spacing: 0.4px;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	}	
+	
+.breadcrumb ul li a {
+	display: block;
+	float: left;
+	background: url(/sites/all/themes/sorted2/images/icons/arrow-breadcrumb.png) no-repeat 100% 0.333em; /* 4px */ /** !ie6 **/
+	background: url(/sites/all/themes/sorted2/images/icons/arrow-breadcrumb.gif) no-repeat 100% 0.333em; /* 4px */ /** ie6 **/
+	line-height: 1.2;
+	white-space: nowrap; /** ie6-7 **/
+	padding: 0 15px 0 0;
+	margin: 0 10px 0 0;
+	}		
+
+
+/*  
+Content styles
+
+Styleguide 1.3.
+*/  
+
+#body {
+	text-align: left;
+	width: 960px;
+	padding: 0 10px;
+	background: #fff;
+	margin: 0 auto;
+	}
+	
+/*  
+Heading styles
+
+Markup:
+<div class="content">
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>          
+</div>
+
+Styleguide 1.3.1.
+*/ 
+
+h1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height: 1.05;
+	letter-spacing: 0.4px;
+	font-size: 4.1em;
+	color: #333;
+	padding: 0 0 40px 0;
+	margin: 0 134px 0 0; /* allows header to wrap before it bumps into hanging ribbon */
+	}
+
+.content h2 {
+	color: #343434;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 2.4em;
+	line-height: 1;
+	font-weight: normal;
+	padding: 30px 0 10px 0;
+	border-top: 1px solid #e5e5e5;
+	margin: 0;
+	}
+	
+.content h3 {
+	color: #636363;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.9em;
+	line-height: 1.1;
+	font-weight: normal;
+	padding: 11px 0 15px 0;
+	margin: 0;
+	}
+	
+.content h4 {
+	color: #303030;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 1.7em;
+	line-height: 1.1;
+	font-weight: normal;
+	padding: 2px 0 7px 0;
+	margin: 0;
+	}
+.content h5 {
+	color: #303030;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; /* extrabold not used as MSIE fills in the 'e' character */
+	font-size: 1.5em; /* 15pt */
+	line-height: 1.2;
+	font-weight: normal;
+	padding: 2px 0 7px 0;
+	margin: 0;	
+	}
+			
+	
+/* @@ paragraphs */		
+		
+.content p {
+	font-size: 1.3em;
+	line-height: 1.6;
+	padding: 0 0 14px 0;
+	margin: 0;
+	}
+
+.content p.intro {
+	color: #535353;
+	font-size: 1.5em;
+	padding: 0 0 28px 0; 
+	}
+	
+.content .back-to-top p {
+	font-size: 1.1em;
+	line-height: 1;
+	text-align: right;
+	padding: 0 0 21px 0;
+	}	
+	
+.content .back-to-top p a {
+	background: url(/resources/images/icons/arrow-back-to-top.gif) no-repeat 100% 0.45em; /* 5px */
+	background: url(/resources/images/icons/arrow-back-to-top.gif) no-repeat 100% 0.27em; /* 3px */ /** ie6-7 **/
+	padding: 0 10px 3px 0;
+	zoom: 1; /** ie6-8 **/
+	}
+
+
+/* @@ links */	
+	
+a:link, 
+a:visited {
+	color: #0056b5;
+	text-decoration: none;
+	}
+a:hover,	
+a:active, 
+a:focus {
+	color: #0056b5;
+	text-decoration: underline ; /* this had a !important that had it's effect throughout the site, Bas */
+	}	
+		
+	
+/* @@ lists */
+	
+.content ul {
+	padding: 0 0 6px 15px;
+	padding: 0 0 6px 20px; /** ie6-7 **/
+	margin: 0;
+	}	
+		
+.content ul li {
+	background: url(/resources/images/icons/bullet-grey.png) no-repeat 0 0.615em; /* 8px */ /** !ie6 **/
+	background: url(/resources/images/icons/bullet-grey.gif) no-repeat 0 0.615em; /** ie6 **/
+	font-size: 1.3em;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 15px;
+	margin: 0;
+	}	
+		
+.content ul li p {
+	font-size: 100%; 
+	padding: 0;
+	margin: 0;
+	}	
+	
+.content ol {
+	padding: 0 0 6px 0;
+	margin: 0 0 0 35px; 
+	margin: 0 0 0 40px; /** ie6-7 **/
+	}
+	
+.content ol li {
+	background: none;
+	font-size: 1.3em;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}
+			
+.content ol li p {
+	font-size: 100%; 
+	padding: 0;
+	margin: 0;
+	}		
+
+.content ul li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}	
+	
+.content ul li ul li {
+	background: url(/resources/images/icons/bullet-dash-grey.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 15px;
+	margin: 0;
+	}		
+	
+.content ul li ul li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}
+	
+.content ul li ul li ul li {
+	background: url(/resources/images/icons/bullet-dash-black.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 7px; 
+	margin: 0;
+	}	
+	
+.content ul li ul li ol {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 20px; 
+	margin: 0 0 -6px 23px; /** ie6-7 **/
+	}
+
+.content ul li ul li ol li {
+	background: none;
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}
+	
+.content ul li ol li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}
+	
+.content ul li ol li ul li {
+	background: url(/resources/images/icons/bullet-dash-black.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 7px; 
+	margin: 0;
+	}		
+	
+.content ol li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}
+
+.content ol li ul li {
+	background: url(/resources/images/icons/bullet-dash-grey.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 15px;
+	margin: 0;
+	}
+	
+.content ol li ul li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}
+
+.content ol li ul li ul li {
+	background: url(/resources/images/icons/bullet-dash-black.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 7px; 
+	margin: 0;
+	}	
+	
+.content ol li ol li ul {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 1px;
+	}
+	
+.content ol li ol li ul li {
+	background: url(/resources/images/icons/bullet-dash-black.gif) no-repeat 0 0.77em; /* 10px */
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: none;
+	padding: 0 0 7px 7px; 
+	margin: 0;
+	}		
+
+.content ul li ol {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 20px; 
+	margin: 0 0 -6px 23px; /** ie6-7 **/
+	}
+
+.content ul li ol li {
+	background: none;
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}
+
+.content ol li ol {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 20px; 
+	margin: 0 0 -6px 23px; /** ie6-7 **/
+	}
+
+.content ol li ol li {
+	background: none;
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}
+	
+.content ol li ol li ol {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 20px; 
+	margin: 0 0 -6px 23px; /** ie6-7 **/
+	}
+
+.content ol li ol li ol li {
+	background: none;
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}	
+	
+.content ol li ul li ol {
+	padding: 6px 0 0 0;
+	margin: 0 0 -6px 20px; 
+	margin: 0 0 -6px 23px; /** ie6-7 **/
+	}
+
+.content ol li ul li ol li {
+	background: none;
+	font-size: 100%;
+	line-height: 1.5;
+	list-style-type: decimal;
+	padding: 0 0 7px 0;
+	margin: 0;
+	}	
+	
+.content ul.jumplinks {
+	padding: 0 0 0 8px;
+	margin: 0 0 27px 0;
+	}	
+
+.content ul.jumplinks li {
+	position: relative; /* AP */
+	line-height: 1.6;
+	padding: 0 0 7px 15px;
+	}	
+.content ul.jumplinks li span.arrow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	}
+
+
+/*  
+ * @@ FEEDBACK LINKS
+ *  
+ */ 
+
+.feedback-links-wrapper {
+	width: 100%;
+	}
+.feedback-links {
+	text-align: center;
+	width: 496px;
+	margin: 0 auto 27px auto;
+	}
+.feedback-links-rule {
+	padding-top: 15px;
+	border-top: 1px solid #e5e5e5;	
+	margin-top: -24px; /* offset space below social media links */
+	}
+.feedback-links p {
+	font-family: "Bliss Medium","Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-weight: normal;	
+	font-size: 1.6em;
+	}
+	
+/* Homepage version */
+
+.homepage .feedback-links {
+	width: 944px;
+	padding-top: 18px;
+	margin-bottom: 45px;
+	}	
+.homepage .feedback-links-rule {
+	margin-top: 0;
+	}
+
+ /*  
+ * @@ NEXT STEPS  
+ * work in progress - placeholder only at this stage
+ *  
+ */  
+
+#footer_nudge {
+	height: 217px; /* this is required to help the JavaScript animation, don't remove */
+	margin-top: 3px;
+}
+
+#next-steps { 
+	position: relative;
+	min-height: 1px;
+	}
+	
+.next-steps-tab-background {
+	position: relative;
+	width: 984px;
+	margin: 0 auto; 
+	}
+
+.next-steps-tab {
+	position: absolute; 
+	right: 23px;
+	/* top: 0; */
+	bottom: -5px;
+	width: 137px;
+	height: 50px;
+	background: url(/sites/all/themes/sorted2/images/backgrounds/bg-next-stepssunset-tab-over.png) no-repeat 0 0;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	}
+
+.next-steps-tiled-background { 
+	width: 100%;
+	background: url(/sites/all/themes/sorted2/images/backgrounds/bg-next-steps-tile.png) repeat-x 50% 0;
+	text-align: center;
+	margin: 0 0 0 0;
+	padding-top: 5px;
+	}
+	
+.next-steps-background {
+	width: 100%;
+	min-height: 212px;
+	height: 212px; /** ie6 **/
+	background: url(/sites/all/themes/sorted2/images/backgrounds/bg-next-steps-sunset.jpg) no-repeat 50% 0; 
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	}	
+		
+.next-steps {
+	width: 984px;
+	min-height: 218px;
+	height: 218px; /** ie6 **/
+	text-align: center;
+	padding: 0 10px; /* provides outside gutter at narrow browser window widths */
+	padding: 0;
+	margin: 0 auto -6px auto;
+	}	
+	
+.next-steps-col1 {
+	float: left;
+	width: 218px;
+	text-align: left;
+	padding: 29px 0 0 19px;
+	margin: 0;
+	}
+	
+.next-steps-col2, 
+.next-steps-col3 {
+	width: 218px;
+	float: left;
+	text-align: left;
+	padding: 29px 0 0 24px;
+	margin: 0;
+	}
+	
+.next-steps h3 {
+	min-height: 47px;
+	height: 47px; /** ie6 **/
+	color: #342418;
+	font-family: "Bliss Bold", "Trebuchet MS", Arial, Helvetica, sans-serif; /* Bliss Light is accurate to design - AM will advise if they want this implemented */
+	font-size: 2.0em; /* 2.2 is accurate to design - AM will advise if they want this implemented */
+	line-height: 1.15; /* line height needs to be reduced slightly to match design - AM will advise if they want this implemented */	
+	font-weight: normal;
+	padding: 0 0 11px 0;
+	margin: 0;
+	}
+	
+.next-steps p {
+	color: #303030;
+	font-size: 1.3em;
+	line-height: 1.5;
+	font-weight: normal;
+	padding: 0 0 10px 0;
+	margin: 0;
+	}
+	
+/* Next steps - JS events */
+#next-steps.active { 
+	position: fixed; 
+	z-index: 22; 
+	bottom: 0; 
+	left: 0; 
+	width: 100%; 
+	}
+	
+#next-steps.active .next-steps-background { 
+	height: 3px; 
+	overflow: hidden; 
+	min-height: 3px; 
+	}
+	
+#next-steps-placeholder { 
+	display: none; 
+	}
+	
+#next-steps.active.panel .next-steps-background { 
+	height: auto; 
+	overflow: hidden; 
+	min-height: 212px; 
+	display: block; 
+}
+
+#next-steps.active .next-steps-tab { 
+	cursor: pointer; 
+	}
+	
+#next-steps.active .next-steps-tab.over { 
+	background-image: url(/sites/all/themes/sorted2/images/backgrounds/bg-next-stepssunset-tab.png);
+	}
+
+#next-steps-overlay { 
+	position: absolute; 
+	left: 0; 
+	top: 0; 
+	height: 0; 
+	width: 100%; 
+	}
+	
+
+/*  
+ * @@ BUTTONS   
+ * paragraphs that wrap around buttons and other overrides
+ *  
+ */
+.next-steps p.button-para, 
+#container p.button-para, 
+#container .content p.button-para, 
+.content p.button-para  { /* for wrapping around links styled as buttons. Switches off all para styles that may have been inherited wherever you are */
+	min-height: 1px !important;
+	height: 1px !important; /** ie6 **/
+	font-family: Verdana, Geneva, sans-serif !important;
+	font-size: 1.0em !important;
+	line-height: 1 !important;
+	font-weight: normal !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	}
+	
+#container .button-block p.button-para, 
+#container .content .button-block p.button-para, 
+.content .button-block p.button-para { 
+	margin: 0 0 7px 0 !important;
+	}	
+	
+
+/* @@ ---------- hidden classes ---------- */	
+
+.hidden,
+.hidden * {
+	position: absolute !important; 
+	left: -10000px; 
+	width: 1px; 
+	height: 1px; 	
+	overflow: hidden;
+	}
+.removed {
+	display: none;
+}
+	
+span.readmore-hidden {
+    position: absolute;
+    left: -9999px;
+	width: 0;
+	height: 0;
+    overflow: hidden;
+    visibility: hidden;
+	font-size: 0;
+    line-height: 0;
+    padding: 0;
+	margin: 0;
+	}	

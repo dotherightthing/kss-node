@@ -1,0 +1,204 @@
+/*
+Button styles
+
+Styleguide 2
+*/ 
+
+/*
+Utility button
+
+Used for utility functions such as Delete, Reset, etc.
+
+Markup: 
+<input type="button" value="Button" class="utility-button {$modifiers}" />
+
+Styleguide 2.1.
+*/ 
+
+.utility-button,
+.utility-button:visited {
+	display:block;
+	width: 69px; /** ie6-7 **/
+	height: auto !important;/** !ie6-8 **/
+	height: 23px;	
+	min-height: 23px;/** !ie6-8 **/
+	font-weight: normal;
+	color: #656565;
+	cursor: pointer;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.0em;
+	line-height: 1;
+	padding-left: 14px;
+	padding-right: 14px;
+	padding-left: 14px; /** ie6-7 **/
+	padding-right: 14px; /** ie6-7 **/
+	padding-bottom: 1px;
+	padding-bottom: 3px; 
+	padding-bottom: 1px; /** ie **/
+
+	border: 1px solid #d3d3d3;	
+	-webkit-border-radius: 3px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px;
+	margin: 0 0 0 4px;
+	
+	background:  #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f7f7f7)); 
+	background-image: -moz-repeating-linear-gradient(center top, #fefefe 0%,  #f7f7f7 100%); 
+	background-image: -o-linear-gradient(top, #fefefe 0%, #f7f7f7 100%); /** opera **/
+	background-image: linear-gradient(top, #fefefe 0%, #f7f7f7 100%);
+
+	behavior: url('/sites/all/themes/sorted2/behaviors/PIE.htc'); /** ie7-9 **/	
+	position: relative; /** ie7-9 **/
+	-pie-background: linear-gradient(top, #fefefe 0%,  #f7f7f7 100%);	/** ie7-9 **/
+}
+
+.utility-button:hover,
+.utility-button:focus {
+	background: #f3f3f3; 
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#ececec)); 
+	background-image: -moz-linear-gradient(center top, #fafafa 0%,  #ececec 100%); 
+	background-image: -o-linear-gradient(top, #fafafa 0%, #ececec 100%); /** opera **/
+	background-image: linear-gradient(top, #fafafa 0%, #ececec 100%);	
+	behavior: url('/sites/all/themes/sorted2/behaviors/PIE.htc'); /** ie7-9 **/	
+	z-index: 0; /** ie8 **/
+	-pie-background: linear-gradient(top, #fafafa 0%,  #ececec 100%);	/** ie7-9 **/
+	border: 1px solid #b0b0b0;
+}
+.utility-button:active {
+	background: #f4f4f4; 
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#fafafa)); 
+	background-image: -moz-repeating-linear-gradient(center top, #ececec 0%,  #fafafa 100%); 
+	background-image: -o-linear-gradient(top, #ececec 0%, #fafafa 100%); /** opera **/
+	background-image: linear-gradient(top, #ececec 0%, #fafafa 100%);
+	
+	behavior: url('/sites/all/themes/sorted2/behaviors/PIE.htc'); /** ie7-9 **/	
+	z-index: 0; /** ie8 **/
+	-pie-background: linear-gradient(top, #ececec 0%,  #fafafa 100%);	/** ie7-9 **/
+}
+
+/*
+Fancy button 
+
+Markup: 
+<input type="button" class="fancy-button {$modifiers}" value="Button" />
+
+:hover - Default skin / over
+:focus - Default skin / focussed
+:visited - Default skin / visited
+.orange - Orange skin
+.orange:hover - Orange skin / over
+.orange:focus - Orange skin / focussed
+.orange:visited - Orange skin / visited
+
+Styleguide 2.3.
+*/ 
+
+.fancy-button,
+.fancy-button:visited {
+	font-family: "Trebuchet MS", Arial,Helvetica, sans-serif;
+	font-size: 1.7em;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	
+	cursor: pointer;
+	text-decoration: none;
+	color: #666;
+
+	display: inline-block;
+	
+	min-height: 32px;
+	height: auto !important;
+	
+	width: 142px;
+
+	border: 1px solid #ccc;
+	text-align: center;
+	
+	padding-top: 4px 10px;
+	
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px;
+	
+	text-shadow: rgba(255, 249, 235, 0.8) 0px 1px 1px;
+
+	background: #FFA509;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#e2e2e2)); 
+	background-image: -moz-repeating-linear-gradient(center top, #fafafa 0%, #f9f9f9 5%, #e2e2e2 100%); 
+	background-image: -o-linear-gradient(top, #fafafa 0%, #f9f9f9 5%, #e2e2e2 100%); 
+	background-image: repeating-linear-gradient(center top, #fafafa 0%, #f9f9f9 5%, #e2e2e2 100%);	
+}
+.fancy-button:hover,
+.fancy-button:focus {
+	text-shadow: rgba(254, 225, 48, 0.8) 0px 1px 1px;
+	text-decoration: none;
+
+	background: #FF8901;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#e2e2e2), to(#ccc)); 
+	background-image: -moz-repeating-linear-gradient(top, #e2e2e2 0%, #e7e7e7 5%, #ccc 100%); 
+	background-image: -o-linear-gradient(top, #e2e2e2 0%, #e7e7e7 5%, #ccc 100%); 
+	background-image: repeating-linear-gradient(top, #e2e2e2 0%, #e7e7e7 5%, #ccc 100%);	
+}
+.fancy-button.orange,
+.fancy-button.orange:visited {
+	background: #FFA509;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FEDB35), to(#FFA509)); 
+	background-image: -moz-repeating-linear-gradient(center top, #FFE983 0%, #FEDB35 5%,  #FFA509 100%); 
+	background-image: -o-linear-gradient(top, #FFE983 0%, #FEDB35 5%, #FFA509 100%); 
+	background-image: repeating-linear-gradient(center top, #FFE983 0%, #FEDB35 5%,  #FFA509 100%);
+
+	color: #252122;
+
+	border-color: #BB6A28;
+}
+.fancy-button.orange:hover,
+.fancy-button.orange:focus {
+	text-shadow: #FEE194 0px 1px 1px;
+	text-decoration: none;
+
+	background: #FF8901;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FFC408), to(#FF8901)); 
+	background-image: -moz-repeating-linear-gradient(top, #FFC408 0%, #FFB902 5%,  #FF8901 100%); 
+	background-image: -o-linear-gradient(top, #FFC408 0%, #FFB902 5%, #FF8901 100%); 
+	background-image: repeating-linear-gradient(top, #FFC408 0%, #FFB902 5%,  #FF8901 100%);	
+}
+
+/*
+Link button
+
+Used where the design shows a link but the build requires a button.
+
+Markup: 
+<input type="button" class="link-button {$modifiers}" value="Button" />
+<div class="ui-widget">
+ <input type="button" class="link-button {$modifiers}" value="Button" />
+</div>
+
+.disabled - Disabled state
+
+Styleguide 2.2.
+*/ 
+
+input.link-button,
+.ui-widget input.link-button {
+	cursor: pointer;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1.3em;
+	font-style: normal;
+	line-height: 1;
+	color: #0056b5;
+	border: none;
+	background: transparent;
+	overflow: visible; /* suppress extra width in ie7 */
+}
+input.link-button.disabled,
+.ui-widget input.link-button.disabled {
+	color: #ccc;
+	cursor: default;
+}

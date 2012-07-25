@@ -1,0 +1,185 @@
+/*
+ * resets/all.scss
+ * Created: 06.04.2011 by DS @ Chrometoaster
+ * Type: Sass Include
+ * Function: override browser CSS defaults to simplify styling
+ *
+ * Known issues: 
+ * None
+ */
+
+/* 
+ * Font sizing
+ * 1em = 10px
+ * In addition, a % size can be set on the #shell element	
+ * Font face rules moved to project-specific font.scss files
+*/	
+
+/* removed
+	body {
+		line-height: 1.125;
+	}
+*/
+
+	input, button, select, textarea {
+		font-size: 1em;
+	}
+	
+/* 
+ * Whitespace
+*/			
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, font, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */
+		margin: 0;
+		padding: 0;
+		border: 0;
+		/* outline: 0; */
+		/* font-size: 100%; */
+		/* vertical-align: baseline; */
+		/* background: transparent; */
+	}	
+	legend {
+		margin-left: -7px; /** ie6 **/
+		margin-left: -8px; /** ie7 **/
+	}
+	html {
+		background: white;
+		}
+	body {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 
+		line-height: 1;
+	*/	
+	}	
+	img {
+		display: block; /* prevent xhtml whitespace */
+	}	
+	a img {
+		/*border: 0; - is this covered by the reset above? */
+	}	
+
+/* 
+ * Hidden content
+*/	
+		
+	hr {
+		display: none;
+	}			
+	
+/*
+	a.screen {
+		position: absolute;
+	}		
+*/
+	
+/* 
+ * Clearing elements
+ *
+ * Backup for _clearfix.scss
+ * div.clear, span.clear = UI clearers
+ * el.clear applied to content elements
+*/	
+
+	div.clear,
+	span.clear {
+		clear: both;
+		display: block;
+		height: 0;
+		overflow: hidden;		
+	}	
+	
+/* 
+ * quotes
+ */		
+	
+	blockquote, q {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */	
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */	
+		content: '';
+		content: none;
+	}	
+	
+/* 
+ * insert/delete
+ */		
+	
+	/* remember to highlight inserts somehow! */
+	ins {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */		
+		text-decoration: none;
+	}
+	del {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */		
+		text-decoration: line-through;
+	}	
+	
+/* 
+ * button
+ */		
+	
+	button,
+	input.submit {
+		cursor: pointer;
+	} 
+	input[type=submit] {
+		cursor: pointer; /* split to separate rule else the rule above is ignored by IE6 */
+	}
+	button { 
+	/* http://snipplr.com/view/23417/reset-button-tag/ */
+		background: none; 
+		border: none; 
+		margin: 0; 
+		padding: 0; 
+		width: auto; 
+		overflow: visible; 			
+	}
+
+/* 
+ * table
+ */			
+		
+	/* tables still need 'cellspacing="0"' in the markup */
+	table {
+	/* http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212 */			
+		border-collapse: collapse;
+		border-spacing: 0;
+	}		
+	
+/* 
+ * cursors
+ * The abbr element represents an abbreviation or acronym (acronym deprecated in HTML5)
+ */		
+	
+	abbr {
+	/*	abbr not supported by ie6 */
+		cursor: help;	
+	}	
+	
+/* 
+ * address
+ */			
+
+	address {
+		display: block;
+		font-style: normal;
+	}
+	
+/* 
+ * hide focus outlines for mouse users
+ */		
+	
+	.hidefocus *:focus {			
+		outline: none;
+	}	
