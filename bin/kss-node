@@ -89,9 +89,24 @@ template = handlebars.compile(template);
 // Create a new "styleguide" directory and copy the contents
 // of "public" over.
 try {
+
+  // make a backup copy of the .svn folder in the target directory, if it exists
+	//wrench.copyDirSyncRecursive( 
+	//	options.destinationDirectory + '/.svn', 
+	//	options.destinationDirectory + '-svnbackup/.svn' 
+	//);
+  
+  // make a backup copy of the .svn folder in the public directory, if it exists
+	//wrench.copyDirSyncRecursive( 
+  //	options.destinationDirectory + '/public/.svn', 
+  //	options.destinationDirectory + '-svnbackup/public/.svn' 
+	//);
+
+	// wipe the existing folders
 	fs.mkdirSync(options.destinationDirectory);
 } catch (e) {}
 
+// copy the public files over
 wrench.copyDirSyncRecursive(
 	options.templateDirectory + '/public',
 	options.destinationDirectory + '/public'
