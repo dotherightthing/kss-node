@@ -124,7 +124,7 @@
 			// was initially going to exclude -defaults, but sometimes they are required..
 			$('.kss-html-default, .kss-html-variation').each( function(i, item) {
 				
-				setTimeout( function() {
+				//setTimeout( function() {
 													
 					var kss_html = $(item).html().trim();		
 					
@@ -179,7 +179,7 @@
 					frame.write( iframe_html );
 					frame.close();
 					
-				}, 250 );
+				//}, 250 );
 				
 			});
 			
