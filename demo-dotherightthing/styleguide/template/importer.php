@@ -40,7 +40,7 @@
 
   <div class="kss-content-col">
 
-    <h1 class="kss-main-title"><?php echo $styleguide_site_name; ?> Living Styleguide</h1>
+    <h1 class="styleguide-main-title"><?php echo $styleguide_site_name; ?> Living Styleguide</h1>
     
     <?php				
                     
