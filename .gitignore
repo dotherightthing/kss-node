@@ -1,23 +1,3 @@
 /node_modules
 
 .DS_Store
-
-demo-dotherightthing/styleguide/generated/public/kss-demo-dotherightthing.js
-
-demo-dotherightthing/styleguide/generated/public/kss.css
-
-demo-dotherightthing/styleguide/generated/public/kss.js
-
-demo-dotherightthing/styleguide/generated/public/kss.less
-
-demo-dotherightthing/styleguide/generated/public/less.js
-
-demo-dotherightthing/styleguide/generated/public/markdown.less
-
-demo-dotherightthing/styleguide/generated/public/placeholder.png
-
-demo-dotherightthing/styleguide/generated/public/prettify.js
-
-demo-dotherightthing/styleguide/generated/public/style.css
-
-demo-dotherightthing/styleguide/generated/public/update.php
