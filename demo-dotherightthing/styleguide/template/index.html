@@ -95,10 +95,15 @@
                 </div>
                 {{/eachModifier}}
                 <!-- END THE VARIATIONS -->   
-            {{else}}
+            		{{else}}
                 {{#if description}}
                 	<div class="content-col">
-                  <div class="kss-para">{{html description}}</div>
+                  	<!-- this was using kss-para, which was a workaround and only supplied some styles -->
+                  	<div class="kss-box styleguide-description markdown-body">
+	                    <!-- the blurb -->
+  	                  <h4 class="kss-heading">Description:</h4>
+	                    {{html description}}
+                    </div>
                   </div>
                 {{/if}}
             {{/ifAny}}

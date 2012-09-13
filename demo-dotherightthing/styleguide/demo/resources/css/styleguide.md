@@ -16,7 +16,7 @@ The rest of the information on this page is for CSS developers who wish to contr
 1. exposing modifiers encourages development of reusable code that can be skinned
 1. reused and resuable code = less code to download, less code to maintain
 1. visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
-1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues
+1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, and identifying what is in the 'box of bits'
 1. automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide and being responsible for its maintenance
 1. a KSS styleguide is 'living' or 'alive' because it updates when your CSS does (when you regenerate it via the commandline)
   
@@ -123,7 +123,33 @@ Remember that munging/minification will strip all comments, so don't hold back o
 
 It's also ok if classes listed in the Modifiers section are actually located in another part of the stylesheet.
 
-### Install the required software
+#### Creating placeholder styles
+
+Placeholder styles can easily be created as follows. This allows styles to be filled in gradually, while understanding what is left to do.  
+
+Note that modifiers cannot be combined, in this scenario.
+
+```css
+/*
+Buttons (TODO)
+
+Links, buttons etc
+
+Markup:
+<p class="kss-placeholder">
+  <img src="/sites/all/themes/mysite/images/ui/placeholders/{$modifiers}.png" alt="{$modifiers}" title="{$modifiers}" />
+  <span class="kss-overlay">&nbsp;</span>
+</p>
+
+.button-green - Green button
+.button-purple - Purple button
+
+Styleguide 9.9.0.
+*/
+```		
+
+
+#### Install the required software
 
 To use KSS, you will need to do the following:
 
