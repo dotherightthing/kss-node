@@ -123,59 +123,63 @@
 			
 			// was initially going to exclude -defaults, but sometimes they are required..
 			$('.kss-html-default, .kss-html-variation').each( function(i, item) {
-												
-				var kss_html = $(item).html().trim();		
 				
-				var iframe_el = '';
-				iframe_el += '<div class="kss-clear"></div>';
-				iframe_el += '<div class="kss-html-variation-print">';
-				iframe_el += '<p class="styleguide-print-heading">Print preview (+ background images disabled):</p>';
-				iframe_el += '<iframe class="styleguide-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" width="100%">print example</iframe>';
-				iframe_el += '</div>';																
-				
-				var iframe_html = '';
-				iframe_html += '<!DOCTYPE html>';
-				iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml" class="styleguide-print">';
-				iframe_html += '<head>';
-				iframe_html += kss_head;			
-				iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .styleguide-placeholder)	
-				iframe_html += '<script type="text/javascript">';
-				iframe_html += 'document.domain = "' + document.domain + '";';
-				
-				// jQuery document.ready fails in MSIE9
-				//iframe_html += 'jQuery(document).ready( function($) {';
-				//iframe_html += '});';	
-				
-				//console.log( window.parent );
-				
-				// window.onload works ok				
-				iframe_html += 'window.onload = function() {';				
-				iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
-				iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body\').outerHeight() );';
-				iframe_html += '}';
-				
-				iframe_html += '<\/script>';							
-				iframe_html += '</head>';
-				iframe_html += '<body>';
-				iframe_html += '<div class="styleguide-liner">';
-				iframe_html += kss_html;
-				iframe_html += '<div class="kss-clear styleguide-clear"></div>'
-				iframe_html += '</div>';
-				iframe_html += '</body>';
-				iframe_html += '</html>';
-				
-				$(item).after( iframe_el );
-				
-				// fails:
-				//$('#print-' + i).contents().append(iframe_html);				
-				//$('#print-' + i).contents().find('body').append( $(this).html().trim() );
-						
-				// works:	
-				// http://bitsandcodes.blogspot.co.nz/2010/09/how-to-write-content-of-iframe-using.html				
-				var frame = $('#kss-html-variation-print-' + i)[0].contentWindow.document; 
-				frame.open();
-				frame.write( iframe_html );
-				frame.close();
+				setTimeout( function() {
+													
+					var kss_html = $(item).html().trim();		
+					
+					var iframe_el = '';
+					iframe_el += '<div class="kss-clear"></div>';
+					iframe_el += '<div class="kss-html-variation-print">';
+					iframe_el += '<p class="styleguide-print-heading">Print preview (+ background images disabled):</p>';
+					iframe_el += '<iframe class="styleguide-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" width="100%">print example</iframe>';
+					iframe_el += '</div>';																
+					
+					var iframe_html = '';
+					iframe_html += '<!DOCTYPE html>';
+					iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml" class="styleguide-print">';
+					iframe_html += '<head>';
+					iframe_html += kss_head;			
+					iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .styleguide-placeholder)	
+					iframe_html += '<script type="text/javascript">';
+					iframe_html += 'document.domain = "' + document.domain + '";';
+					
+					// jQuery document.ready fails in MSIE9
+					//iframe_html += 'jQuery(document).ready( function($) {';
+					//iframe_html += '});';	
+					
+					//console.log( window.parent );
+					
+					// window.onload works ok				
+					iframe_html += 'window.onload = function() {';				
+					iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
+					iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body\').outerHeight() );';
+					iframe_html += '}';
+					
+					iframe_html += '<\/script>';							
+					iframe_html += '</head>';
+					iframe_html += '<body>';
+					iframe_html += '<div class="styleguide-liner">';
+					iframe_html += kss_html;
+					iframe_html += '<div class="kss-clear styleguide-clear"></div>'
+					iframe_html += '</div>';
+					iframe_html += '</body>';
+					iframe_html += '</html>';
+					
+					$(item).after( iframe_el );
+					
+					// fails:
+					//$('#print-' + i).contents().append(iframe_html);				
+					//$('#print-' + i).contents().find('body').append( $(this).html().trim() );
+							
+					// works:	
+					// http://bitsandcodes.blogspot.co.nz/2010/09/how-to-write-content-of-iframe-using.html				
+					var frame = $('#kss-html-variation-print-' + i)[0].contentWindow.document; 
+					frame.open();
+					frame.write( iframe_html );
+					frame.close();
+					
+				}, 250 );
 				
 			});
 			
