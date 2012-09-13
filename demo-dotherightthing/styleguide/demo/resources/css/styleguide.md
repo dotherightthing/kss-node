@@ -136,10 +136,10 @@ Buttons (TODO)
 Links, buttons etc
 
 Markup:
-<p class="kss-placeholder">
+<div class="kss-placeholder">
   <img src="/sites/all/themes/mysite/images/ui/placeholders/{$modifiers}.png" alt="{$modifiers}" title="{$modifiers}" />
-  <span class="kss-overlay">&nbsp;</span>
-</p>
+  <div class="kss-overlay"></div>
+</div>
 
 .button-green - Green button
 .button-purple - Purple button

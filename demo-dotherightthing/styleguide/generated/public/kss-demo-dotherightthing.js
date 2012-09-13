@@ -77,9 +77,11 @@
 			- OS X 10.7.4 Chrome 21
 			- OS X 10.7.4 Safari 5.1.6
 			- Win 7 SP1 IE9
-			
+			- Win 8 RTM IE10
+						
 			Issues still to resolve in:
 			- Win XP SP3 IE8: iframe content is generated but print->screen stylesheet not working ('Object does not support this property or method)
+			- Win XP SP3 IE7: iframe content is not generated
 			
 			Notes:
 			- runs window.onload (ie after images have loaded), so that .kss-html-variation container heights are calculated correctly
