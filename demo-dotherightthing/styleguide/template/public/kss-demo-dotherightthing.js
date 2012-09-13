@@ -137,7 +137,7 @@
 					
 					var iframe_html = '';
 					iframe_html += '<!DOCTYPE html>';
-					iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml" class="styleguide-print">';
+					iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml" class="styleguide-print t-styleguide">';
 					iframe_html += '<head>';
 					iframe_html += kss_head;			
 					iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .styleguide-placeholder)	
@@ -153,7 +153,7 @@
 					// window.onload works ok				
 					iframe_html += 'window.onload = function() {';				
 					iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
-					iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body>.styleguide-liner\').outerHeight() );';
+					iframe_html += 'setTimeout( function() { window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(document).outerHeight() ); }, 1000 );';
 					iframe_html += '}';
 					
 					iframe_html += '<\/script>';							
