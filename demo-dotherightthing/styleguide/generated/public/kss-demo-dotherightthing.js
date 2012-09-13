@@ -95,7 +95,7 @@
 				iframe_el += '<div class="kss-clear"></div>';
 				iframe_el += '<div class="kss-html-variation-print">';
 				iframe_el += '<p class="kss-print-heading">Print preview:</p>';
-				iframe_el += '<iframe id="kss-html-variation-print-' + i + '" allowtransparency="true" height="' + $(item).height() + '" width="100%">print example</iframe>';
+				iframe_el += '<iframe class="kss-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" height="' + $(item).height() + '" width="100%">print example</iframe>';
 				iframe_el += '</div>';												
 				
 				var kss_head = $('head').html();
@@ -113,9 +113,10 @@
 				//iframe_html += 'jQuery(document).ready( function($) {';
 				//iframe_html += '});';	
 				
-				// window.onload works ok
-				iframe_html += 'window.onload = function() {';
-				iframe_html += 'jQuery(\'link[media="print"]\').attr(\'media\',\'screen\');';
+				// window.onload works ok				
+				iframe_html += 'window.onload = function() {';				
+				iframe_html += 'jQuery(\'link[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
+				iframe_html += 'jQuery(\'style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';								
 				iframe_html += '}';
 				
 				iframe_html += '<\/script>';							
