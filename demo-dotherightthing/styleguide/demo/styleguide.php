@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="resources/css/global.css" />
   <!-- a subfolder is used here just to ensure that all css is being parsed by kss-node -->
   <link rel="stylesheet" href="resources/css/subfolder/buttons.css" />
+  <link rel="stylesheet" href="resources/css/print.css" media="print" />    
   <!-- PROJECT ASSETS: JS -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="resources/js/ui.js"></script>

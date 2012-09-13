@@ -1,0 +1,21 @@
+/*
+Print styles
+
+Do not document styles here - only in the screen stylesheet.
+*/	
+
+/*  
+ * @@ LAYOUT  
+ * 
+ *  
+ */  
+
+html,
+body {
+	background: none !important;
+}
+
+.fancy-button {
+	background: none !important;
+	color: red;
+}

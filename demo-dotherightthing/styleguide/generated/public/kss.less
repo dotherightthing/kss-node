@@ -216,17 +216,24 @@
 	border-top: none; 
 	font-family: courier;
 }
-.styleguide-example .styleguide-element .kss-placeholder {
+
+/* orphan styles for reuse by the .kss-html-variation-print iframe */
+
+.kss-placeholder {
 	position: relative; /* AP */
 	display: inline-block; /* shrink-wrap */
 }
-.styleguide-example .styleguide-element .kss-placeholder .kss-overlay {
+.kss-placeholder .kss-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	background: url(kss-placeholder.png);
+}
+.kss-print-heading {
+	color: #666 !important;
+	margin: 20px 0 10px 0 !important;
 }
 
 /* @ styles for the overview page */
