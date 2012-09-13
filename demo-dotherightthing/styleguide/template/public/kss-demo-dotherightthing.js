@@ -4,6 +4,36 @@
 	DTRT
 */
 
+ /*
+	 Set iframe height
+	 DI @ CT 
+ */
+ 
+	var resize_page_load = true;
+	
+	// script is called by the iframe content onload
+	function set_iframe_height( iframe_id, height) {
+		
+		"use strict";				
+		
+		// Chrome gives 32px too high on page load - adjust this to suit
+		if ( /chrome/.test(navigator.userAgent.toLowerCase()) && resize_page_load === true ) {
+			height = height - 32;
+		}
+		// IE7 gives 28px too low - adjust this to suit
+		if ( $.browser.msie && parseInt($.browser.version, 10) === 7 ) {
+			height = height + 28;
+		}
+		// IE8 gives 20px too low - adjust this to suit
+		if ( $.browser.msie && parseInt($.browser.version, 10) === 8 ) {
+			height = height + 20;
+		}
+	
+		// swap in a selector that will get the iframe
+		$('#' + iframe_id).css('height', height);
+		resize_page_load = false;		
+	} 	
+
 	$(document).ready( function() {
 		
 		/*jshint browser:true, jquery:true, strict:true, devel:true, smarttabs:true */
@@ -61,7 +91,7 @@
 		//if ( document.getElementById("viewport").length ) {
 			// TODO: fix string
 			//document.getElementById("viewport").setAttribute("content", "width=' + styleguide_viewport_width + '");
-		//}
+		//}			
 					
 		/*
 			Print preview
@@ -85,7 +115,7 @@
 			
 			Notes:
 			- runs window.onload (ie after images have loaded), so that .kss-html-variation container heights are calculated correctly
-		*/
+		*/				
 		
 		$(window).load( function() {
 			
@@ -96,23 +126,11 @@
 												
 				var kss_html = $(item).html().trim();		
 				
-				// match catches both raw HTML and placeholder images 
-				// but this is of no use as even in meaningul default HTML this string is present!
-				//if ( kss_html.match( 'modifiers}' ) ) { 
-				//	return;
-				//}
-				
-				var iframe_height = $(item).height();
-				
-				if ( iframe_height < 50 ) { /* if the content is floated and the .kss-clear element does not work due to the nesting the */
-					iframe_height = 150;
-				}
-				
 				var iframe_el = '';
 				iframe_el += '<div class="kss-clear"></div>';
 				iframe_el += '<div class="kss-html-variation-print">';
 				iframe_el += '<p class="styleguide-print-heading">Print preview (+ background images disabled):</p>';
-				iframe_el += '<iframe class="styleguide-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" height="' + iframe_height + '" width="100%">print example</iframe>';
+				iframe_el += '<iframe class="styleguide-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" width="100%">print example</iframe>';
 				iframe_el += '</div>';																
 				
 				var iframe_html = '';
@@ -122,15 +140,18 @@
 				iframe_html += kss_head;			
 				iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .styleguide-placeholder)	
 				iframe_html += '<script type="text/javascript">';
+				iframe_html += 'document.domain = "' + document.domain + '";';
 				
 				// jQuery document.ready fails in MSIE9
 				//iframe_html += 'jQuery(document).ready( function($) {';
 				//iframe_html += '});';	
 				
+				//console.log( window.parent );
+				
 				// window.onload works ok				
 				iframe_html += 'window.onload = function() {';				
-				iframe_html += 'jQuery(\'link[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
-				iframe_html += 'jQuery(\'style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';								
+				iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
+				iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body\').outerHeight() );';
 				iframe_html += '}';
 				
 				iframe_html += '<\/script>';							
@@ -138,6 +159,7 @@
 				iframe_html += '<body>';
 				iframe_html += '<div class="styleguide-liner">';
 				iframe_html += kss_html;
+				iframe_html += '<div class="kss-clear styleguide-clear"></div>'
 				iframe_html += '</div>';
 				iframe_html += '</body>';
 				iframe_html += '</html>';

@@ -54,6 +54,7 @@
   $content = file_get_contents( $source );
           
   $replacements = array(
+	 "[{STYLEGUIDE_DOMAIN}]" => $_SERVER['HTTP_HOST'],
 	 "[{STYLEGUIDE_SITE_NAME}]" => $styleguide_site_name,
 	 "[{STYLEGUIDE_PATH}]" => $styleguide_path,
 	 "[{STYLEGUIDE_SECTION_PREFIX}]" => $styleguide_section_prefix,

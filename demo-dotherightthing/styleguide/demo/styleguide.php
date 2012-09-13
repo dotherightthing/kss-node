@@ -58,7 +58,7 @@
 
 			$styleguide_site_root = $_SERVER['DOCUMENT_ROOT']; // /Users/Dan/github/kss-node/ctdemo
 			$styleguide_path = $_SERVER['PHP_SELF'];// /resources/styleguide/demo.php	
-			$styleguide_section = isset($_GET['section']) ? $_GET['section'] : ''; // &section=['', or '1', '2', '3' etc]
+			$styleguide_section = isset($_GET['section']) ? $_GET['section'] : ''; // &section=['', or '1', '2', '3' etc]			
 
 			// START EDIT
 			$styleguide_site_name = 'TestProject';			
