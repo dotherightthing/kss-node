@@ -153,7 +153,7 @@
 					// window.onload works ok				
 					iframe_html += 'window.onload = function() {';				
 					iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
-					iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body\').outerHeight() );';
+					iframe_html += 'window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body>.styleguide-liner\').outerHeight() );';
 					iframe_html += '}';
 					
 					iframe_html += '<\/script>';							
