@@ -219,27 +219,44 @@
 
 /* orphan styles for reuse by the .kss-html-variation-print iframe */
 
-.kss-placeholder {
+.styleguide-placeholder {
 	position: relative; /* AP */
 	display: inline-block; /* shrink-wrap */
 }
-.kss-placeholder .kss-overlay {
+.styleguide-placeholder .styleguide-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url(kss-placeholder.png);
+	background: url(styleguide-placeholder.png);
 }
-.kss-print-heading {
+
+/* print preview styles */
+
+.styleguide-print-heading {
 	color: #666 !important;
 	margin: 20px 0 10px 0 !important;
 }
-.kss-print-iframe {
+.styleguide-print-iframe {
 	padding: 0;
 	border: 0 none;
 	margin: 0;	
 }
+.styleguide-print * {
+	background-image: none !important;
+}
+/*
+Cufon - needs more work:
+
+.styleguide-print cufon {
+	padding: 0!important;
+}
+.styleguide-print cufon canvas {
+	display: none! important;
+}
+
+*/
 
 /* @ styles for the overview page */
 

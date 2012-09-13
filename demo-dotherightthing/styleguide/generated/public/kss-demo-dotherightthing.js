@@ -89,24 +89,38 @@
 		
 		$(window).load( function() {
 			
-			$('.kss-html-variation').each( function(i, item) {
+			var kss_head = $('head').html();
+			
+			// was initially going to exclude -defaults, but sometimes they are required..
+			$('.kss-html-default, .kss-html-variation').each( function(i, item) {
+												
+				var kss_html = $(item).html().trim();		
+				
+				// match catches both raw HTML and placeholder images 
+				// but this is of no use as even in meaningul default HTML this string is present!
+				//if ( kss_html.match( 'modifiers}' ) ) { 
+				//	return;
+				//}
+				
+				var iframe_height = $(item).height();
+				
+				if ( iframe_height < 50 ) { /* if the content is floated and the .kss-clear element does not work due to the nesting the */
+					iframe_height = 150;
+				}
 				
 				var iframe_el = '';
 				iframe_el += '<div class="kss-clear"></div>';
 				iframe_el += '<div class="kss-html-variation-print">';
-				iframe_el += '<p class="kss-print-heading">Print preview:</p>';
-				iframe_el += '<iframe class="kss-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" height="' + $(item).height() + '" width="100%">print example</iframe>';
-				iframe_el += '</div>';												
-				
-				var kss_head = $('head').html();
-				var kss_html = $(item).html().trim();
+				iframe_el += '<p class="styleguide-print-heading">Print preview (+ background images disabled):</p>';
+				iframe_el += '<iframe class="styleguide-print-iframe" id="kss-html-variation-print-' + i + '" allowtransparency="true" height="' + iframe_height + '" width="100%">print example</iframe>';
+				iframe_el += '</div>';																
 				
 				var iframe_html = '';
 				iframe_html += '<!DOCTYPE html>';
-				iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml">';
+				iframe_html += '<html xmlns="http://www.w3.org/1999/xhtml" class="styleguide-print">';
 				iframe_html += '<head>';
 				iframe_html += kss_head;			
-				iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .kss-placeholder)	
+				iframe_html += '<link rel="stylesheet" href="' + styleguide_template_path + 'public/kss.css" />'; // Styleguide styles (eg .styleguide-placeholder)	
 				iframe_html += '<script type="text/javascript">';
 				
 				// jQuery document.ready fails in MSIE9
@@ -122,7 +136,9 @@
 				iframe_html += '<\/script>';							
 				iframe_html += '</head>';
 				iframe_html += '<body>';
+				iframe_html += '<div class="styleguide-liner">';
 				iframe_html += kss_html;
+				iframe_html += '</div>';
 				iframe_html += '</body>';
 				iframe_html += '</html>';
 				

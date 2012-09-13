@@ -72,20 +72,20 @@
                 </div>                  
                 <!-- END MODIFIERS -->                                        
                 <!-- START THE DEFAULT -->                
-                <div class="styleguide-element styleguide-html-example">
+                <div class="styleguide-element styleguide-liner styleguide-html-example">
                 	<div class="styleguide-modifier-heading">
                   	<h4 class="kss-heading">Default layout</h4>
                   </div>
                   <!-- this is the visual example -->                  
                   <div class="kss-html-default">
                  		{{modifierMarkup}}   
-                 	</div>
-                 <div class="kss-clear"></div>
+                    <div class="kss-clear"></div>
+                 	</div>                 
                 </div>  
                 <!-- END THE DEFAULT -->
                 <!-- START THE VARIATIONS -->              
                 {{#eachModifier}}
-                <div class="styleguide-element styleguide-modifier">
+                <div class="styleguide-element styleguide-liner styleguide-modifier">
                 	<div class="styleguide-modifier-heading">
                   	<h4 class="kss-heading">Modified layout</h4>
                   </div>
@@ -94,8 +94,8 @@
                   <!-- this is the visual example -->
                  	<div class="kss-html-variation">
                  		{{modifierMarkup}}   
-                 	</div>
-                  <div class="kss-clear"></div>                                  
+                    <div class="kss-clear"></div>
+                 	</div>                                                  
                 </div>
                 {{/eachModifier}}
                 <!-- END THE VARIATIONS -->   

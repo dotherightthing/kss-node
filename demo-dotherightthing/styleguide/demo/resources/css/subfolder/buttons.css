@@ -209,9 +209,9 @@ Buttons (TODO)
 Links, buttons etc
 
 Markup:
-<div class="kss-placeholder">
+<div class="styleguide-placeholder">
   <img src="/demo-dotherightthing/styleguide/demo/resources/images/ui/placeholders/{$modifiers}.png" alt="{$modifiers}" />
-  <div class="kss-overlay" title="{$modifiers} (placeholder)"></div>
+  <div class="styleguide-overlay" title="{$modifiers} (placeholder)"></div>
 </div>
 
 .button-green - Green button
