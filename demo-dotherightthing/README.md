@@ -24,7 +24,6 @@ This demo has been borrowed/assembled/hacked on-the-fly to create something imme
 Therefore I need to get to the following at some point:
 
 1. Tidy up template code
-1. Tidy up stylesheets
 1. Check that no config options are redundant
 1. Edit kss-node to prevent the contents of the 'public' directory from being cloned to the 'generated' folder
 1. Build a FAQ page of common developer errors when authoring KSS comments

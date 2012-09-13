@@ -39,7 +39,7 @@
 <li>exposing modifiers encourages development of reusable code that can be skinned</li>
 <li>reused and resuable code = less code to download, less code to maintain</li>
 <li>visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS</li>
-<li>HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues</li>
+<li>HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, and identifying what is in the &apos;box of bits&apos;</li>
 <li>automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide and being responsible for its maintenance</li>
 <li>a KSS styleguide is &apos;living&apos; or &apos;alive&apos; because it updates when your CSS does (when you regenerate it via the commandline)</li>
 </ol>
@@ -139,7 +139,30 @@ Styleguide 1.3.0.
 <p>It&apos;s also ok if classes listed in the Modifiers section are actually located in another part of the stylesheet.
 
 </p>
-<h3>Install the required software</h3>
+<h4>Creating placeholder styles</h4>
+<p>Placeholder styles can easily be created as follows. This allows styles to be filled in gradually, while understanding what is left to do.  
+
+</p>
+<p>Note that modifiers cannot be combined, in this scenario.
+
+</p>
+<pre><code class="css">/*
+Buttons (TODO)
+
+Links, buttons etc
+
+Markup:
+&lt;p class=&quot;kss-placeholder&quot;&gt;
+  &lt;img src=&quot;/sites/all/themes/mysite/images/ui/placeholders/{$modifiers}.png&quot; alt=&quot;{$modifiers}&quot; title=&quot;{$modifiers}&quot; /&gt;
+  &lt;span class=&quot;kss-overlay&quot;&gt;&amp;nbsp;&lt;/span&gt;
+&lt;/p&gt;
+
+.button-green - Green button
+.button-purple - Purple button
+
+Styleguide 9.9.0.
+*/</code></pre>
+<h4>Install the required software</h4>
 <p>To use KSS, you will need to do the following:
 
 </p>
