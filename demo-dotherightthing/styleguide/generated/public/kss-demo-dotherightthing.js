@@ -119,6 +119,12 @@
 		
 		$(window).load( function() {
 			
+			// this is a bit buggy in some versions, so remove it until we have time to debug things
+			// disabled as it is quite slow...
+			//if ( $.browser.msie ) {
+				return;
+			//}
+			
 			var kss_head = $('head').html();
 			
 			// was initially going to exclude -defaults, but sometimes they are required..
@@ -153,7 +159,7 @@
 					// window.onload works ok				
 					iframe_html += 'window.onload = function() {';				
 					iframe_html += 'jQuery(\'link[media="print"], style[media="print"]\').attr(\'media\',\'screen\').attr(\'title\',\'[Print stylesheet]\');';
-					iframe_html += 'setTimeout( function() { window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(\'body>.styleguide-liner\').outerHeight() ); }, 1000 );';
+					iframe_html += 'setTimeout( function() { window.parent.set_iframe_height( "kss-html-variation-print-' + i + '", $(document).outerHeight() ); }, 1000 );';
 					iframe_html += '}';
 					
 					iframe_html += '<\/script>';							

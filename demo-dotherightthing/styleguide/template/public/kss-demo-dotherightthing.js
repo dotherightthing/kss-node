@@ -119,6 +119,12 @@
 		
 		$(window).load( function() {
 			
+			// this is a bit buggy in some versions, so remove it until we have time to debug things
+			// disabled as it is quite slow...
+			//if ( $.browser.msie ) {
+				return;
+			//}
+			
 			var kss_head = $('head').html();
 			
 			// was initially going to exclude -defaults, but sometimes they are required..
