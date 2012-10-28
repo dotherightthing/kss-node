@@ -183,8 +183,24 @@ To use KSS, you will need to do the following:
 
 #### Copy the templating files to your project
 
-1. Copy the 'styleguide' folder to your 'resources' (assets) or 'theme' folder
-1. Copy `[{STYLEGUIDE_FOLDER_PATH_ABSOLUTE}]/demo/resources/css/`**`styleguide.md`** to your site's `css` or `styles` folder (eg `[{STYLEGUIDE_CLI_SOURCE}]`)
+Github offers `svn:external` support:
+
+1. Locate the directory containing your `styles` folder (`css` folder support to be added)
+1. Create a folder named `styleguide`
+1. Within this folder create a folder named `generated`
+1. Commit both folders to SVN
+
+Navigate to your SVN 'styleguide' folder and add these SVN externals:
+
+1. `template https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/template`
+1. `update https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/update`
+
+Navigate to your SVN 'styles' folder and add this SVN external:
+
+1. `styleguide.md https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/demo/resources/css/styleguide.md`
+
+Create a page that will pull in the external styleguide 'template':
+
 1. Create a page which will `<?php `**`include()`**`; ?>` the `[{STYLEGUIDE_CLI_TEMPLATE}]/`**`importer.php`** file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: [/demo/styleguide.php]([{STYLEGUIDE_FOLDER_PATH}]/demo/styleguide.php) (you may even be looking at this now ;-)). Note the required (editable) PHP globals.
 
 ~~~
@@ -215,6 +231,8 @@ To resolve this:
 
 #### (Re)generate the styleguide
 
+##### Windows
+
 Run kss-node via the commandline: 
 
 `kss-node [{STYLEGUIDE_CLI_SOURCE}] [{STYLEGUIDE_CLI_DESTINATION}] --template [{STYLEGUIDE_CLI_TEMPLATE}]`
@@ -225,6 +243,10 @@ This command:
 1. Reads KSS comments in stylesheets in this folder: `[{STYLEGUIDE_CLI_SOURCE}]`
 1. Generates documentation into this folder: `[{STYLEGUIDE_CLI_DESTINATION}]`
 1. Formats the results using this custom `.html` template (and associated assets): `--template [{STYLEGUIDE_CLI_TEMPLATE}]`
+
+##### OS X
+
+Run `styleguide/update/regenerate-styleguide.app`
 
 ### View the generated styleguide
 
