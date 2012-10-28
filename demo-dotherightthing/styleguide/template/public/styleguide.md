@@ -1,6 +1,6 @@
 ## About this guide
 
-*Last updated 29.10.2012*
+*Last updated 29.10.2012 12:28*
 
 *These instructions are located in css/styleguide.md and are written using [markdown](http://en.wikipedia.org/wiki/Markdown). For a good online editor, check out [Dillinger](http://dillinger.io/).* 
 

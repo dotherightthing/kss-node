@@ -167,14 +167,14 @@
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>732.500000:1001.000000</string>
+				<string>732.500000:1294.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Finder Items.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -219,7 +219,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "Terminal"		# Start KSS node		do script with command "cd /Users/Dan/github/kss-node; kss-node index.js"		# quit Terminal		# quit	end tellend run</string>
+					<string>on run {input, parameters}	tell application "Terminal"		# Start KSS node		do script with command "cd " &amp; input &amp; "; kss-node index.js"	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -425,9 +425,7 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	tell application "Terminal"		# activate -- removed as brings window to the front; you can tell whether script is running because a spinning cog appears in the toolbar at the top of the page.				# identify location of project styleguide folder, relative to the action which resides in this folder		set my_path to path to me		tell application "Finder"			set styleguide_folder to POSIX path of (container of container of my_path as string)			set styleguide_folder_parent to POSIX path of (container of container of container of my_path as string)			# assume 'styles' is the styles folder. We can change this later but I'm over browsing to it!			set styles_folder to styleguide_folder_parent &amp; "/" &amp; input		end tell		# Set target paths		# we'd normally copy stuff over so that the badly coded stylesheets didn't break everything, 		# but let's try and fix that this time because workarounds are fiddly and prone to error		set kss_source_folder to styles_folder		set kss_output_folder to styleguide_folder &amp; "/generated"		set kss_template_folder to styleguide_folder &amp; "/template"
-		# Copy styleguide.md from the template/public folder to the stylesheets folder.
-		do script with command "cp " &amp; kss_template_folder &amp; "/public/styleguide.md " &amp; kss_source_folder		# Empty the target folder		do script with command "rm -rf /" &amp; kss_output_folder &amp; "/*"		# Regenerate the style guide				do script with command "kss-node " &amp; kss_source_folder &amp; " " &amp; kss_output_folder &amp; " --template " &amp; kss_template_folder		# wait 3 seconds		delay 5		# close all terminal windows		close every window		# quit Terminal		quit	end tellend run</string>
+					<string>on run {input, parameters}	tell application "Terminal"		# activate -- removed as brings window to the front; you can tell whether script is running because a spinning cog appears in the toolbar at the top of the page.				# identify location of project styleguide folder, relative to the action which resides in this folder		set my_path to path to me		tell application "Finder"			set styleguide_folder to POSIX path of (container of container of my_path as string)			set styleguide_folder_parent to POSIX path of (container of container of container of my_path as string)			# assume 'styles' is the styles folder. We can change this later but I'm over browsing to it!			set styles_folder to styleguide_folder_parent &amp; "/" &amp; input		end tell		# Set target paths		# we'd normally copy stuff over so that the badly coded stylesheets didn't break everything, 		# but let's try and fix that this time because workarounds are fiddly and prone to error		set kss_source_folder to styles_folder		set kss_output_folder to styleguide_folder &amp; "/generated"		set kss_template_folder to styleguide_folder &amp; "/template"		# Copy styleguide.md from the template/public folder to the stylesheets folder.		do script with command "cp " &amp; kss_template_folder &amp; "/public/styleguide.md " &amp; kss_source_folder		# Empty the target folder		do script with command "rm -rf /" &amp; kss_output_folder &amp; "/*"		# Regenerate the style guide				do script with command "kss-node " &amp; kss_source_folder &amp; " " &amp; kss_output_folder &amp; " --template " &amp; kss_template_folder		# wait 3 seconds		delay 5		# close all terminal windows		close every window		# quit Terminal		quit	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -491,21 +489,21 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>31BD732A-FAAF-409A-AE65-658A523B2AB5</key>
+		<key>7BE1E336-6D04-45E6-B240-4D090E7A7271</key>
 		<dict>
 			<key>from</key>
 			<string>C305D01E-1F91-4F40-A691-EBAE393BEE9C - C305D01E-1F91-4F40-A691-EBAE393BEE9C</string>
 			<key>to</key>
 			<string>EDDFDD3D-825A-4C1A-81DB-309CDBA264D9 - EDDFDD3D-825A-4C1A-81DB-309CDBA264D9</string>
 		</dict>
-		<key>9C183CE1-4247-44B1-A11A-4FB1B4C08C92</key>
+		<key>837AE592-E6CB-4841-B043-087D0C51DD9A</key>
 		<dict>
 			<key>from</key>
 			<string>EDDFDD3D-825A-4C1A-81DB-309CDBA264D9 - EDDFDD3D-825A-4C1A-81DB-309CDBA264D9</string>
 			<key>to</key>
 			<string>934CD3E0-DD23-4520-AE5F-22C5BF9A124C - 934CD3E0-DD23-4520-AE5F-22C5BF9A124C</string>
 		</dict>
-		<key>C01A573D-A023-4AE1-BD5B-5470449BCEC4</key>
+		<key>F7615CFF-A0E5-4469-B4FA-1A84DDB41BBD</key>
 		<dict>
 			<key>from</key>
 			<string>27E1471E-5889-4CF9-B63B-C1DA0DD75F91 - 27E1471E-5889-4CF9-B63B-C1DA0DD75F91</string>
