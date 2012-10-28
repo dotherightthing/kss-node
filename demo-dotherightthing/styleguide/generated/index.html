@@ -21,6 +21,9 @@
       
       	<div id="kss-overview" class="content-col">
         <h2>About this guide</h2>
+<p><em>Last updated 29.10.2012</em>
+
+</p>
 <p><em>These instructions are located in css/styleguide.md and are written using <a href="http://en.wikipedia.org/wiki/Markdown">markdown</a>. For a good online editor, check out <a href="http://dillinger.io/">Dillinger</a>.</em> 
 
 </p>
@@ -196,10 +199,30 @@ Styleguide 9.9.0.
 <li>Navigate to your local kss-node directory (step 3), eg: <code>cd ﻿C:\Files\Websites\GitHub\kss-node</code>, then use the Node Package Manager to install the kss-node dependencies: <code>npm install -g</code>, (<code>-g</code> = global, ie copy files to <code>???</code>)</li>
 </ol>
 <h4>Copy the templating files to your project</h4>
+<p>Github offers <code>svn:external</code> support, so:
+
+</p>
 <ol>
-<li>Copy the &apos;styleguide&apos; folder to your &apos;resources&apos; (assets) or &apos;theme&apos; folder</li>
-<li>Copy <code>[{STYLEGUIDE_FOLDER_PATH_ABSOLUTE}]/demo/resources/css/</code><strong><code>styleguide.md</code></strong> to your site&apos;s <code>css</code> or <code>styles</code> folder (eg <code>[{STYLEGUIDE_CLI_SOURCE}]</code>)</li>
-<li>Create a page which will <code>&lt;?php </code><strong><code>include()</code></strong><code>; ?&gt;</code> the <code>[{STYLEGUIDE_CLI_TEMPLATE}]/</code><strong><code>importer.php</code></strong> file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: <a href="[{STYLEGUIDE_FOLDER_PATH}]/demo/styleguide.php">/demo/styleguide.php</a> (you may even be looking at this now ;-)). Note the required (editable) PHP globals.</li>
+<li>Locate the parent directory which contains your <code>styles</code> or <code>css</code> folder (note: other folder names not supported at this time)</li>
+<li>Create a folder named <code>styleguide</code></li>
+<li>Within this folder create a folder named <code>generated</code></li>
+<li>Commit both folders to SVN</li>
+</ol>
+<p>Navigate to your SVN &apos;styleguide&apos; folder and add these SVN externals:
+
+</p>
+<ol>
+<li><code>template https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/template</code></li>
+<li><code>update https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/update</code></li>
+</ol>
+<p>Note: Whenever you run the updater, <code>template/styleguide.md</code> will be copied to your stylesheets folder.
+
+</p>
+<p>Create a page that will pull in the external styleguide &apos;template&apos;:
+
+</p>
+<ol>
+<li>Create a page which will <code>&lt;?php </code><strong><code>include()</code></strong><code>; ?&gt;</code> the <code>[{STYLEGUIDE_CLI_TEMPLATE}]/</code><strong><code>importer.php</code></strong> file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: <code>/demo-dotherightthing/html/styleguide.php</code> (you may even be looking at this now ;-)). Note the required (editable) PHP globals.</li>
 </ol>
 <p>~~~
 
@@ -231,6 +254,7 @@ Styleguide 9.9.0.
 <li>Start the node.js server: <code>node index.js</code></li>
 </ol>
 <h4>(Re)generate the styleguide</h4>
+<h5>Windows</h5>
 <p>Run kss-node via the commandline: 
 
 </p>
@@ -246,8 +270,12 @@ Styleguide 9.9.0.
 <li>Generates documentation into this folder: <code>[{STYLEGUIDE_CLI_DESTINATION}]</code></li>
 <li>Formats the results using this custom <code>.html</code> template (and associated assets): <code>--template [{STYLEGUIDE_CLI_TEMPLATE}]</code></li>
 </ol>
+<h5>OS X</h5>
+<p>Run <code>styleguide/update/regenerate-styleguide.app</code>
+
+</p>
 <h3>View the generated styleguide</h3>
-<p>You may now view the documentation via your custom template, eg <a href="[{STYLEGUIDE_FOLDER_PATH}]/demo/styleguide.php">/demo/styleguide.php</a>.
+<p>You may now view the documentation via your custom template, eg <code>/demo-dotherightthing/html/styleguide.php</code>.
 
 </p>
 <h4>Known issues</h4>

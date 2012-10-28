@@ -1,5 +1,7 @@
 ## About this guide
 
+*Last updated 29.10.2012*
+
 *These instructions are located in css/styleguide.md and are written using [markdown](http://en.wikipedia.org/wiki/Markdown). For a good online editor, check out [Dillinger](http://dillinger.io/).* 
 
 The stylesheet documentation containined in this styleguide is dynamically generated from the CSS stylesheets using KSS (Knyle Style Sheets).
@@ -183,9 +185,9 @@ To use KSS, you will need to do the following:
 
 #### Copy the templating files to your project
 
-Github offers `svn:external` support:
+Github offers `svn:external` support, so:
 
-1. Locate the directory containing your `styles` folder (`css` folder support to be added)
+1. Locate the parent directory which contains your `styles` or `css` folder (note: other folder names not supported at this time)
 1. Create a folder named `styleguide`
 1. Within this folder create a folder named `generated`
 1. Commit both folders to SVN
@@ -195,13 +197,11 @@ Navigate to your SVN 'styleguide' folder and add these SVN externals:
 1. `template https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/template`
 1. `update https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/update`
 
-Navigate to your SVN 'styles' folder and add this SVN external:
-
-1. `styleguide.md https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/demo/resources/css/styleguide.md`
+Note: Whenever you run the updater, `template/styleguide.md` will be copied to your stylesheets folder.
 
 Create a page that will pull in the external styleguide 'template':
 
-1. Create a page which will `<?php `**`include()`**`; ?>` the `[{STYLEGUIDE_CLI_TEMPLATE}]/`**`importer.php`** file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: [/demo/styleguide.php]([{STYLEGUIDE_FOLDER_PATH}]/demo/styleguide.php) (you may even be looking at this now ;-)). Note the required (editable) PHP globals.
+1. Create a page which will `<?php `**`include()`**`; ?>` the `[{STYLEGUIDE_CLI_TEMPLATE}]/`**`importer.php`** file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: `/demo-dotherightthing/html/styleguide.php` (you may even be looking at this now ;-)). Note the required (editable) PHP globals.
 
 ~~~
 
@@ -250,7 +250,7 @@ Run `styleguide/update/regenerate-styleguide.app`
 
 ### View the generated styleguide
 
-You may now view the documentation via your custom template, eg [/demo/styleguide.php]([{STYLEGUIDE_FOLDER_PATH}]/demo/styleguide.php).
+You may now view the documentation via your custom template, eg `/demo-dotherightthing/html/styleguide.php`.
 
 #### Known issues
 

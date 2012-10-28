@@ -22,14 +22,14 @@
   <!-- PROJECT ASSETS: CSS -->  
   <!-- linking your project stylesheets here will serve to style both the project 'chrome' and the KSS HTML examples -->
   <!-- in a CMS environment the list of CSS files would usually be dynamically generated, with CSS files having been passed through various filters (eg the Munger) to alter the output -->
-  <link rel="stylesheet" href="resources/css/reset.css" />
-  <link rel="stylesheet" href="resources/css/global.css" />
+  <link rel="stylesheet" href="../styles/demo-reset.css" />
+  <link rel="stylesheet" href="../styles/demo-global.css" />
   <!-- a subfolder is used here just to ensure that all css is being parsed by kss-node -->
-  <link rel="stylesheet" href="resources/css/subfolder/buttons.css" />
-  <link rel="stylesheet" href="resources/css/print.css" media="print" />    
+  <link rel="stylesheet" href="../styles/subfolder/demo-buttons.css" />
+  <link rel="stylesheet" href="../styles/demo-print.css" media="print" />    
   <!-- PROJECT ASSETS: JS -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="resources/js/ui.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
 </head>
 <body>
 
@@ -63,14 +63,16 @@
 			// START EDIT
 			$styleguide_site_name = 'TestProject';			
 			$styleguide_folder_path = '/demo-dotherightthing/styleguide';	
-			$styleguide_css_path = '/demo-dotherightthing/styleguide/demo/resources/css';	
+			$styleguide_css_path = '/demo-dotherightthing/styles';	
 			$styleguide_section_prefix = '?section=';
 			$styleguide_munge_breadcrumbs = 'false';
 			$styleguide_munge_title = 'true';
 			$styleguide_viewport_width = '1024';						
 			// END EDIT
 			
-			include( $styleguide_site_root . $styleguide_folder_path . '/template/importer.php' );
+			$include_path = $styleguide_site_root . $styleguide_folder_path . '/template/importer.php';
+			
+			include( $include_path );
 			
 			// END KSS STYLEGUIDE
     ?>
