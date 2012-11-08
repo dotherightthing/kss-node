@@ -4,15 +4,15 @@ This is a demo I put together for reuse on our PHP-based client projects.
 
 It consists of:
 
-1. /private - folder of any name which should exist anywhere *outside of* your project's web root
-  * /styleguide/template/generated - empty folder
-  * /styleguide/template/template - kss-node templating, and a custom PHP importer which acts as a bridge between the KSS templates and /styleguide/demo.php
-  * /styleguide/update - contains an Automator .app for easy regeneration of style guides on OS X
-  * /styleguide/user - config file for the Automator app - copy config-demo.plist to config.plist and customise for your project
-1. /public - folder of any name which can exist anywhere *inside of* your project's webroot
-  * /demo-images - demo images used by the demo-styles
-  * /demo-styles - demo CSS stylesheets to test that KSS is working
-  * /styleguide/demo.php - PHP page which makes the style guide formatting consistent with the rest of your website. This file needs to be customised to reflect your project file paths.
+1. `/private` - folder of any name which should exist anywhere **outside of** your project's web root
+1. `/private/styleguide/template/generated` - empty folder
+1. `/private/styleguide/template/template` - kss-node templating, and a custom PHP importer which acts as a bridge between the KSS templates and `/public/styleguide/demo.php`
+1. `/private/styleguide/update` - contains an Automator .app for easy regeneration of style guides on OS X
+1. `/private/styleguide/user` - XML config file for the Automator app. **Copy `config-demo.plist` to `config.plist` and customise for your project**.
+1. `/public` - folder of any name which can exist anywhere **inside of** your project's web root
+1. `/public/demo-images` - demo images used by the `demo-styles`
+1. `/public/demo-styles` - demo CSS stylesheets to test that KSS is working
+1. `/public/styleguide/demo.php` - webpage which makes the style guide formatting consistent with the rest of your website. **This file needs to be customised to reflect your project file paths**.
  
 ##Main changes from [https://github.com/hughsk/kss-node](https://github.com/hughsk/kss-node)
  
