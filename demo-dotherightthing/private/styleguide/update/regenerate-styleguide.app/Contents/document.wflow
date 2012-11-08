@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>339.2</string>
+	<key>AMApplicationVersion</key>
+	<string>2.2.4</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionNameComment</key>
+				<string>Regenerate styleguide</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}	# description: to allow us to store regenerate-styleguide.app separately from the project assets, we load KSS configuration from a developer-managed XML (.plist) file 	# note: the easiest way to test and edit this script is to use Spotlight to search for AppleScript Editor 		# useful: http://lists.apple.com/archives/applescript-users/2009/Feb/msg00054.html	# useful: http://www.mactech.com/articles/mactech/Vol.22/22.03/StoringandAccessingData/index.html - "Retrieving Properties From a Property List File"	# last updated: Thurs 08.11.2012 @ 14.45 by DS	tell application "Finder"		# get path to /myfolder/private/styleguide/update/regenerate-styleguide.app		set automator_app_path to path to me		# get path to /myfolder/private/styleguide		set private_styleguide_folder to (container of container of (automator_app_path)) as alias		# get path to /myfolder/private/styleguide/update		set private_styleguide_update_folder to ((POSIX path of (private_styleguide_folder as string)) &amp; "update")		# get path to /myfolder/private/styleguide/template		set private_styleguide_template_folder to ((POSIX path of (private_styleguide_folder as string)) &amp; "template")		# get path to /myfolder/private/styleguide/user		set private_styleguide_user_folder to ((POSIX path of (private_styleguide_folder as string)) &amp; "user")		# get path to structured .plist (XML) config file		set config_file to (private_styleguide_user_folder &amp; "/config.plist")		# read variable values out config file		tell application "System Events"			tell property list file config_file				tell contents					set kss_node_folder to value of property list item "kss_node_folder"					set public_styles_folder to value of property list item "project_styles_folder"					set public_styleguide_folder to value of property list item "project_styleguide_folder"				end tell			end tell		end tell		get {kss_node_folder, public_styles_folder, public_styleguide_folder}	end tell	tell application "Terminal"		# activate -- removed as brings window to the front; you can tell whether script is running because a spinning cog appears in the toolbar at the top of the page.			# Set KSS paths		set kss_source_folder to public_styles_folder		set kss_output_folder to public_styleguide_folder		set kss_template_folder to private_styleguide_template_folder		set kss_template_template_folder to (kss_template_folder &amp; "/template")		set kss_template_generated_folder to (kss_template_folder &amp; "/generated")		# Copy styleguide.md from /myfolder/private/template/public -&gt; CSS folder		do script with command "cp " &amp; kss_template_template_folder &amp; "/public/styleguide.md " &amp; kss_source_folder		# Copy populated 'template' folder over, removing what's there first		do script with command "rm -rf /" &amp; kss_output_folder &amp; "/template"		do script with command "cp -R " &amp; kss_template_template_folder &amp; " " &amp; kss_output_folder		# Copy empty 'generated' folder over		do script with command "rm -rf /" &amp; kss_output_folder &amp; "/generated"		do script with command "cp -R " &amp; kss_template_generated_folder &amp; " " &amp; kss_output_folder		# set the target path for the generated style guide HTML		set kss_output_source_folder to (kss_output_folder &amp; "/generated")		# Start KSS node		do script with command "cd " &amp; kss_node_folder &amp; "; kss-node index.js"		# Regenerate the style guide				do script with command "kss-node " &amp; kss_source_folder &amp; " " &amp; kss_output_source_folder &amp; " --template " &amp; kss_template_template_folder		# wait N seconds		delay 5		# close all terminal windows		close every window		# quit Terminal		quit	end tellend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>352A3397-5C1B-4BC4-B7A9-7422434B431B</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>9ABEDD25-7E43-44EE-8A63-20A21E93F146</string>
+				<key>UUID</key>
+				<string>934CD3E0-DD23-4520-AE5F-22C5BF9A124C</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>945.500000:1173.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>1622AB03-1415-4EAC-95FF-688C68AA6AFF</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Path</string>
+			<key>name</key>
+			<string>Path</string>
+			<key>value</key>
+			<string>~/Desktop</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>6F2636A9-0263-4DB5-95B0-D69BB44A6335</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>Storage</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>6E5440ED-8D13-4365-8E12-8C95FAE7395F</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Path</string>
+			<key>name</key>
+			<string>Path 1</string>
+			<key>value</key>
+			<string>~/Desktop</string>
+		</dict>
+	</array>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.application</string>
+	</dict>
+</dict>
+</plist>

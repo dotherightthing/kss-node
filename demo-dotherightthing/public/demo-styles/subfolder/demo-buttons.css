@@ -210,7 +210,7 @@ Links, buttons etc
 
 Markup:
 <div class="styleguide-placeholder">
-  <img src="/demo-dotherightthing/images/ui/placeholders/{$modifiers}.png" alt="{$modifiers}" />
+  <img src="/demo-dotherightthing/public/demo-images/{$modifiers}.png" alt="{$modifiers}" />
   <div class="styleguide-overlay" title="{$modifiers} (placeholder)"></div>
 </div>
 

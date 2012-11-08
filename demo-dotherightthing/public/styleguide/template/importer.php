@@ -22,8 +22,8 @@
 				
 	// CLI args for documentation
 	$styleguide_cli_source = $styleguide_site_root . $styleguide_css_path;
-	$styleguide_cli_destination = $styleguide_site_root . $styleguide_folder_path . '/generated';
-	$styleguide_cli_template = $styleguide_site_root . $styleguide_folder_path . '/template';	
+	$styleguide_cli_destination = $styleguide_site_root . $styleguide_folder_path . '/generated'; // to update
+	$styleguide_cli_template = $styleguide_site_root . $styleguide_folder_path . '/template';	// to update
 			
 	// generated path for documentation navigation
 	$styleguide_generated_path = $styleguide_folder_path . '/generated/';		
@@ -34,7 +34,7 @@
 
 <!-- yup, stylesheets don't belong here, but it works ;-) -->
 <!-- this stylesheet only styles the KSS scaffolding, demo text, and markdown index/overview page -->
-<link rel="stylesheet" href="<?php echo $styleguide_template_path; ?>public/kss.css" />
+<link rel="stylesheet" href="<?php echo $styleguide_folder_path; ?>/template/public/kss.css" />
 
 <div class="kss-wrapper">
 

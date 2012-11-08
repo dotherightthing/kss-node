@@ -4,18 +4,21 @@ This is a demo I put together for reuse on our PHP-based client projects.
 
 It consists of:
 
-1. styleguide - the directory to copy to your projects 'resources'/'assets'/'theme' folder
-1. styleguide/demo - 'styleguide.php' is a configurable file which imports the KSS documentation, which is generated from the 'resources/css' folder; the 'overview' page contains setup instructions for Windows and OS X
-1. styleguide/generated - this is the folder which the KSS documentation is generated into; the child 'public' folder is never referenced, but I haven't hacked this script to stop this being populated yet
-1. styleguide/template - 'importer.php' uses placeholders to pass styleguide.php's config options to the KSS template 'index.htm'
+1. styleguide/public - folder which can exist anywhere in your project
+  * /index.php - file which makes the style guide formatting consistent with the rest of your website 
+  * /source - empty folder which the style guide is generated into via kss-node
+1. styleguide/private - folder which should exist outside of your project's web root
+  * /template - 'importer.php' uses placeholders to pass styleguide.php's config options to the KSS template 'index.htm'
+  * /template/public - assets used by the KSS template
+  * /update - contains an Automator .app for easy regeneration of style guides on OS X
+  * /user - contains config-demo.plist which should be copied to config.plist and customized for your project
  
 ##Main changes from [https://github.com/hughsk/kss-node](https://github.com/hughsk/kss-node)
  
 1. set up is for PHP/LAMP projects
 1. `.svn` directories do not prevent styleguide regeneration
 1. uses a configurable template for easy integration with the rest of your site
- 
-It is important to note that this demo still uses the command-line for styleguide regeneration.
+1. added Automator app to regenerate files on OS X
  
 ##TO DO
 
