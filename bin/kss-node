@@ -115,6 +115,7 @@ wrench.copyDirSyncRecursive(
 // Generate the static HTML pages in the next tick, i.e. after the other functions have
 // been defined and handlebars helpers set up.
 process.nextTick(function() {
+/* DTRT: Disable less compiling as kss.css was getting out of synch...
 	less.render('@import "' + path.relative(process.cwd(), options.destinationDirectory) + '/public/kss.less";', function(err, css) {
 		if (err) {
 			console.error(err);
@@ -126,7 +127,8 @@ process.nextTick(function() {
 		console.log('...compiling LESS');
 		// Write the compiled LESS styles from the template.
 		fs.writeFileSync(options.destinationDirectory + '/public/kss.css', css, 'utf8');
-
+*/
+		console.log('...LESS compiling disabled');
 		console.log('...parsing your styleguide');
 		kss.traverse(options.sourceDirectory, {
 			multiline : true,
@@ -172,7 +174,9 @@ process.nextTick(function() {
 			generateIndex(styleguide, childSections, pages, sectionRoots);
 			generateStylesheet(argv);
 		});
+/* DTRT: Disable less compiling as kss.css was getting out of synch...
 	});
+*/
 });
 
 // Compile LESS/CSS files into a single "style.css" if required
