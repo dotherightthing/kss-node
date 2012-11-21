@@ -108,7 +108,8 @@ try {
 
 // copy the public files over
 
-// DTRT: comment out old approach as it copies over the github .svn folder which screws up the project svn versioning
+
+// DTRT: the author's approach copies over the github .svn folder which breaks the target project's svn versioning
 //wrench.copyDirSyncRecursive(
 //	options.templateDirectory + '/public',
 //	options.destinationDirectory + '/public'
@@ -117,12 +118,26 @@ try {
 // DTRT: copying everything then deleting .svn files didn't work (presumably because the .svn files are protected and/or kss-node is not running as a service)
 // DTRT: so instead build a file list which excludes .svn files (which readdirSync does by default)
 var public_files = fs.readdirSync(options.templateDirectory + '/public');
+
 // DTRT: then copy files over one at a time
+var public_file_count = 0;
+var p_source_dir = options.templateDirectory + '/public/';
+var p_target_dir = options.destinationDirectory + '/public/';
+
 public_files.forEach(function(public_file) { 
-    fs.readFile(public_file, function(err, buf){
-        fs.writeFile('/Users/Dan/' + options.destinationDirectory + '/public/' + public_file, buf);
-    });
+
+  public_file_count ++;
+
+  var p_source = p_source_dir + public_file;  
+  var p_target = p_target_dir + public_file;
+
+  var file_contents = fs.readFileSync(p_source); // optional 'utf8' argument omitted as this corrupts .png files
+  fs.writeFileSync(p_target, file_contents);
+
 });
+
+// DTRT: confirm copy was successful
+console.log( '..copied ' + public_file_count  + ' public assets from ' + p_source_dir + ' to ' + p_target_dir );
 
 // Generate the static HTML pages in the next tick, i.e. after the other functions have
 // been defined and handlebars helpers set up.
