@@ -17,19 +17,16 @@ It consists of:
 ##Main changes from [https://github.com/hughsk/kss-node](https://github.com/hughsk/kss-node)
  
 1. set up is for PHP/LAMP projects
-1. `.svn` directories do not prevent styleguide regeneration
+1. `.svn` directories do not prevent styleguide regeneration, github `.svn` directories do not pollute the target project (`kss-node` executable edited)
+1. LESS compiling to resolve issues with generated files falling out of sync
 1. uses a configurable template for easy integration with the rest of your site
-1. added Automator app to regenerate files on OS X
+1. added Automator app for on-demand regeneration of files on OS X, this loads `.plist` config files for easy management of project-specific settings
  
 ##TO DO
 
-This demo has been borrowed/assembled/hacked on-the-fly to create something immediately usable. As a result the files are currently fairly messy.
-
-Therefore I need to get to the following at some point:
+This demo has been borrowed/assembled/hacked on-the-fly to create something immediately usable. Therefore I need to get to the following at some point:
 
 1. Tidy up template code
-1. Check that no config options are redundant
-1. Edit kss-node to prevent the contents of the 'public' directory from being cloned to the 'generated' folder
 1. Build a FAQ page of common developer errors when authoring KSS comments
 
 As this is also my first outing with Github, I also need to address how these modifications do (or don't) fit in with the previous contributors' work.
