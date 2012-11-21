@@ -107,10 +107,22 @@ try {
 } catch (e) {}
 
 // copy the public files over
-wrench.copyDirSyncRecursive(
-	options.templateDirectory + '/public',
-	options.destinationDirectory + '/public'
-);
+
+// DTRT: comment out old approach as it copies over the github .svn folder which screws up the project svn versioning
+//wrench.copyDirSyncRecursive(
+//	options.templateDirectory + '/public',
+//	options.destinationDirectory + '/public'
+//);
+
+// DTRT: copying everything then deleting .svn files didn't work (presumably because the .svn files are protected and/or kss-node is not running as a service)
+// DTRT: so instead build a file list which excludes .svn files (which readdirSync does by default)
+var public_files = fs.readdirSync(options.templateDirectory + '/public');
+// DTRT: then copy files over one at a time
+public_files.forEach(function(public_file) { 
+    fs.readFile(public_file, function(err, buf){
+        fs.writeFile('/Users/Dan/' + options.destinationDirectory + '/public/' + public_file, buf);
+    });
+});
 
 // Generate the static HTML pages in the next tick, i.e. after the other functions have
 // been defined and handlebars helpers set up.
