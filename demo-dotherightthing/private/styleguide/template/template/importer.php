@@ -49,7 +49,8 @@
 
 <!-- yup, stylesheets don't belong here, but it works ;-) -->
 <!-- this stylesheet only styles the KSS scaffolding, demo text, and markdown index/overview page -->
-<link rel="stylesheet" href="<?php echo $styleguide_folder_path; ?>/template/public/kss.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $styleguide_folder_path; ?>/template/public/kss.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Codystar">
 
 <div class="kss-wrapper">
 

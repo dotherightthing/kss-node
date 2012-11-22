@@ -2,27 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-   <key>kss_node_folder</key>
+   <key>docroot_kssnode_path</key>
    <string>/Users/Dan/github/kss-node</string>
-   <key>project_styles_folder</key>
-   <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/demo-styles</string>
-   <key>project_styleguide_folder</key>
+	 <key>project_domain</key>
+	 <string>http://kss.dan</string>	 	 
+   <key>project_docroot_styleguide_path</key>
    <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/styleguide</string>
-	 <key>project_styleguide_url</key>
-	 <string>http://kss.dan/demo-dotherightthing/public/styleguide/demo.php</string>
-	 <key>project_php_styleguide_site_name</key>
-	 <string>Styleguide Demo</string>
-	 <key>project_php_styleguide_path</key>
-	 <string>/demo-dotherightthing/public/styleguide/demo.php</string>			
-	 <key>project_php_styleguide_css_path</key>
-	 <string>/demo-dotherightthing/public/demo-styles</string>
-	 <key>project_php_styleguide_section_prefix</key>
-	 <string>?section=</string>
-	 <key>project_php_styleguide_munge_breadcrumbs</key>
+   <key>project_docroot_styles_path</key>
+   <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/demo-styles</string>	
+	 <key>project_name</key>
+	 <string>Styleguide Demo</string>	 	  
+	 <key>project_styleguide_rewrite_breadcrumbs</key>
 	 <string>false</string>
-	 <key>project_php_styleguide_munge_title</key>
+	 <key>project_styleguide_rewrite_title</key>
 	 <string>true</string>
-	 <key>project_php_styleguide_viewport_width</key>
+	 <key>project_styleguide_section_prefix</key>
+	 <string>?section=</string>	 
+	 <key>project_styleguide_viewport_width</key>
 	 <string>1024</string>		 
+	 <key>project_webroot_styleguide_path</key>
+	 <string>/demo-dotherightthing/public/styleguide/demo.php</string>			
+	 <key>project_webroot_styles_path</key>
+	 <string>/demo-dotherightthing/public/demo-styles</string>	 
 </dict>
 </plist>

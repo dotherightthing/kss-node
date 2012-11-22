@@ -11,7 +11,6 @@
 }
 .styleguide h4.kss-heading {
 	font-weight: normal !important;
-	font-family: Arial !important;
 	font-size: 16px !important;
 	line-height: 1.3 !important;
 	margin-bottom: 10px !important;	
@@ -32,16 +31,28 @@
 /* @ toc nav at the top of the page */
 
 .styleguide-main-title {
- color: #333333;
- font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
  font-size: 40px;
  letter-spacing: 0.4px;
  line-height: 1.05;
- margin: 0 134px 0 0;
- padding: 0 0 40px;
+ margin: 0 134px 25px 0;
 }
 #kss-nav {
 	margin-bottom: 30px;
+	margin-right: 20px;
+}
+#kss-nav a {
+	display: block;
+	line-height: 2;
+	border-bottom: 1px dotted #eaeaea;
+}
+#kss-nav .kss-nav-index {
+	width: 50px;
+	float: left;
+	text-align: right;
+	color: #999;
+	padding-right: 10px;
+	border-right: 1px solid #ccc;
+	margin-right: 10px;
 }
 #kss-nav ul,
 #kss-nav li {
@@ -53,17 +64,38 @@
 	font-size: 13px;
 	line-height: 1.4;
 }
-#kss-nav a {
-	text-decoration: none;
-}
+
+/* Links */	
+	
 #kss-nav a,
-#kss-nav a:visited {
-	color: #0056b5;
+#kss-overview a,
+#kss-nav a:visited,
+#kss-overview a:visited {
+	color: #0056b5;	
+	text-decoration: none;	
 }
 #kss-nav a:hover,
-#kss-nav a:focus {
+#kss-nav a:focus,
+#kss-overview a:hover,
+#kss-overview a:focus {
 	color: #0056b5;
-	text-decoration: underline;
+	text-decoration: underline;	
+}
+
+/* Fonts */
+
+h2.kss-title, 
+#kss-overview h2,
+#kss-overview h3,
+#kss-overview h4,
+#kss-overview h5,
+#kss-overview h6,
+.styleguide-example .styleguide-description h4,
+.styleguide-description h4,
+.styleguide h4.kss-heading,
+.styleguide-main-title {
+ color: #000;
+ font-family: 'Codystar', cursive !important;
 }
 
 /* @ example container */
@@ -105,7 +137,6 @@
 .styleguide-example .styleguide-description h4,
 .styleguide-description h4 {
 	font-weight: normal !important;
-	font-family: Arial !important;
 	font-size: 16px !important;
 	line-height: 1.3 !important;
 	margin-bottom: 10px !important;	
@@ -428,7 +459,6 @@ li.L9 {  background: #eee }
 .styleguide-example .styleguide-description h4,
 .styleguide-description h4 {
 	font-weight: normal !important;
-	font-family: Arial !important;
 	font-size: 16px !important;
 	line-height: 1.3 !important;
 	margin-bottom: 10px !important;	
