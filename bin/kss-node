@@ -108,6 +108,8 @@ try {
 
 // copy the public files over
 
+/*
+DTRT: actually, there's no reason to do this as we can just reference the copies in the template directory….
 
 // DTRT: the author's approach copies over the github .svn folder which breaks the target project's svn versioning
 //wrench.copyDirSyncRecursive(
@@ -138,6 +140,8 @@ public_files.forEach(function(public_file) {
 
 // DTRT: confirm copy was successful
 console.log( '..copied ' + public_file_count  + ' public assets from ' + p_source_dir + ' to ' + p_target_dir );
+
+*/
 
 // Generate the static HTML pages in the next tick, i.e. after the other functions have
 // been defined and handlebars helpers set up.

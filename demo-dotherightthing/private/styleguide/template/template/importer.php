@@ -7,18 +7,33 @@
 	* To use: read styleguide.md
   * 
 */
-
+				
 	// GLOBALS
+	// globals populated in project's custom PHP template
+	global $styleguide_site_root;			
 	global $styleguide_section;
-	global $styleguide_site_root;	
-	global $styleguide_site_name;
+	global $styleguide_folder_path;		
+	
+	// globals populated via automatically (OS X) or manually (Windows) generated kss_config.inc.php
+	global $styleguide_site_name;			
 	global $styleguide_path;
+	global $styleguide_css_path;			
 	global $styleguide_section_prefix;
 	global $styleguide_munge_breadcrumbs;
 	global $styleguide_munge_title;
 	global $styleguide_viewport_width;		
-	global $styleguide_css_path;
-	global $styleguide_folder_path;
+	
+	// globals populated below
+	global $styleguide_generated_path;
+	
+	include( $styleguide_site_root . $styleguide_folder_path . '/template/importer_config.inc.php' );
+	$styleguide_site_name = $kss_config['project_php_styleguide_site_name'];
+	$styleguide_path = $kss_config['project_php_styleguide_path'];			
+	$styleguide_css_path = $kss_config['project_php_styleguide_css_path'];	
+	$styleguide_section_prefix = $kss_config['project_php_styleguide_section_prefix'];
+	$styleguide_munge_breadcrumbs = $kss_config['project_php_styleguide_munge_breadcrumbs'];
+	$styleguide_munge_title = $kss_config['project_php_styleguide_munge_title'];
+	$styleguide_viewport_width = $kss_config['project_php_styleguide_viewport_width'];				
 				
 	// CLI args for documentation
 	$styleguide_cli_source = $styleguide_site_root . $styleguide_css_path;

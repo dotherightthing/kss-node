@@ -43,35 +43,18 @@
 		<?php	
 			// START KSS STYLEGUIDE
 		
-			global $styleguide_site_name;
-			global $styleguide_site_root;
-			global $styleguide_path;
-			global $styleguide_generated_path;			
+			global $styleguide_site_root;			
 			global $styleguide_section;
-			global $styleguide_section_prefix;
-			global $styleguide_munge_breadcrumbs;
-			global $styleguide_munge_title;
-			global $styleguide_viewport_width;
-			global $styleguide_css_path;
-			global $styleguide_folder_path;			
+			global $styleguide_folder_path;						
 
-			$styleguide_site_root = $_SERVER['DOCUMENT_ROOT']; // /Users/Dan/github/kss-node/ctdemo
-			$styleguide_path = $_SERVER['PHP_SELF'];// /resources/styleguide/demo.php	
-			$styleguide_section = isset($_GET['section']) ? $_GET['section'] : ''; // &section=['', or '1', '2', '3' etc]			
-
+			$styleguide_site_root = $_SERVER['DOCUMENT_ROOT']; // /Users/Dan/github/kss-node/ctdemo			
+			$styleguide_section = isset($_GET['section']) ? $_GET['section'] : ''; // &section=['', or '1', '2', '3' etc]
+			
 			// START EDIT
-			$styleguide_site_name = 'TestProject';			
-			$styleguide_folder_path = '/demo-dotherightthing/public/styleguide';	
-			$styleguide_css_path = '/demo-dotherightthing/public/demo-styles';	
-			$styleguide_section_prefix = '?section=';
-			$styleguide_munge_breadcrumbs = 'false';
-			$styleguide_munge_title = 'true';
-			$styleguide_viewport_width = '1024';						
+			$styleguide_folder_path = '/demo-dotherightthing/public/styleguide';
 			// END EDIT
 			
-			$include_path = $styleguide_site_root . $styleguide_folder_path . '/template/importer.php';
-			
-			include( $include_path );
+			include( $styleguide_site_root . $styleguide_folder_path . '/template/importer.php' );
 			
 			// END KSS STYLEGUIDE
     ?>
