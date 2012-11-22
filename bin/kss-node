@@ -203,7 +203,8 @@ process.nextTick(function() {
 			}
 
 			generateIndex(styleguide, childSections, pages, sectionRoots);
-			generateStylesheet(argv);
+			// DTRT: removed as this is not required and causes an error when the zero-bytes style.css is read
+			//generateStylesheet(argv);
 		});
 /* DTRT: Disable less compiling as kss.css was getting out of synch...
 	});
