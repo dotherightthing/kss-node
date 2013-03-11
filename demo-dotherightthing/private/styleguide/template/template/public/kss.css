@@ -1,409 +1,415 @@
 /* @ shared styles */
 /* Last updated 22.11.2012 by DTRT */
+/* TODO: waypoints nav - maybe this could just select the correct option in the select element? */
 
-.kss-content-col { 
-/* wraps heading, TOC, content */
-	margin-top: 40px; 
-}
-.styleguide-clear,
-.kss-clear {
-	clear: both;
-}
-.styleguide h4.kss-heading {
-	font-weight: normal !important;
-	font-size: 16px !important;
-	line-height: 1.3 !important;
-	margin-bottom: 10px !important;	
-}
+/* toc nav at the top of the page */
+
+	.kss-content-col {
+		position: relative; /* AP */
+	}
+	.styleguide-nav {
 	
-/* @ the 'About this guide' overview page */
+		margin-bottom: 30px;
+		margin-right: 20px;
+		margin-top: 40px;
+		
+	}
+	.styleguide-nav select {
+		font-size: 12px;	
+		width: 100%;
+		padding: 5px;	 /* doesn't affect chrome/safari on mac */
+		-webkit-appearance: menulist-button; /* for chrome safari on mac */
+		height: 30px; /* for chrome safari on mac */
+	}
+	.styleguide-nav .kss-nojs select {
+		width: 95%;
+		float: left;
+		min-height: 28px;
+	}
+	.styleguide-nav input.submit {
+		display: none;
+	}
+	.styleguide-nav .kss-nojs input.submit {
+		display: block;
+		width: 5%;
+		float: right;
+		min-height: 28px;
+	}	
+
+/* intro at start of styleguide */ 
+
+	.markdown-body {
+		margin-bottom: 40px !important;
+	}
+	#kss-overview .prettyprint {
+		display: block;
+	}
+
+	.styleguide-intro a,
+	.styleguide-intro a:visited {
+		color: #0056b5;	
+		text-decoration: none;	
+	}
+	.styleguide-intro a:hover,
+	.styleguide-intro a:focus {
+		color: #0056b5;
+		text-decoration: underline;	
+	}
 	
-#kss-overview pre { 
-	font-size: 1.5em; 
-}	
-#kss-overview .highlight pre { 
-	margin: 20px 0; color: #000; background-color: #f8f8f8; border: 1px solid #ddd; font-size: 13px; font-family: "Bitstream Vera Sans Monoa",Courier,monospace; line-height: 19px; overflow: auto; padding: 6px 10px; border-radius: 4px; 
-}
-#kss-overview .highlight pre .com { 
-	color: #999988; 
-}	
+/* raw code */
 
-/* @ toc nav at the top of the page */
+	.kss-nodepth .styleguide-raw-html {
+	/* we allow html demos in section root items (for template links etc), but hide the pretty code and label */
+		display: none !important;
+	}	
 
-.styleguide-main-title {
- font-size: 40px;
- letter-spacing: 0.4px;
- line-height: 1.05;
- margin: 0 134px 25px 0;
-}
-#kss-nav {
-	margin-bottom: 30px;
-	margin-right: 20px;
-}
-#kss-nav a {
-	display: block;
-	line-height: 2;
-	border-bottom: 1px dotted #eaeaea;
-}
-#kss-nav .kss-nav-index {
-	width: 50px;
-	float: left;
-	text-align: right;
-	color: #999;
-	padding-right: 10px;
-	border-right: 1px solid #ccc;
-	margin-right: 10px;
-}
-#kss-nav ul,
-#kss-nav li {
-	list-style: none;
-	padding-left: 0;
-	margin-left: 0;
-}
-#kss-nav li {
-	font-size: 13px;
-	line-height: 1.4;
-}
+/* rendered demos */
 
-/* Links */	
+/*
+	.kss-html-variation:before,
+	.kss-html-variation:after {
+		content: "start demo" !important;
+		color: #080 !important;
+		font-family: "Courier New",Courier,monospace !important;
+		font-size: 12px !important;
+		line-height: 20px !important;
+		font-weight: normal !important;
+		margin: 10px 0;
+		display: block;
+	}
+	.kss-html-variation:after {
+		content: "end demo" !important;	
+	}
+*/	
+
+
+	.styleguide-html-examples-header,
+	.styleguide-html-examples {
+	/* box em up */
+		background-color: #f7f7f7;
+		border: 1px solid #ddd;
+		border-radius: 4px 4px 4px 4px;
+		padding: 0 10px;
+		margin: 15px 0;
+	}
+	.styleguide-html-examples-header {
+		background-color: #FFFAF0 !important;
+	}
+		
+	.styleguide-raw-html,
+	.styleguide-explanation,
+	.styleguide-html-default,
+	.styleguide-list-of-modifiers,
+	.styleguide-html-modifier {
+	/* aka bootstrap 2.3 .bs-docs-example */
+		position: relative;	
+		background-color: #fefefe;
+		border: 1px solid #ddd;
+		border-radius: 4px 4px 4px 4px;
+		padding: 0 19px 14px;
+		margin: 15px 0;
+		width: 964px !important; /* hack for IE6 to make overflow work correctly (1024 - 2*20) */	
+		overflow: auto;
+	}
+	.styleguide-html-default .kss-html-default,
+	.styleguide-html-modifier .kss-html-variation {
+		background: url(photoshop-transparency.png) !important;
+	}
+	.styleguide-raw-html .highlight {
+		overflow: auto;
+	}	
+	.styleguide-modifier-label,
+	.styleguide-description h4.styleguide-modifier-label {
+	/* aka bootstrap 2.3 .bs-docs-example:after */
+		
+		/*
+		top: -1px !important;
+		left: -1px !important;	
+		background-color: #F5F5F5 !important;
+		border: 1px solid #DDDDDD !important;
+		border-radius: 4px 0 4px 0 !important;
+		*/
+		/* plain look is a bit nicer */
+		/*
+		position: absolute !important;
+		top: 8px !important;
+		left: 10px !important;		
+		*/
+		margin-top: 10px !important;
+		margin-bottom: 20px !important;
+	}
 	
-#kss-nav a,
-#kss-overview a,
-#kss-nav a:visited,
-#kss-overview a:visited {
-	color: #0056b5;	
-	text-decoration: none;	
-}
-#kss-nav a:hover,
-#kss-nav a:focus,
-#kss-overview a:hover,
-#kss-overview a:focus {
-	color: #0056b5;
-	text-decoration: underline;	
-}
+	.styleguide-category,
+	input.styleguide-modifier-classname,
+	.styleguide-modifier-type,
+	.styleguide-description h4.styleguide-category,
+	.styleguide-modifier-classname-description {
+	/* aka bootstrap 2.3 .bs-docs-example:after */		
+		color: #333 !important;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+		font-size: 14px !important;		
+		padding: 3px 4px 3px 0 !important;
+	}
+	.styleguide-modifier-classname-description {
+		display: block;
+	}
+	.styleguide-category,
+	.styleguide-modifier-type {
+		font-weight: bold !important;	
+	}
+	
+	.styleguide-modifier-classname-description p {
+		background: none repeat scroll 0 0 #fbfbfb;
+    color: #999999 !important;
+    font-size: 12px !important;
+    font-weight: normal !important;
+    padding: 4px !important;
+		margin-top: 2px;
+	}
+	.styleguide-html-modifier:hover .styleguide-modifier-classname-description p {
+		color: #333 !important; /* bump up legibility on hover */
+	}
+	.styleguide-html-modifier:hover {
+		cursor: copy;
+	}
+	
+	.styleguide-category:before,
+	.styleguide-modifier-type:before,
+	.styleguide-description h4.styleguide-category:before {
+		content: "// ";
+	}
+	
+	.styleguide-html-modifier .styleguide-modifier-type {
+		color: #ccc !important;
+	}
+	.styleguide-html-modifier:hover .styleguide-modifier-type {
+		color: #666 !important;
+	}	
+	
+	.kss-nodepth .styleguide-element {
+		padding-top: 20px;
+	}		
+	
+	input.styleguide-modifier-classname {
+		background-color: #FFFAF0 !important;
+		font-family: "Courier New", Courier, monospace !important;
+		padding: 0 8px 0 0 !important; /* allow for hover offset */
+		border: 1px solid transparent;
+		_border: none; /* ie6 */
+	}
+	.styleguide-html-modifier:hover input.styleguide-modifier-classname {
+		border-color: #E1E1E8; 
+	}
+	input.styleguide-modifier-classname:focus {
+		padding: 0 0 0 8px !important; /* offset the removed leading dot */
+		margin-right: 0;
+	}
+
 
 /* Fonts */
 
-h2.kss-title, 
-#kss-overview h2,
-#kss-overview h3,
-#kss-overview h4,
-#kss-overview h5,
-#kss-overview h6,
-.styleguide-example .styleguide-description h4,
-.styleguide-description h4,
-.styleguide h4.kss-heading,
-.styleguide-main-title {
- color: #000;
- font-family: 'Codystar', cursive !important;
-}
+	h1.styleguide-main-title,
+	h2.kss-title-level-1,
+	h3.kss-title-level-2,
+	h3.kss-title-level-3 {
+	/* aka bootstrap 2.3 h1, h2, h3, h4, h5, h6 */
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;	
+		font-weight: bold !important;	
+		line-height: 20px !important;
+		padding: 0 !important;
+		border: 0 !important;
+		margin: 10px 0 !important;
+	}
+	
+	h1.styleguide-main-title {
+		font-size: 50px !important;
+		margin: 40px 0 30px !important; 	
+	}
+	h2.kss-title-level-1 {	
+	/* aka bootstrap 2.3 .page-header */	
+		font-size: 38.5px !important;
+		line-height: 40px !important;	
+		color: #000 !important; 
+		padding-bottom: 9px !important;
+		border-bottom: 1px solid #eee !important;
+		margin: 20px 0 30px !important;    
+	}
+	h3.kss-title-level-2 {
+	/* aka bootstrap 2.3 h3 */	
+		font-size: 24.5px !important;		
+		line-height: 40px !important;
+		color: #000 !important; 
+	}
+	h3.kss-title-level-3 { 
+	/* aka bootstrap 2.3 h4 */
+		font-size: 24.5px !important;
+		color: #333 !important; 
+	}
+	.styleguide-description ol,
+	.styleguide-description ul {
+		margin-left: 20px;
+	}
+	.styleguide-html pre,
+	.styleguide-description p,
+	.styleguide-description h2,
+	.styleguide-description h3,
+	.styleguide-description h4,
+	.styleguide-description h5,
+	.styleguide-description h6,
+	.styleguide-description li {
+	/* aka bootstrap 2.3 p */
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+		color: #000 !important; /* was 333 */
+		font-size: 14px !important;
+		line-height: 20px !important;
+		margin: 0 0 10px !important;
+	}
+	.styleguide-example {
+		position: relative;
+	}
+	.styleguide-example .styleguide-back-to-top a {
+		position: absolute;
+		bottom: 0;
+		right: -50px;	
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+		color: #000 !important; /* was 333 */
+		font-size: 30px !important;	
+	}
+	.styleguide-raw-html pre,
+	.styleguide-description code {
+		font-family: "Courier New",Courier,monospace !important;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		font-weight: normal !important;
+		color: #333 !important;		
+	}
 
-/* @ example container */
+/* modifiers list is in a table */
+/* aka bootstrap 2.3 table + .table-bordered + .table-striped */
 
-.styleguide-example { 
-	margin: 15px auto; 
-	background: rgba(255,255,255,0.5); 
-	border: 1px solid #ddd; 
-	box-shadow: 0 0 5px rgba(0,0,0,0.1); 
-}
+	table.styleguide-table,
+	.styleguide-table th,
+	.styleguide-table td,
+	.styleguide-table td p {
+		color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;			
+	}
 
-/* @ example heading and TOC index */
-
-.styleguide-example h3.kss-title { 
-	margin: 0; 
-	padding: 5px; 
-	color: #fff; 
-	font-size: 12px; 
-	text-transform: uppercase; 
-	background: #333; 
-	border-top: 1px solid #000; 
-}
-.styleguide-example h3.kss-title em,
-.styleguide-example h3.kss-title em a { 
-	float: right; 
-	text-transform: none; 
-	font-style: normal; 
-	font-weight: normal; 
-	color: #999; 
-}
-
-/* @ example description, also inherited by the example modifer list */
-
-.styleguide-example .styleguide-description { 
-	padding: 1px 10px; 
-	background: #f1f1f1; 
-	border-bottom: 1px solid #ddd; 
-}
-.styleguide-example .styleguide-description h4,
-.styleguide-description h4 {
-	font-weight: normal !important;
-	font-size: 16px !important;
-	line-height: 1.3 !important;
-	margin-bottom: 10px !important;	
-}
-.styleguide-example .styleguide-description h4:first-child,
-.styleguide-description h4:first-child { 
-	margin-top: 1em; 
-}
-.styleguide-example .styleguide-description p:first-child,
-.styleguide-description p:first-child { 
-	margin-top: 0; 
-}
-.styleguide-example .styleguide-description p:last-child,
-.styleguide-description p:last-child { 
-	margin-bottom: 10px;
-}
-.styleguide-example .styleguide-description p,
-.styleguide-example .styleguide-description li,
-.styleguide-description p,
-.styleguide-description li {
-	font-size: 13px;
-	line-height: 1.3;
-}
-.styleguide-example .styleguide-description p,
-.styleguide-example .styleguide-description ul,
-.styleguide-example .styleguide-description ol,
-.styleguide-description p,
-.styleguide-description ul,
-.styleguide-description ol {
-	margin-bottom: 10px;
-}
-.styleguide-example .styleguide-description ul,
-.styleguide-example .styleguide-description ol,
-.styleguide-description ul,
-.styleguide-description ol {
-	margin-left: 16px;
-}
-.styleguide-example .styleguide-description ul,
-.styleguide-description ul {
-	list-style: disc;
-}
-.styleguide-example .styleguide-description ol,
-.styleguide-description ol {
-	list-style: decimal;
-}
-.styleguide-example .styleguide-description ol li,
-.styleguide-description ol li {
-	margin-left: 16px;
-}
-
-/* @ example modifier list */
-
-.styleguide-example .styleguide-modifiers { 
-	background-color: #fefeed; /* the container */
-}
-.styleguide-example .styleguide-description ul.styleguide-modifier {
-	margin-bottom: 20px;
-	margin-left: 0;
-}
-.styleguide-example .styleguide-description ul.styleguide-modifier,
-.styleguide-example .styleguide-description ul.styleguide-modifier li {
-	list-style: none;
-	padding-left: 0;
-	margin-left: 0;
-	background: none !important; /* hide bullets, including any inherited from the project stylesheets */
-}
-.styleguide-example .styleguide-description ul.styleguide-modifier li {
-	font-size: 13px;
-	line-height: 2;
-	font-family: "Courier New", Courier, monospace; /* style the modifier classname */
-}
-.styleguide-example .styleguide-description ul.styleguide-modifier li p {
-	font-family: Arial, Helvetica, sans-serif; /* style the modifier description */
-	display: inline;
-}
-
-/* @ example html, displayed as code */
-
-#kss-content code,
-#kss-content pre {
-	font-family: "Courier New", Courier, monospace !important;
-}
-.styleguide-example .styleguide-html { 
-	padding: 15px 15px; 
-	background: #edf6f8; 
-	overflow: auto; 
-	border-bottom: 1px solid #ddd; 
-	width: 994px; /* hack for IE6 to make overflow work correctly (1024 - 2*15) */
-}
-.styleguide-example>.styleguide-html { 
-	width: auto; /* undo IE6 hack */
-}
-.styleguide-example .styleguide-html .highlight { 
-/* the code block within the container */
-	background: none; 
-	font-size: 13px;
-	line-height: 1.3;
-}
-
-/* @ example html, displayed as rendered html */
-
-/* there are two variants: 
-   .styleguide-html-example - the Default block
-	 .styleguide-modifier - the modified block
-*/
-
-.styleguide-example .styleguide-element { 
-	position: relative; 
-	padding: 50px 20px 20px 20px; 
-	border-top: 1px solid #eee; 
-	overflow: auto; 
-	width: 984px; /* hack for IE6 to make overflow work correctly (1024 - 2*20) */
-}
-.styleguide-example>.styleguide-element { 
-	width: auto; /* undo IE6 hack */
-}
-.styleguide-example .styleguide-element .styleguide-modifier-heading { 
-	display: block; 
-	position: absolute; 
-	top: 0; left: 0; 
-	padding: 5px 15px; 
-	font-size: 11px; 
-	color: #999; 
-	background: #f9f9f9; 
-	border: 1px solid #eee; 
-	border-top: none; 
-}
-.styleguide-example .styleguide-element .styleguide-modifier-heading h4 {
-/* the 'Default layout' and 'Modified layout' labels on the LHS */
-  font-weight: normal;
-	font-family: Arial !important;
-	font-size: 11px !important;
-	line-height: 1.3 !important;	
-	margin-bottom: 0 !important;
-}
-.styleguide-example .styleguide-element .styleguide-modifier-name { 
-/* the '.modifier' label on the RHS */
-	display: block; 
-	position: absolute; 
-	top: 0; 
-	right: 0; 
-	padding: 7px 15px 5px 15px; 
-	font-size: 12px; 
-	color: #999; 
-	background: #f9f9f9; 
-	border: 1px solid #eee; 
-	border-top: none; 
-	font-family: courier;
-}
+	table.styleguide-table {
+		background-color: transparent;
+		width: 100%;
+		max-width: 100%;
+		border-collapse: separate;
+		border: 1px solid #ddd;
+		border-width: 0 1px 1px 0;	
+		border-radius: 4px 4px 4px 4px;	
+		margin-bottom: 20px;			
+	}
+	table.styleguide-table tbody tr:nth-child(2n+1) td, 
+	table.styleguide-table tbody tr:nth-child(2n+1) th {
+    background-color: #F9F9F9;
+	}
+	.styleguide-table th {
+		font-weight: bold;
+	}
+	.styleguide-table th,
+	.styleguide-table td {
+		text-align: left;
+		vertical-align: top;
+		padding: 8px;
+		border: 1px solid #ddd;
+		border-width: 1px 0 0 1px;	
+	}
 
 /* orphan styles for reuse by the .kss-html-variation-print iframe */
 
-.styleguide-placeholder {
-	position: relative; /* AP */
-	display: inline-block; /* shrink-wrap */
-}
-.styleguide-placeholder .styleguide-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: url(styleguide-placeholder.png);
-}
-.styleguide-print .styleguide-placeholder .styleguide-overlay {
-	background: url(styleguide-placeholder.png) !important;
-}
+	.styleguide-placeholder {
+		position: relative; /* AP */
+		display: inline-block; /* shrink-wrap */
+	}
+	.styleguide-placeholder .styleguide-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url(styleguide-placeholder.png);
+	}
+	.styleguide-print .styleguide-placeholder .styleguide-overlay {
+		background: url(styleguide-placeholder.png) !important;
+	}
 
 /* print preview styles */
 
-.styleguide-print-heading {
-	color: #666 !important;
-	font-size: 10px;
-	margin: 20px 0 15px 0 !important;
-}
-.styleguide-print-iframe {
-	padding: 0;
-	border: 0 none;
-	margin: 0;	
-}
-.styleguide-print * {
-	background-image: none !important;
-}
-/*
-Cufon - needs more work:
+	.styleguide-print-heading {
+		color: #666 !important;
+		font-size: 10px;
+		margin: 20px 0 15px 0 !important;
+	}
+	.styleguide-print-iframe {
+		padding: 0;
+		border: 0 none;
+		margin: 0;	
+	}
+	.styleguide-print * {
+		background-image: none !important;
+	}
 
-.styleguide-print cufon {
-	padding: 0!important;
-}
-.styleguide-print cufon canvas {
-	display: none! important;
-}
+/* back to top link */
 
-*/
+	.styleguide-back-to-top a {
+		display: block;
+		padding: 5px;
+		text-align: center;
+		background: #666;
+		color: #fff;
+		text-decoration: none;
+		font-size: 11px;
+	}
 
-/* @ styles for the overview page */
+/* helpers useful in styleguides */
 
-/* kss-para used if there are no markup modifiers (I think) */
+	.styleguide-reveal {
+		background-color: #f1f1f1;
+		margin-bottom: 8px;
+	}
+	.styleguide-reveal-bottomless {
+		background-color: #f1f1f1;
+		margin-bottom: 0;	
+	}
+	.styleguide-reveal .styleguide-reveal {
+		background-color: #f7f7f7;
+		margin-bottom: 0;	
+	}
+	.styleguide-reveal-light {
+		background-color: #fbfbfb;	
+	}
+	.styleguide-block-20 {
+		display: block;
+		height: 20px;
+	}
+	.styleguide-block-50 {
+		display: block;
+		height: 50px;	
+	}
+	.styleguide-clear {
+		clear: both;
+	}
+	.styleguide-nofloat {
+		float: none !important;
+	}
+	.styleguide-hidden {
+		display: none;
+	}
+	.styleguide-docsonly {
+		background: white !important; /* suppressed the photoshop tile bg */
+	}
 
-.kss-para p,
-.kss-para li,
-#kss-overview p,
-#kss-overview li,
-#kss-overview pre,
-#kss-overview code {
-	font-size: 13px;
-}
-
-.kss-para p,
-.kss-para ul,
-#kss-overview p,
-#kss-overview ol,
-#kss-overview ul {
-	margin-bottom: 10px;
-}
-
-#kss-overview li {
-	padding-left: 5px;
-	margin-left: 16px;
-	margin-bottom: 5px;
-}
-h2.kss-title,
-#kss-overview h2,
-#kss-overview h3,
-#kss-overview h4,
-#kss-overview h5 {
- font-weight: normal;
-	margin-bottom: 10px;
-}
-h2.kss-title,
-#kss-overview h2 {
- font-size: 20px;
-}
-#kss-overview h3 {
- font-size: 17px;
-	margin-top: 20px;
-}
-#kss-overview h4 {
-	font-size: 15px;
-	margin-top: 20px;
-}
-#kss-overview h5 {
-	font-size: 13px;
-	margin-top: 15px;
-}
-#kss-overview ul,
-#kss-overview ol {
-	margin-left: 16px;
-	margin-top: 5px;
-}
-#kss-overview ul li {
-	list-style: disc;
-}
-#kss-overview ol li {
-		list-style: decimal;
-}
-#kss-overview #kss-nav {
-	margin-left: 0;
-}
-
-// ------------------------------------------------------------------------------
-//   @group prettyprint.js styling
-// ------------------------------------------------------------------------------
-/* Pretty printing styles. Used with prettify.js. */
-
+/* prettyprint.js styling */
+/* also ripped from bootstrap 2.3: http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css */
 /* SPAN elements with the classes below are added by prettyprint. */
-.pln {  color: #000 }  /* plain text */
 
 @media screen { 
   .str {  color: #080 }  /* string content */
@@ -418,6 +424,7 @@ h2.kss-title,
   .atv {  color: #080 }  /* a markup attribute value */
   .dec, .var {  color: #606 }  /* a declaration;  a variable name */
   .fun {  color: red }  /* a function name */
+	.pln {  color: #000 }  /* plain text */
 }
 
 /* Use higher contrast and text-weight for printable form. */
@@ -431,80 +438,28 @@ h2.kss-title,
   .tag {  color: #006;  font-weight: bold }
   .atn {  color: #404 }
   .atv {  color: #060 }
+	.pln {  color: #000 }  /* plain text */
 }
 
-/* Put a border around prettyprinted code snippets. */
-/*pre.prettyprint {  padding: 2px;  border: 1px solid #888 }*/
+.prettyprint {
+  padding: 8px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+     -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+          box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+}
 
 /* Specify class=linenums on a pre to get line numbering */
-ol.linenums {  margin-top: 0;  margin-bottom: 0 } /* IE indents via margin-left */
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L5,
-li.L6,
-li.L7,
-li.L8 {  list-style-type: none }
-/* Alternate shading for lines */
-li.L1,
-li.L3,
-li.L5,
-li.L7,
-li.L9 {  background: #eee }
-
-
-/* ... */
-	
-.styleguide-example .styleguide-description h4,
-.styleguide-description h4 {
-	font-weight: normal !important;
-	font-size: 16px !important;
-	line-height: 1.3 !important;
-	margin-bottom: 10px !important;	
-}
-.styleguide-example .styleguide-description h4:first-child,
-.styleguide-description h4:first-child { 
-	margin-top: 1em; 
-}
-.styleguide-example .styleguide-description p:first-child,
-.styleguide-description p:first-child { 
-	margin-top: 0; 
-}
-.styleguide-example .styleguide-description p:last-child,
-.styleguide-description p:last-child { 
-	margin-bottom: 10px;
-}
-.styleguide-example .styleguide-description p,
-.styleguide-example .styleguide-description li,
-.styleguide-description p,
-.styleguide-description li {
-	font-size: 13px;
-	line-height: 1.3;
-}
-.styleguide-example .styleguide-description p,
-.styleguide-example .styleguide-description ul,
-.styleguide-example .styleguide-description ol,
-.styleguide-description p,
-.styleguide-description ul,
-.styleguide-description ol {
-	margin-bottom: 10px;
-}
-.styleguide-example .styleguide-description ul,
-.styleguide-example .styleguide-description ol,
-.styleguide-description ul,
-.styleguide-description ol {
-	margin-left: 16px;
-}
-.styleguide-example .styleguide-description ul,
-.styleguide-description ul {
-	list-style: disc;
-}
-.styleguide-example .styleguide-description ol,
-.styleguide-description ol {
+ol.linenums {
 	list-style: decimal;
+  margin: 0 0 0 33px; /* IE indents via margin-left */
 }
-.styleguide-example .styleguide-description ol li,
-.styleguide-description ol li {
-	margin-left: 16px;
+ol.linenums li {
+  padding-left: 12px;
+  color: #bebec5;
+  line-height: 20px;
+  text-shadow: 0 1px 0 #fff;
 }

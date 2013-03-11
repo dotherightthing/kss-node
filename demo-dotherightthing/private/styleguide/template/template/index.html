@@ -5,19 +5,25 @@
   Project-specific customisation is by way of [{PLACEHOLDERS}], which are replaced by the importing PHP file.
 -->
 <div id="kss-wrapper" class="styleguide">  
-	<div id="kss-nav" class="content-col">
-      <ul>
-        <li><a href="[{STYLEGUIDE_PATH}]"><span class="kss-nav-index">0.0</span> About this guide</a></li>
+	<div><a name="ksstop" id="ksstop"></a></div>
+	<div id="kss-nav" class="styleguide-nav">
+    <form id="kss-nav-form" action="[{STYLEGUIDE_PATH}]" method="get" class="kss-nojs">
+      <select name="section" id="kss-nav-select" class="kss-select">
+        <option value="0">0.0 About this guide</option>
         {{#eachRoot}}
-        <li><a href="[{STYLEGUIDE_PATH}][{STYLEGUIDE_SECTION_PREFIX}]{{reference}}"><span class="kss-nav-index">{{reference}}.0</span> {{header}}</a></li>
+        <option value="{{reference}}">{{reference}}.0 {{header}}</option>
         {{/eachRoot}}
-      </ul>   
+      </select>
+      <input type="submit" value="Go" class="submit" />
+      <div class="styleguide-clear"></div>
+      <!-- JS generated select injected here -->
+    </form>
   </div>
-  <div role="main" id="kss-main">
+  <div role="main" id="kss-main">  	
     <div id="kss-content">
       {{#if overview}}
       
-      	<div id="kss-overview" class="content-col">
+      	<div id="kss-overview" class="styleguide-description">
         {{html overview}}
         </div>
       {{else}}
@@ -32,92 +38,91 @@
         }}
         {{#eachSection rootNumber}}
           {{#whenDepth 1}}
-						<div class="content-col">
-            	<h2 class="kss-title" id="kss-section-{{ reference }}"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h2>
-            </div>
+            <h2 class="kss-title-level-1" id="kss-section-{{ reference }}"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h2>              
+            <div class="styleguide-example kss-nodepth">
           {{else}}
-           <div class="styleguide-example kss-depth-{{ refDepth }}">           	
-	         <h3 class="kss-title" id="kss-section-{{ reference }}"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h3>            
+						<!-- then the box -->
+						<div class="styleguide-example kss-depth-{{ refDepth }}">  
+            	<div class="styleguide-html-examples-header">
+								<h3 class="kss-title-level-{{ refDepth }}" id="kss-section-{{ reference }}"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h3>                          	          
+              </div>
           {{/whenDepth}}
-            {{#ifAny markup modifiers}}
-                <div class="content-col">
-                  <div class="kss-box styleguide-description markdown-body">
-                    <!-- the blurb -->
-                    <h4 class="kss-heading">Description:</h4>
-                    {{html description}}
-                  </div>
-                </div>  
+            {{#ifAny markup modifiers}}            
+              <!-- END html examples -->
+              <div class="styleguide-html-examples">
+              	{{#if description}}
+                <div class="kss-box styleguide-description markdown-body styleguide-explanation">
+                	<h4 class="styleguide-modifier-label">
+                  	<span class="styleguide-category">Description</span>
+                  </h4>
+                  <!-- the blurb -->
+                  {{html description}}
+                </div> 
+                {{/if}}
                 <!-- START EXAMPLE MARKUP -->               
-                <div class="kss-markup styleguide-html">
-                	<div class="content-col">
-                  	<h4 class="kss-heading">HTML markup:</h4>
-                  </div>
+                <div class="kss-markup styleguide-raw-html">
+                  <h4 class="styleguide-modifier-label">
+                    <span class="styleguide-category">HTML Structure</span>
+                  </h4>
                   <div class="highlight">
-                    <pre class="prettyprint lang-html">{{markup}}</pre>
+                    <pre class="prettyprint linenums lang-html">{{markup}}</pre>
                   </div>                  
                 </div>
-                <!-- END EXAMPLE MARKUP -->  
-                <!-- START MODIFIERS -->
-                <div class="content-col">
-                  <div class="kss-box styleguide-description markdown-body styleguide-modifiers">
-                    <div class="styleguide-variations">
-                      <h4 class="kss-heading">CSS/HTML Modifiers:</h4>
-                      <ul class="styleguide-modifier">
-                      {{#eachModifier}}
-                        <li>{{name}} - {{html description}}</li>
-                      {{/eachModifier}}
-                      </ul>            
-                    </div>  
-                  </div>                  
-                </div>                  
-                <!-- END MODIFIERS -->                                        
+                <!-- END EXAMPLE MARKUP -->                                                                   
                 <!-- START THE DEFAULT -->                
-                <div class="styleguide-element styleguide-liner styleguide-html-example">
-                	<div class="styleguide-modifier-heading">
-                  	<h4 class="kss-heading">Default layout</h4>
-                  </div>
+                <div class="styleguide-element styleguide-liner styleguide-html-default">
+                  <h4 class="styleguide-modifier-label">
+                  	<span class="styleguide-modifier-type">Default style</span>
+                  </h4>
                   <!-- this is the visual example -->                  
                   <div class="kss-html-default">
-                 		{{modifierMarkup}}   
-                    <div class="kss-clear"></div>
-                 	</div>                 
+                    {{modifierMarkup}}   
+                    <div class="styleguide-clear"></div>
+                  </div>                 
                 </div>  
-                <!-- END THE DEFAULT -->
-                <!-- START THE VARIATIONS -->              
-                {{#eachModifier}}
-                <div class="styleguide-element styleguide-liner styleguide-modifier">
-                	<div class="styleguide-modifier-heading">
-                  	<h4 class="kss-heading">Modified layout</h4>
-                  </div>
-                  <!-- state class that appears on the RHS -->
-                  <span class="styleguide-modifier-name">{{name}}</span> 
-                  <!-- this is the visual example -->
-                 	<div class="kss-html-variation">
-                 		{{modifierMarkup}}   
-                    <div class="kss-clear"></div>
-                 	</div>                                                  
+                <!-- END THE DEFAULT -->            
+                  {{#eachModifier}}
+                <!-- START THE VARIATION -->                  
+                <div class="styleguide-element styleguide-liner styleguide-html-modifier">
+                	<h4 class="styleguide-modifier-label">
+                  	<span class="styleguide-modifier-type">Modified style</span>
+                    <span class="styleguide-hidden">: </span>
+                    <input type="text" value="{{name}}" class="styleguide-modifier-classname" size="80" autocomplete="off" readonly="readonly" />
+                    <span class="styleguide-hidden"> - </span>
+                    <span class="styleguide-modifier-classname-description">{{html description}}</span>
+                  </h4>
+                  <!-- this is the visual example -->                  
+                  <div class="kss-html-variation">
+                    {{modifierMarkup}}   
+                    <div class="styleguide-clear"></div>
+                  </div>                                                 
                 </div>
-                {{/eachModifier}}
-                <!-- END THE VARIATIONS -->   
+                <!-- END THE VARIATION -->               
+                {{/eachModifier}}                  
+              </div>
+              <!-- END html examples -->                                    							                                                      
             		{{else}}
                 {{#if description}}
-                	<div class="content-col">
-                  	<!-- this was using kss-para, which was a workaround and only supplied some styles -->
-                  	<div class="kss-box styleguide-description markdown-body">
-	                    <!-- the blurb -->
-  	                  <h4 class="kss-heading">Description:</h4>
-	                    {{html description}}
-                    </div>
-                  </div>
-                {{/if}}
+              <!-- START DESCRIPTION -->
+              <!-- this was using kss-para, which was a workaround and only supplied some styles -->
+							<div class="kss-box styleguide-description markdown-body">
+              	{{html description}}
+							</div>
+              {{/if}}                
             {{/ifAny}}
-          {{#whenDepth 1}} {{else}}
-        </div>
+          {{#whenDepth 1}} 
+          		<!--<p class="styleguide-back-to-top"><a href="#ksstop" title="Back to top">^</a></p>-->
+						</div>
+            <!-- END example (depth) -->
+          {{else}}        
+						</div>
+            <!-- END example (no depth) -->
           {{/whenDepth}}
         {{/eachSection}}
       {{/if}}
-    </div>
-  </div>
+				</div>
+			</div>
+      <p class="styleguide-back-to-top"><a href="#">Back to top</a></p>
   <!-- SCRIPTS -->
   <script>
 		var styleguide_path = '[{STYLEGUIDE_PATH}]'; // str
@@ -132,5 +137,6 @@
   <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->  
   <script src="[{STYLEGUIDE_TEMPLATE_PATH}]public/kss-demo-dotherightthing.js"></script>
   <script src="[{STYLEGUIDE_TEMPLATE_PATH}]public/kss.js"></script>
+  <!--<script src="[{STYLEGUIDE_TEMPLATE_PATH}]public/jss.js"></script>-->
   <script src="[{STYLEGUIDE_TEMPLATE_PATH}]public/prettify.js"></script>
 </div>

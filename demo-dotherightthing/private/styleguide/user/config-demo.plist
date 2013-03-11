@@ -5,7 +5,7 @@
    <key>docroot_kssnode_path</key>
    <string>/Users/Dan/github/kss-node</string>
 	 <key>project_domain</key>
-	 <string>http://kss.dan</string>	 	 
+	 <string>http://kss</string>	 	 
    <key>project_docroot_styleguide_path</key>
    <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/styleguide</string>
    <key>project_docroot_styles_path</key>

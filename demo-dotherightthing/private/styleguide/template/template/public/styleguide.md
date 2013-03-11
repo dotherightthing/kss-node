@@ -1,12 +1,10 @@
 ## About this guide
 
-*Last updated 29.10.2012 12:28*
+*Last updated 11.03.2013*
 
-*These instructions are located in css/styleguide.md and are written using [markdown](http://en.wikipedia.org/wiki/Markdown). For a good online editor, check out [Dillinger](http://dillinger.io/).* 
+The documentation in the following pages (navigable by the jump menu at the top of the page) has been written into this project's stylesheets using KSS (Knyle Style Sheets). 
 
-The stylesheet documentation containined in this styleguide is dynamically generated from the CSS stylesheets using KSS (Knyle Style Sheets).
-
-The rest of the information on this page is for CSS developers who wish to contribute to the maintenance of this guide.
+KSS involves adding structured comments to CSS files. These comments create an index, HTML snippets which are transformed into live demos which demonstrate the any style variants, and a place to makes any notes which would be useful to the client or fellow developers.
 
 ### Setup and usage instructions for developers 
 
@@ -15,7 +13,7 @@ The rest of the information on this page is for CSS developers who wish to contr
 1. long and complex stylesheets are difficult for clients and even other experienced coders to decipher
 1. even the original coder can be stumped about what they did 6 months ago, when they have since evolved their coding style
 1. visualising stylesheets allows developers to see at a glance whether a style already exists before authoring new styles
-1. exposing modifiers encourages development of reusable code that can be skinned
+1. exposing modifiers encourages development of reusable components that can be skinned
 1. reused and resuable code = less code to download, less code to maintain
 1. visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
 1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, and identifying what is in the 'box of bits'
@@ -30,13 +28,13 @@ First up let's create an item in the Styleguide table of contents (TOC):
 /* <- start KSS comment block
 Button styles <- name of the section for the styleguide jump links
 
-Note that the Munger is not active on this demo, so Munger comments will be ignored, resulting in all styles being shown to all browsers. <- description which appears below the topmost heading when this TOC item is selected
+Lorem ipsum dolor sit anet. <- description which appears below the topmost heading when this TOC item is selected
 
-Styleguide  1 <- index for generated TOC
+Styleguide  1 <- index for generated TOC (table of contents)
 end KSS comment block -> */ 
 ```
 
-Now let's start documenting the individual components. Here's an example:
+Now let's start documenting the individual components. Here's an example, please pay special attention to the use of line breaks and new lines.
 
 ```css
 /* <- start KSS comment block
@@ -47,24 +45,24 @@ A fake `button`. <- description for generated docs
 Markup: 
 <a href="#" class="button {$modifiers}">Link</a> <- this markup may span multiple lines and is rendered into the stylesguide to demonstrate the style. A copy will be generated for each modifier, plus one for the 'default' state.
 
-:hover - Hover state (color change) <- this is a 'modifier' and its description
+.hover - Hover state (color change) <- this is a 'modifier' and its description, note that KSS can not demonstrate pseudo classes such as :hover
 .disabled - Dims the button to indicate it cannot be used. <- this is another 'modifier' and it's description
 
-Styleguide 1.1.0. <- index for generated TOC
+Styleguide 1.1. <- index for generated TOC, note that 0.0 is reserved for the 'About this guide' page
 end KSS comment block -> */ 
 
 .button {
-    color: red;
-	padding: 10px;
-	border: 1px solid;
+  color: red;
+  padding: 10px;
+  border: 1px solid;
 }
 .button:hover,
-.button:focus {
+.button.hover {
 	color: green;
 }
 .button.disabled {
-	color: grey;
-	cursor: text;
+  color: grey;
+  cursor: text;
 }
 ```
 		
@@ -78,13 +76,14 @@ A square container.
 
 Markup: 
 <div class="box {$modifiers}">
-	<span>Box</span>
+	<span>Box</span> <- note that this span is indented with two spaces rather than one 'tab'
 </div>
 
 .phat - Thick border		
 
 Styleguide 1.2.0.
 */
+
 .box {
 	width: 100px;
 	height: 100px;
@@ -146,10 +145,22 @@ Markup:
 .button-green - Green button
 .button-purple - Purple button
 
-Styleguide 9.9.0.
+Styleguide 9.9.
 */
 ```		
 
+#### Helper styles that are available
+
+There are a handful of `styleguide-` name-spaced classes available for use when authoring your styleguide:
+
+1. `.styleguide-reveal` - adds a light grey background color and an 8px bottom margin, can be nested
+1. `.styleguide-reveal-bottomless` - as above, without the bottom margin
+1. `.styleguide-reveal-light` - alternative with a lighter background colour
+1. `.styleguide-block-20` - forces display block and a height of 20 pixels
+1. `.styleguide-block-20` - forces display block and a height of 50 pixels
+1. `.styleguide-clear` - clears preceding floats
+1. `.styleguide-nofloat` - disables floating on the element
+1. `.styleguide-hidden` - hides the element
 
 #### Install the required software
 
@@ -167,7 +178,7 @@ To use KSS, you will need to do the following:
 1. Install the [GitHub GUI for Mac](http://mac.github.com/)
 1. Launch the Githib application
 1. Sign in to Github (create an account if haven't done so already). 
-1. Clone my bug-fixed fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
+1. Clone our fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
 1. Open Terminal
 1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `sudo npm install -g kss`
 1. Navigate to your local kss-node directory (step 3), eg: `cd /Users/Dan/github/kss-node/`, then use the Node Package Manager to install the kss-node dependencies: `sudo npm install -g`, (`-g` = global, ie copy files to `/usr/local/lib/node_modules/kss/`) 
@@ -183,70 +194,32 @@ To use KSS, you will need to do the following:
 1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `npm install -g kss`
 1. Navigate to your local kss-node directory (step 3), eg: `cd ﻿C:\Files\Websites\GitHub\kss-node`, then use the Node Package Manager to install the kss-node dependencies: `npm install -g`, (`-g` = global, ie copy files to `???`)
 
-#### Copy the templating files to your project
+#### Set up the styleguide structure in your project
 
-Github offers `svn:external` support, so:
+Please note that this is *in addition to* checking out our kss-node fork to your development computer.
 
-1. Locate the parent directory which contains your `styles` or `css` folder (note: other folder names not supported at this time)
-1. Create a folder named `styleguide`
-1. Within this folder create a folder named `generated`
-1. Commit both folders to SVN
+1. Move your site stylesheets to a separate folder if they are not already in one, eg: `/path/to/resources/styles`
+1. Create a 'styleguide' folder within your project. Typically this would be a sibling of the folder which contains your site stylesheets. eg: `/path/to/resources/styleguide`
+1. Create a dynamic project template page, that will pull in the external styleguide 'template'. This file should be similar to your existing site templates, in that it should include all project assets such as CSS, JS etc, and use the same structural markup. A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
 
-Navigate to your SVN 'styleguide' folder and add these SVN externals:
-
-1. `template https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/template`
-1. `update https://github.com/dotherightthing/kss-node/trunk/demo-dotherightthing/styleguide/update`
-
-Note: Whenever you run the updater, `template/styleguide.md` will be copied to your stylesheets folder.
-
-Create a page that will pull in the external styleguide 'template':
-
-1. Create a page which will `<?php `**`include()`**`; ?>` the `[{STYLEGUIDE_CLI_TEMPLATE}]/`**`importer.php`** file. This file should be similar to your existing site templates, in that it should  include all project assets such as CSS, JS etc, and use the same structural markup. Tip: a full-width template (ie without secondary navigation) will work best. For an example of this, see: `/demo-dotherightthing/html/styleguide.php` (you may even be looking at this now ;-)). Note the required (editable) PHP globals.
-
-~~~
-
-Note: If using a zipped folder called 'styleguide.zip'
-
-If the uncompressed folder has green text in Explorer, this means that the files are encrypted - this will cause problems for Apache.
-
-To resolve this:
-
-1. Create a New Compressed (zipped) Folder
-1. Drag the uncompressed folder into the new zip
-1. Extract the new zip
-1. Use the extracted files
-
-
-#### Navigate to the kss-node directory and start `kss-node`
+#### Populate the styleguide structure by regenerating the styleguide
 
 ##### OS X
 
-1. Navigate to the kss-node directory, eg: `cd /Users/Dan/github/kss-node/`
-1. Start the node.js server: `node index.js`
+I've created a small Automator application which handles population of the styleguide folder including regeneration of the styleguide.
+
+The first time you use the application with any project, you will need to create a configuration file:
+
+1. Create a configuration file for the application by making a copy of the `config-demo.plist` file and naming this so that you remember which project it is for (as you could end up having different configuration files for different projects). Configuration files live in `/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
+1. Open up your configuration file in a text editor. The file uses an XML structure. Update the `<string>` values to suit your project.
+
+Once ytou configuration file is set up:
+
+1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
 
 ##### Windows 7
 
-1. Navigate to the kss-node directory, eg: `cd ﻿C:\Files\Websites\GitHub\kss-node`
-1. Start the node.js server: `node index.js`
-
-#### (Re)generate the styleguide
-
-##### Windows
-
-Run kss-node via the commandline: 
-
-`kss-node [{STYLEGUIDE_CLI_SOURCE}] [{STYLEGUIDE_CLI_DESTINATION}] --template [{STYLEGUIDE_CLI_TEMPLATE}]`
-
-This command:
-
-1. Calls kss-node: `kss-node`
-1. Reads KSS comments in stylesheets in this folder: `[{STYLEGUIDE_CLI_SOURCE}]`
-1. Generates documentation into this folder: `[{STYLEGUIDE_CLI_DESTINATION}]`
-1. Formats the results using this custom `.html` template (and associated assets): `--template [{STYLEGUIDE_CLI_TEMPLATE}]`
-
-##### OS X
-
-Run `styleguide/update/regenerate-styleguide.app`
+TODO: I need to add step-by-step instructions here
 
 ### View the generated styleguide
 
@@ -254,9 +227,9 @@ You may now view the documentation via your custom template, eg `/demo-dotherigh
 
 #### Known issues
 
-1. Pseudo-classes don't display correctly in the documentation, in some browsers. Seems to work ok in Chrome (OS X &amp; Windows 7) though.
-1. When regenerating documentation locally, the contents of the 'generated' folder may be deleted and then recreated. This breaks SVN, because the .svn stub files are also removed. In this case it is necessary to specify a different 'generated' folder, then manually copy the files over.
-
-#### Read the Developer Notes
-
-[Full developer and usage notes are available here](https://github.com/hughsk/kss-node/blob/master/demo/styleguide.md). 
+1. Some modifiers are not output in the styleguide
+  1. Check that the modifier is followed by a description: `.mymodifier - my description`
+	1. Remove any empty lines from the KSS code
+1. Styleguide is generated but the styleguide page is blank
+  1. Navigate to the styleguide homepage then select the desired page from the dropdown, this will eliminate the possibility that the desired index comment has been removed from the stylesheets
+  1. Remove any empty lines from the end of the stylesheet files

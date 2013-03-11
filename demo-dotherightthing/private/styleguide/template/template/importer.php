@@ -33,7 +33,8 @@
 	$styleguide_section_prefix = $kss_config['project_php_styleguide_section_prefix'];
 	$styleguide_munge_breadcrumbs = $kss_config['project_php_styleguide_munge_breadcrumbs'];
 	$styleguide_munge_title = $kss_config['project_php_styleguide_munge_title'];
-	$styleguide_viewport_width = $kss_config['project_php_styleguide_viewport_width'];				
+	$styleguide_viewport_width = $kss_config['project_php_styleguide_viewport_width'];
+	$styleguide_max_width = ( $styleguide_viewport_width - 60 ); // eg 1024 - 60 = 964			
 				
 	// CLI args for documentation
 	$styleguide_cli_source = $styleguide_site_root . $styleguide_css_path;
@@ -50,7 +51,15 @@
 <!-- yup, stylesheets don't belong here, but it works ;-) -->
 <!-- this stylesheet only styles the KSS scaffolding, demo text, and markdown index/overview page -->
 <link rel="stylesheet" type="text/css" href="<?php echo $styleguide_folder_path; ?>/template/public/kss.css" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Codystar">
+<style type="text/css">
+.styleguide-raw-html,
+.styleguide-explanation,
+.styleguide-html-default,
+.styleguide-list-of-modifiers,
+.styleguide-html-modifier {
+	width: <?php echo $styleguide_max_width; ?>px !important; /* hack for IE6 to make overflow work correctly */	
+}
+</style>
 
 <div class="kss-wrapper">
 
