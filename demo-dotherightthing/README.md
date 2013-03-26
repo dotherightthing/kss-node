@@ -220,15 +220,20 @@ Sections are created with the text: `Styleguide N`, where 'N' is the number of t
 This creates an entry in the topmost dropdown menu in your styleguide.
 
 If your site can dynamically merge stylesheets, it's a good idea to have a separate stylesheet for each section of
-the Styleguide. This makes it easy to find styles when viewing a Styleguide.
+the Styleguide. This makes it easy to find styles when viewing a Styleguide, 
+and gives you a good structure for the Styleguide.
 
 For example:
 
-* typography.css = `Styleguide 1`
-* scaffolding.css = `Styleguide 2`
-* forms.css = `Styleguide 3`
+* typography.css = "Typography": `Styleguide 1`
+* scaffolding.css = "Scaffolding": `Styleguide 2`
+* forms.css = "Forms": `Styleguide 3`
 
-The example code below demonstrates the code that should appear at the top of your stylesheet. 
+Note that `Styleguide 0` is reserved for use by the Styleguide 'splash' page and should not be used.
+
+##### Example:
+
+The example below demonstrates the code that should appear at the top of your stylesheet. 
 
 Please note that, within the KSS comment:
 
@@ -246,7 +251,7 @@ Typography
 
 src: typography.css
 
-Text styles
+Text styles.
 
 Styleguide  1
 */ 
@@ -254,93 +259,91 @@ Styleguide  1
 
 #### Create a Styleguide sub-section
 
-TO FINISH
+Sub-sections are created with the text: `Styleguide N.n`, 
+where 'N' is the number of the section, and 'n' is the number of the sub-section.
 
-Now let's start documenting the individual components. Here's an example, please pay special attention to the use of line breaks and new lines.
+This creates an entry in the dropdown *below* the topmost dropdown menu in your styleguide.
 
-```css
-/* <- start KSS comment block
-Faux button <- title for generated docs
+Sub sections are useful for documenting components.
 
-A fake `button`. <- description for generated docs
+For example:
 
-Markup: 
-<a href="#" class="button {$modifiers}">Link</a> <- this markup may span multiple lines and is rendered into the stylesguide to demonstrate the style. A copy will be generated for each modifier, plus one for the 'default' state.
+* forms.css - Styleguide 3
+   * "Forms - Textareas" - `Styleguide 3.1` 
+   * "Forms - Text fields" - `Styleguide 3.2`
+   * "Forms - Select menus" - `Styleguide 3.3` 
 
-.hover - Hover state (color change) <- this is a 'modifier' and its description, note that KSS can not demonstrate pseudo classes such as :hover
-.disabled - Dims the button to indicate it cannot be used. <- this is another 'modifier' and it's description
+The example code below demonstrates the code that you could use to document a component.
 
-Styleguide 1.1. <- index for generated TOC, note that 0.0 is reserved for the 'About this guide' page
-end KSS comment block -> */ 
+Please note that, within the KSS comment:
 
-.button {
-  color: red;
-  padding: 10px;
-  border: 1px solid;
-}
-.button:hover,
-.button.hover {
- color: green;
-}
-.button.disabled {
-  color: grey;
-  cursor: text;
-}
-```
-		
-Here's another example:		
+* multiline comment syntax is used
+* the code is not indented, except for the Markup HTML, which is indented using **spaces** (rather than tabs)
+* the text after the opening comment will appear in the menu
+* there is a short description
+* `Markup:` appears on its own line
+* the HTML markup
+   * is optional, but is best included, otherwise the Styleguide could make false assumptions 
+about how widely styles are supported
+   * has been wrapped in `div.content` because this is the way the styles have been defined
+   * can span multiple lines
+   * cannot contain any blank lines
+   * should include **one** instance of `class="{$modifiers}"`, meaning that your code should be able to be altered at a single point
+   * will be displayed in the Styleguide both as source code and as rendered HTML
+* the list of classes ('modifiers')
+   * are preceded and followed by a blank line
+   * each start with a period and are followed by space-dash-space then a short description of what the modifier does
+   * will each be displayed in the Styleguide as an additional block of rendered HTML, for visual comparison
+   * can string together multiple classes, but this does not mean that your CSS rules need to target all of these classes
+* the actual CSS rules:
+   * will only be included in the Styleguide if they were mentioned in the modifiers list 
+      * the `.crazy` pink/orange class will not appear in the Styleguide, as it was not included in the modifier list
+      * the first, classless `input` **will** appear in the Styleguide, as the 'Default' layout
+* we finish with the TOC (Table of Contents) index, with no trailing period
+
+##### Example:
 
 ```css
 /*
-Box
+Forms - Textfield
 
-A square container.
+A textbox for data entry.
 
 Markup: 
-<div class="box {$modifiers}">
-	<span>Box</span> <- note that this span is indented with two spaces rather than one 'tab'
+<div class="content">
+  <div class="input-text">
+    <input type="text" size="20" value="Textfield" class="{$modifiers}" />
+  </div>
 </div>
 
-.phat - Thick border		
+.focus - indicates that the element has been focussed by the user
+.invalid - indicates that the data entered into the input is invalid
+.disabled - indicates that the textfield cannot be edited
 
-Styleguide 1.2.0.
-*/
+Styleguide 3.1
+*/ 
 
-.box {
-	width: 100px;
-	height: 100px;
-	border: 1px solid;
-}
-.box.phat {
-	border-width: 20px;
-}
-.foo { /* <- this class won't appear in the KSS docs because the modifier isn't listed above */
-	border: 5px solid red;
-}
-.foo.bar { /* <- this class won't appear in the KSS docs because the modifier isn't listed above */
-	border-color: green;
-}
-```
-
-And another:	
-
-```css
-/*
-Hidden <- This demo will generate a heading in the KSS docs but no examples as there is no sample markup to 'skin'
-
-Hide anything with this utility class.
-
-.shown - a variation
-
-Styleguide 1.3.0.
-*/
-.hidden { /* <- this class won't appear in the KSS docs because the modifier isn't listed above */
-	border: 5px solid blue;
-}
-.hidden.shown {
-	border-color: yellow;
-}
-```		
+	.content .input-text input {
+		color: black;
+		padding: 5px;
+		border: 1px solid black;
+	}
+	.content .input-text input.focus {
+		border-color: yellow;
+	}
+	.content .input-text input.invalid {
+		color: red;
+		border-color: red;
+	}
+	.content .input-text input.disabled {
+		color: grey;
+		border-color: grey;
+	}
+	.content .input-text input.crazy {
+		color: pink;
+		border-color: orange;
+	}
+			
 
 Remember that munging/minification will strip all comments, so don't hold back on documenting your code (note that you only need to KSS-comment rules which would be meaningful in a styleguide). 
 
