@@ -1,20 +1,17 @@
-## About this guide
-
 *Last updated 26.03.2013*
 
-The documentation in the following pages (navigable by the jump menu at the top of the page) 
-has been written into this project's stylesheets using KSS (Knyle Style Sheets). 
+## What is KSS?
 
-KSS involves adding structured comments to CSS files. These comments create an index, 
-HTML snippets which are transformed into live demos which demonstrate the any style variants, 
+KSS involves adding structured comments to CSS files to generate a **Living Styleguide**. These comments create an index, 
+HTML snippets which are transformed into live demos which demonstrate any style variants, 
 and a place to make any notes which would be useful to the client or fellow developers.
 
 ## Benefits of using KSS
 
 ### Clarity:
 
-1. provides an overview of complex stylesheets suitable for clients and other developers
-1. provides a reference for developers returning to a project after a long break
+* provides an overview of complex stylesheets suitable for clients and other developers
+* provides a reference for developers returning to a project after a long break
 
 ### Efficiency:
 
