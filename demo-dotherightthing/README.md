@@ -34,7 +34,20 @@ and is maintained in [Github](https://github.com/hughsk/kss-node).
 
 ## What's different in this fork?
 
-This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.chrometoaster.com), and includes:
+[Forking](https://help.github.com/articles/fork-a-repo) allows a developer to contribute to another 
+developer's Github project, or grab their code as the starting point for their own Github project.
+
+Forking a Github project creates a copy of the project on the Github server. 
+This is a snapshot of the project at the time the fork was created. 
+
+The fork is not automatically updated with any changes to the original repository, 
+and, conversely, any changes or improvments will not automatically make their way back into the original repository.
+
+More information about forking is available on 
+[stackoverflow.com](http://stackoverflow.com/questions/6286571/git-fork-is-git-clone).
+
+Our fork of [kss-node](https://github.com/hughsk/kss-node) has been tweaked to suit our workflow 
+at [Chrometoaster](http://www.chrometoaster.com), and includes:
 
 * Some minor bug fixes which allow Subversion to be used for version control, rather than Git
 * A bundled OS X app for regenerating styleguides without using the command line, 
