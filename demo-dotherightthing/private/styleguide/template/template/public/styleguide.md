@@ -62,7 +62,7 @@ scalable network applications, that run in the backend, outside a browser.
 
 Node installers are available for Windows, Mac, Linux and SunOS.
 
-[Download the Node installer](http://nodejs.org/download/).
+[Download and install Node](http://nodejs.org/download/).
 
 #### Step 3: Install a Git client
 
@@ -75,7 +75,7 @@ It's important that you stay up-to-date with any changes to the KSS-node code re
 
 The easiest way to do this is to install a Git client.
 
-Install the GitHub client (GUI) for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
+Download and install the GitHub client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
 
 #### Step 4: Install the KSS binary
 
