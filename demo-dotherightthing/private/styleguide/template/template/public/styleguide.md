@@ -23,14 +23,14 @@ and is maintained in [Github](https://github.com/hughsk/kss-node).
 
 ## What's different in this fork?)
 
-This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.chrometoaster.com).
+This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.chrometoaster.com), and includes:
 
 * Some minor bug fixes which allow Subversion to be used for version control, rather than Git
-* Bundled OS X app for regenerating styleguides without using the command line
-* Bundled OS X app uses XML configuration files to allow easy switching between projects
-* Boilerplate for integration into PHP-based CMSes (Content Management Systems)
-* Front-end maximises the available screen real estate
-* Uses vanilla CSS rather than LESS
+* A bundled OS X app for regenerating styleguides without using the command line, 
+plus XML configuration files to allow easy switching between projects
+* A boilerplate for integration into PHP-based CMSes (Content Management Systems)
+* A front-end layout which maximises the available screen real estate
+* Use of vanilla CSS rather than LESS
 
 This fork was created by Dan Smith ([dotherightthing](https://github.com/dotherightthing/)) 
 and is maintained in [Github](https://github.com/dotherightthing/kss-node).
