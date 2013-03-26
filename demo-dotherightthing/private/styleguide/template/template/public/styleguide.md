@@ -12,7 +12,8 @@ and a place to make any notes which would be useful to the client or fellow deve
 
 ## What is KSS Node?
 
-KSS Node is a NodeJS implementation of KSS. 
+KSS Node is a NodeJS implementation of KSS, the trunk of which is available at 
+[https://github.com/hughsk/kss-node](https://github.com/hughsk/kss-node).
 
 ## What's different in this fork?
 
