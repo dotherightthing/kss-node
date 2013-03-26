@@ -206,10 +206,12 @@ You may now view the documentation via your custom template, eg `/demo-dotherigh
 1. Some modifiers are not output in the styleguide
   1. Check that the modifier is followed by a description: `.mymodifier - my description`
   1. Remove any empty lines from the KSS code
-1. Styleguide is generated but the styleguide page is blank
-  1. Navigate to the styleguide homepage then select the desired page from the dropdown, 
+1. The Styleguide is generated but the Styleguide page is blank
+  1. Navigate to the Styleguide homepage then select the desired page from the dropdown, 
 this will eliminate the possibility that the desired index comment has been removed from the stylesheets
   1. Remove any empty lines from the end of the stylesheet files
+1. There are duplicate entries in the styleguide
+  1. Check that an SVN update has not created multiple copies of a conflicted file/stylesheet
  
 ### D) Authoring KSS
 
@@ -300,6 +302,11 @@ about how widely styles are supported
       * the `.crazy` pink/orange class will not appear in the Styleguide, as it was not included in the modifier list
       * the first, classless `input` **will** appear in the Styleguide, as the 'Default' layout
 * we finish with the TOC (Table of Contents) index, with no trailing period
+* the KSS comments *will* make your stylesheet larger, but you should be using either manual or automated 
+minification as part of your development flow, which means that these comments will be stripped from your 
+production stylesheets
+* the KSS comment precedes the code that it described; the generator does not actually mind where the KSS comment is, 
+but for readability by developers, it is best to keep it close to the CSS source
 
 ##### Example:
 
@@ -343,15 +350,17 @@ Styleguide 3.1
 		color: pink;
 		border-color: orange;
 	}
-			
+```
 
-Remember that munging/minification will strip all comments, so don't hold back on documenting your code (note that you only need to KSS-comment rules which would be meaningful in a styleguide). 
+#### Create a Styleguide sub-sub-section
 
-It's also ok if classes listed in the Modifiers section are actually located in another part of the stylesheet.
+Deeper sections can be created using the same approach as above, but using an additional period and numeral 
+in the Styleguide index comment.
 
-#### Creating placeholder styles
+#### Create a Styleguide placeholder
 
-Placeholder styles can easily be created as follows. This allows styles to be filled in gradually, while understanding what is left to do.  
+Placeholder styles can easily be created as follows. This allows styles to be filled in gradually, 
+while understanding what is left to do.  
 
 Note that modifiers cannot be combined, in this scenario.
 
@@ -386,6 +395,3 @@ There are a handful of `styleguide-` name-spaced classes available for use when 
 1. `.styleguide-clear` - clears preceding floats
 1. `.styleguide-nofloat` - disables floating on the element
 1. `.styleguide-hidden` - hides the element
-
-
-
