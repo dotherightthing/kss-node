@@ -71,6 +71,7 @@ and being responsible for its maintenance
 
 * HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, 
 and identifying what is in 'the box of bits'
+* Removes the risk of capturing in appropriate (eg JS-injected) markup when ripping HTML via eg Firebug
 
 ## Setup and usage instructions for developers 
  
@@ -107,8 +108,6 @@ Node installers are available for Windows, Mac, Linux and SunOS.
 
 [Download and install Node](http://nodejs.org/download/).
 
-TODO: how to check that Node is installed
-
 #### Step 3: Install a Git client
 
 KSS-node is hosted on [Github](https://github.com/). 
@@ -121,8 +120,6 @@ It's important that you stay up-to-date with any changes to our fork of the KSS-
 The easiest way to do this is to install a Git client.
 
 Download and install the GitHub client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
-
-TODO: how to check that the Github client is installed
 
 #### Step 4: Download our code
 
@@ -138,16 +135,12 @@ so you can look at it or use the code.
 1. `dotherightthing/kss-node` will be added to your local repositories
 1. Close the Github application
 
-TODO: how to check for updates
-
 #### Step 5: Install the KSS binary
 
 1. Open Terminal (OS X) or a Command Prompt (Windows: `Start > Run > `cmd` > Enter`)
 1. Type `sudo npm install -g kss` (OS X) or `npm install -g kss` (OS X) and press `Enter`
 1. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the KSS binary
 1. Leave Terminal (OS X) or the Command Prompt (Windows) open for Step 6
-
-TODO: how to check for updates
 
 #### Step 6: Install the KSS-Node dependencies
 
@@ -157,8 +150,6 @@ downloaded our code to, eg `cd /Users/Dan/github/kss-node/` (OS X) or `cd ﻿C:\
 1. Type `sudo npm install -g` (OS X) or `npm install -g` (Windows) and press `Enter`
 `. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the kss-node dependencies. The 
 `-g` ('global') flag tells OS X to copy the files to `/usr/local/lib/node_modules/kss/
-
-TODO: how to check for updates
 
 ### B) Per-project set-up
 
@@ -178,8 +169,6 @@ This file should be similar to your existing site templates, in that it should i
 CSS, JS etc, and use the same structural markup. 
 A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
 
-TODO: I'll commit separate boilerplate files to this project as I find time.
-
 #### Step 2: Create a configuration file
 
 I've created a small Automator application (OS X only) which handles population of the Styleguide folder, 
@@ -187,8 +176,6 @@ including regeneration of the styleguide.
 
 If you're using Windows (as some of our contractors are), 
 you'll need to ask someone on a Mac to complete this step for you.
-
-TODO: create a .bat (batch) file to allow project setup via Windows.
 
 The first time you use the application with any project, you will need to create a configuration file:
 
@@ -208,8 +195,6 @@ Update the various `<string>` values to suit your project.
 1. The application will open the directory containing your configuration files
 1. Double-click a configuration file to use those options
 
-TODO: add steps to install aLaunch
-
 #### Step 2: View the generated styleguide
 
 1. When the generator has finished running, you will have the option to close the application 
@@ -226,6 +211,11 @@ this will eliminate the possibility that the desired index comment has been remo
   1. Remove any empty lines from the end of the stylesheet files
 1. There are duplicate entries in the styleguide
   1. Check that an SVN update has not created multiple copies of a conflicted file/stylesheet
+1. The second dropdown menu is not populated
+  1. Sections should be named as: `Styleguide 7` (not `Styleguide 7.`)
+  1. Sub-sections should be named as: `Styleguide 7.1` (not `Styleguide 7.1.` or `Styleguide 7.1.0` 
+which registers as a sub-sub-section)
+  1. Sub-sub-sections should be named as: `Styleguide 7.1.1` (not `Styleguide 7.1.1.`)
  
 ### D) Authoring KSS
 
@@ -409,3 +399,23 @@ There are a handful of `styleguide-` name-spaced classes available for use when 
 1. `.styleguide-clear` - clears preceding floats
 1. `.styleguide-nofloat` - disables floating on the element
 1. `.styleguide-hidden` - hides the element
+
+## TODO
+
+This boilerplate is a work-in-progress.
+
+As time allows I'd like to address the following:
+
+1. This documentation - Add some way to check that the correct version of Node is installed
+1. This documentation - Add some way to check that the correct version of the Github client is installed
+1. This documentation - Add some way to check that the correct version of the KSS binary is installed
+1. This documentation - Add some information on keep the KSS binary up to date
+1. This documentation - Add some information on keep the KSS Node dependencies up to date
+1. This documentation - Add some information on keep the clone up to date via the Github client
+1. This documentation - Add a diagram explaining how the system works, so that the role of the generator, 
+KSS template and PHP boilerplate are clarified
+1. This documentation - Add steps to install and configure aLaunch
+1. Generator - create a .bat (batch) file, or Adobe Air app to allow project setup via Windows
+1. Boilerplate - add separate boilerplate files (Drupal, Wordpress, Silverstripe, etc)
+1. Configuration file - Add an option to include jQuery, in case it is not available in the parent project
+1. Github - apply to merge changes with the original kss-node project, if appropriate
