@@ -107,6 +107,8 @@ Node installers are available for Windows, Mac, Linux and SunOS.
 
 [Download and install Node](http://nodejs.org/download/).
 
+TODO: how to check that Node is installed
+
 #### Step 3: Install a Git client
 
 KSS-node is hosted on [Github](https://github.com/). 
@@ -120,6 +122,8 @@ The easiest way to do this is to install a Git client.
 
 Download and install the GitHub client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
 
+TODO: how to check that the Github client is installed
+
 #### Step 4: Download our code
 
 1. Launch the Github application
@@ -129,12 +133,16 @@ Download and install the GitHub client for [Mac](http://mac.github.com/) or [Win
 1. `dotherightthing/kss-node` will be added to your local repositories
 1. Close the Github application
 
+TODO: how to check for updates
+
 #### Step 5: Install the KSS binary
 
 1. Open Terminal (OS X) or a Command Prompt (Windows: `Start > Run > `cmd` > Enter`)
 1. Type `sudo npm install -g kss` (OS X) or `npm install -g kss` (OS X) and press `Enter`
 1. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the KSS binary
 1. Leave Terminal (OS X) or the Command Prompt (Windows) open for Step 6
+
+TODO: how to check for updates
 
 #### Step 6: Install the KSS-Node dependencies
 
