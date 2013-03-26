@@ -2,6 +2,10 @@
 
 ## What is KSS?
 
+KSS is an acronym which stands for 'Knyle Style Sheets'. 'Knyle' is a combination of 'Kyle' + 'Neath'. 
+Kyle Neath is the Design Director at Github. 
+Read [Kyle's introduction to Knyle Style Sheets](http://warpspire.com/posts/kss/),
+
 KSS involves adding structured comments to CSS files to generate a **Living Styleguide**. These comments create an index, 
 HTML snippets which are transformed into live demos which demonstrate any style variants, 
 and a place to make any notes which would be useful to the client or fellow developers.
@@ -79,7 +83,7 @@ Download and install the GitHub client for [Mac](http://mac.github.com/) or [Win
 
 #### Step 4: Install the KSS binary
 
-1. Install the KSS ([Knyle Style Sheets, ala Kyle Neath, Design Director at Github](http://warpspire.com/posts/kss/)) binary
+1. Install the KSS binary
 
 #### Step 5: Install the KSS-Node dependencies
 
