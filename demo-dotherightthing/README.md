@@ -1,6 +1,6 @@
-# kss-node: dotherightthing styleguide demo
+# kss-node boilerplate 
 
-Boilerplate for reuse on our PHP-based client projects. 
+Boilerplate for reuse on [Chrometoaster's](http://www.chrometoaster.com) PHP-based client projects. 
 
 Please read the 
 [instructions](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/private/styleguide/template/template/public/styleguide.md) 
