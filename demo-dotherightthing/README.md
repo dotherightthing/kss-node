@@ -230,9 +230,10 @@ For example:
 
 The example code below demonstrates the code that should appear at the top of your stylesheet. 
 
-Please note the following:
+Please note that, within the KSS comment:
 
 * multiline comment syntax is used
+* the code is not indented
 * the text after the opening comment will appear in the menu
 * we include the name of the source file for easy debugging
 * there is a short description
