@@ -18,7 +18,7 @@ KSS Node is maintained at [https://github.com/hughsk/kss-node](https://github.co
 
 ## What's different in this fork?
 
-This fork has been tweaked to fit in with out workflow at [Chrometoaster](http://www.chrometoaster.com).
+This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.chrometoaster.com).
 
 * Some minor bug fixes which allow Subversion to be used for version control, rather than Git
 * Bundled OS X app for regenerating styleguides without using the command line
