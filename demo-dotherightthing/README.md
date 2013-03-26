@@ -415,7 +415,9 @@ As time allows I'd like to address the following:
 1. This documentation - Add a diagram explaining how the system works, so that the role of the generator, 
 KSS template and PHP boilerplate are clarified
 1. This documentation - Add steps to install and configure aLaunch
+1. This documentation - Document the config file
 1. Generator - create a .bat (batch) file, or Adobe Air app to allow project setup via Windows
 1. Boilerplate - add separate boilerplate files (Drupal, Wordpress, Silverstripe, etc)
+1. Boilerplate - rename the project directory from `demo-dotherightthing` to `php-boilerplate`, or something similar
 1. Configuration file - Add an option to include jQuery, in case it is not available in the parent project
 1. Github - apply to merge changes with the original kss-node project, if appropriate
