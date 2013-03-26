@@ -192,14 +192,13 @@ Update the various `<string>` values to suit your project.
 1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
 1. The application will open the directory containing your configuration files
 1. Double-click a configuration file to use those options
-1. When the generator has finished running, you will have the option to close the application 
-or open the styleguide in a web browser
 
 TODO: add steps to install aLaunch
 
 #### Step 2: View the generated styleguide
 
-You may now view the documentation via your custom template, eg `/demo-dotherightthing/html/styleguide.php`.
+1. When the generator has finished running, you will have the option to close the application 
+or open the styleguide in a web browser
 
 #### Step 3: Debugging common problems
 
