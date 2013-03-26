@@ -162,7 +162,7 @@ including regeneration of the styleguide.
 If you're using Windows (as some of our contractors are), 
 you'll need to ask someone on a Mac to complete this step for you.
 
-TODO: create a .bat (batch) file to allow project setup via Window.
+TODO: create a .bat (batch) file to allow project setup via Windows.
 
 The first time you use the application with any project, you will need to create a configuration file:
 
