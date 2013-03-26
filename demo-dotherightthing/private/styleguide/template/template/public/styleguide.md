@@ -9,16 +9,14 @@ KSS involves adding structured comments to CSS files. These comments create an i
 HTML snippets which are transformed into live demos which demonstrate the any style variants, 
 and a place to make any notes which would be useful to the client or fellow developers.
 
-### Setup and usage instructions for developers 
+## Benefits of using KSS
 
-#### Benefits of using KSS
-
-##### Clarity:
+### Clarity:
 
 1. provides an overview of complex stylesheets suitable for clients and other developers
 1. provides a reference for developers returning to a project after a long break
 
-##### Efficiency:
+### Efficiency:
 
 * visualising stylesheets allows developers to see at a glance whether a style already exists,
 before authoring new styles
@@ -27,18 +25,20 @@ before authoring new styles
 * automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide, 
 and being responsible for its maintenance
 
-##### Completeness:
+### Completeness:
 
 * visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
 
-##### Integration:
+### Integration:
 
 * HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, 
 and identifying what is in 'the box of bits'
- 
-#### Getting started
 
-##### Step 1: Install a LAMP stack
+## Setup and usage instructions for developers 
+ 
+### Getting started
+
+#### Step 1: Install a LAMP stack
 
 [LAMP](http://en.wikipedia.org/wiki/LAMP_(software_bundle)) is an acronym which stands for 
 'Linux, Apache, MySQL, PHP' - a popular open-source combination for web development. 
@@ -58,7 +58,7 @@ as your site changes and grows.
 
 As your site should already be running on a PHP CMS, installation of a LAMP stack is not covered in this documentation.
 
-##### Step 2: Install Node
+#### Step 2: Install Node
 
 node.js aka 'Node' is a platform built on Chrome's JavaScript runtime, for easily building fast, 
 scalable network applications, that run in the backend, outside a browser. 
@@ -67,7 +67,7 @@ Node installers are available for Windows, Mac, Linux and SunOS.
 
 [Download the Node installer](http://nodejs.org/download/).
 
-##### Step 3: Install a Git client
+#### Step 3: Install a Git client
 
 KSS-node is hosted on [Github](https://github.com/). 
 Originally developed to simplify sharing code, GitHub has grown into the largest code host in the world.
@@ -78,19 +78,20 @@ It's important that you stay up-to-date with any changes to the KSS-node code re
 
 The easiest way to do this is to install a Git client.
 
-Install the Git client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
+Install the GitHub client (GUI) for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
 
-##### Step 4: Install the KSS binary
+#### Step 4: Install the KSS binary
 
 1. Install the KSS ([Knyle Style Sheets, ala Kyle Neath, Design Director at Github](http://warpspire.com/posts/kss/)) binary
 
-##### Step 5: Install the KSS-Node dependencies
+#### Step 5: Install the KSS-Node dependencies
 
 1. Install the kss-node dependencies
 
+TO FINISH
+
 ##### OS X
 
-1. Install the [GitHub GUI for Mac](http://mac.github.com/)
 1. Launch the Githib application
 1. Sign in to Github (create an account if haven't done so already). 
 1. Clone our fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
@@ -100,7 +101,6 @@ Install the Git client for [Mac](http://mac.github.com/) or [Windows](http://win
 
 ##### Windows 7
 
-1. Install the [GitHub GUI for Windows](﻿http://windows.github.com/)
 1. Launch the Githib application, then click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
 1. Sign in to Github (create an account if haven't done so already). 
 1. Clone my bug-fixed fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Windows' button. This will add '﻿dotherightthing/kss-node' to your local repositories. Then close the Github application
