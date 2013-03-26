@@ -2,14 +2,14 @@
 
 Boilerplate for reuse on [Chrometoaster](http://www.chrometoaster.com)'s PHP-based client projects. 
 
+*Last updated 26.03.2013*
+
 ##Credits
 
 * Thanks to Kyle Neath ([kneath](https://github.com/kneath/)) for inventing KSS.
 * Thanks to Hugh Kennedy ([hughsk](https://github.com/hughsk/)) for his work on getting kss-node up and running.
 * As some work time was spent refining this, I should also thank 
 [Chrometoaster](http://www.chrometoaster.com) for their support in this endeavour.
-
-*Last updated 26.03.2013*
 
 ## What is KSS?
 
