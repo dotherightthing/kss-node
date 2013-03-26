@@ -18,7 +18,8 @@ and is maintained on [Github](https://github.com/kneath/kss).
 
 KSS Node is a NodeJS implementation of KSS. 
 
-KSS Node was created by Hugh Kennedy ([hughsk](https://github.com/hughsk/)) and is maintained in [Github](https://github.com/hughsk/kss-node).
+KSS Node was created by Hugh Kennedy ([hughsk](https://github.com/hughsk/)) 
+and is maintained in [Github](https://github.com/hughsk/kss-node).
 
 ## What's different in this fork?)
 
@@ -30,6 +31,10 @@ This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.ch
 * Boilerplate for integration into PHP-based CMSes (Content Management Systems)
 * Front-end maximises the available screen real estate
 * Uses vanilla CSS rather than LESS
+
+This fork was created by Dan Smith ([dotherightthing](https://github.com/dotherightthing/)) 
+and is maintained in [Github](https://github.com/dotherightthing/kss-node).
+
 
 ## Benefits of using KSS
 
