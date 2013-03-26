@@ -129,7 +129,12 @@ TODO: how to check that the Github client is installed
 1. Launch the Github application
 1. If using Windows, click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
 1. Sign in to Github (create an account if haven't done so already). 
-1. Clone our fork of kss-node by clicking the 'Clone in Windows' or 'Clone in Mac' button, as appropriate.
+You must be signed in, in order to complete the cloning step.
+1. Navigate to the our kss-node project homepage: 
+[https://github.com/dotherightthing/kss-node/](https://github.com/dotherightthing/kss-node/)
+1. Clone our fork of kss-node by clicking the 'Clone in Windows' or 'Clone in Mac' button, as appropriate. 
+[Cloning](http://gitref.org/creating/#clone) allows you to grab a copy of a project, 
+so you can look at it or use the code.
 1. `dotherightthing/kss-node` will be added to your local repositories
 1. Close the Github application
 
