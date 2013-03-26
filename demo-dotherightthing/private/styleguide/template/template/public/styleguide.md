@@ -10,6 +10,19 @@ KSS involves adding structured comments to CSS files to generate a **Living Styl
 HTML snippets which are transformed into live demos which demonstrate any style variants, 
 and a place to make any notes which would be useful to the client or fellow developers.
 
+## What is KSS Node?
+
+KSS Node is a NodeJS implementation of KSS. 
+
+## What's different in this fork?
+
+* Some minor bug fixes which allow Subversion to be used for version control (rather than Git)
+* Bundled OS X app for regenerating styleguide without using the command line
+* Bundled OS X app uses XML configuration files to allow easy switching between projects
+* Boilerplate for integration into PHP-based CMSes (Content Management Systems)
+* Front-end maximises the available screen real estate
+* Uses vanilla CSS rather than LESS
+
 ## Benefits of using KSS
 
 ### Clarity:
