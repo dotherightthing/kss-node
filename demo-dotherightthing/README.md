@@ -275,6 +275,8 @@ For example:
    * "Forms - Text fields" - `Styleguide 3.2`
    * "Forms - Select menus" - `Styleguide 3.3` 
 
+##### Example:
+
 The example code below demonstrates the code that you could use to document a component.
 
 Please note that, within the KSS comment:
@@ -307,8 +309,6 @@ minification as part of your development flow, which means that these comments w
 production stylesheets
 * the KSS comment precedes the code that it described; the generator does not actually mind where the KSS comment is, 
 but for readability by developers, it is best to keep it close to the CSS source
-
-##### Example:
 
 ```css
 /*
