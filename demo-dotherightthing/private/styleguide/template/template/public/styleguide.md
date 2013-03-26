@@ -1,32 +1,40 @@
 ## About this guide
 
-*Last updated 11.03.2013*
+*Last updated 26.03.2013*
 
 The documentation in the following pages (navigable by the jump menu at the top of the page) 
 has been written into this project's stylesheets using KSS (Knyle Style Sheets). 
 
 KSS involves adding structured comments to CSS files. These comments create an index, 
 HTML snippets which are transformed into live demos which demonstrate the any style variants, 
-and a place to makes any notes which would be useful to the client or fellow developers.
+and a place to make any notes which would be useful to the client or fellow developers.
 
 ### Setup and usage instructions for developers 
 
-#### Why use KSS?
+#### Benefits of using KSS
 
-1. long and complex stylesheets are difficult for clients and even other experienced coders to decipher
-1. even the original coder can be stumped about what they did 6 months ago, 
-when they have since evolved their coding style
-1. visualising stylesheets allows developers to see at a glance whether a style already exists,
+##### Clarity:
+
+1. provides an overview of complex stylesheets suitable for clients and other developers
+1. provides a reference for developers returning to a project after a long break
+
+##### Efficiency:
+
+* visualising stylesheets allows developers to see at a glance whether a style already exists,
 before authoring new styles
-1. exposing modifiers encourages development of reusable components that can be skinned
-1. reused and resuable code = less code to download, less code to maintain
-1. visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
-1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, 
-and identifying what is in the 'box of bits'
-1. automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide, 
+* exposing modifiers encourages development of reusable components that can be skinned
+* reused and resuable code = less code to download, less code to maintain
+* automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide, 
 and being responsible for its maintenance
-1. a KSS styleguide is 'living' or 'alive' because it updates when your CSS does 
-(when you regenerate it via the commandline)
+
+##### Completeness:
+
+* visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
+
+##### Integration:
+
+* HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, 
+and identifying what is in 'the box of bits'
  
 #### Getting started
 
