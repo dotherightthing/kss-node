@@ -2,24 +2,135 @@
 
 *Last updated 11.03.2013*
 
-The documentation in the following pages (navigable by the jump menu at the top of the page) has been written into this project's stylesheets using KSS (Knyle Style Sheets). 
+The documentation in the following pages (navigable by the jump menu at the top of the page) 
+has been written into this project's stylesheets using KSS (Knyle Style Sheets). 
 
-KSS involves adding structured comments to CSS files. These comments create an index, HTML snippets which are transformed into live demos which demonstrate the any style variants, and a place to makes any notes which would be useful to the client or fellow developers.
+KSS involves adding structured comments to CSS files. These comments create an index, 
+HTML snippets which are transformed into live demos which demonstrate the any style variants, 
+and a place to makes any notes which would be useful to the client or fellow developers.
 
 ### Setup and usage instructions for developers 
 
 #### Why use KSS?
 
 1. long and complex stylesheets are difficult for clients and even other experienced coders to decipher
-1. even the original coder can be stumped about what they did 6 months ago, when they have since evolved their coding style
-1. visualising stylesheets allows developers to see at a glance whether a style already exists before authoring new styles
+1. even the original coder can be stumped about what they did 6 months ago, 
+when they have since evolved their coding style
+1. visualising stylesheets allows developers to see at a glance whether a style already exists,
+before authoring new styles
 1. exposing modifiers encourages development of reusable components that can be skinned
 1. reused and resuable code = less code to download, less code to maintain
 1. visual documention provides an easy way to check that there are no bugs, oversights, or redundant rules in the CSS
-1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, and identifying what is in the 'box of bits'
-1. automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide and being responsible for its maintenance
-1. a KSS styleguide is 'living' or 'alive' because it updates when your CSS does (when you regenerate it via the commandline)
-  
+1. HTML demos assist back-end developers and other front-end developers in troubleshooting integration issues, 
+and identifying what is in the 'box of bits'
+1. automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide, 
+and being responsible for its maintenance
+1. a KSS styleguide is 'living' or 'alive' because it updates when your CSS does 
+(when you regenerate it via the commandline)
+ 
+#### Getting started
+
+##### Step 1: Install a LAMP stack
+
+[LAMP](http://en.wikipedia.org/wiki/LAMP_(software_bundle)) is an acronym which stands for 
+'Linux, Apache, MySQL, PHP' - a popular open-source combination for web development. 
+Some common LAMP stacks are 
+[WAMP](http://www.wampserver.com) (Windows, Apache, MySQL, PHP) and 
+[MAMP](http://www.mamp.info) (Mac, Apache, MySQL, PHP).
+
+While KSS Node runs on [node.js](http://nodejs.org), this fork is designed for use with PHP-based sites, 
+such as those running on 
+[Drupal](http://drupal.org), 
+[Silverstripe](http://www.silverstripe.com), or 
+[Wordpress](http://wordpress.org).
+
+The intention is that the KSS Styleguide becomes a 'living' part of the site, 
+integrated into the stylesheets and the CMS front-end, so that the Styleguide stays up to date 
+as your site changes and grows.
+
+As your site should already be running on a PHP CMS, installation of a LAMP stack is not covered in this documentation.
+
+##### Step 2: Install Node
+
+node.js aka 'Node' is a platform built on Chrome's JavaScript runtime, for easily building fast, 
+scalable network applications, that run in the backend, outside a browser. 
+
+Node installers are available for Windows, Mac, Linux and SunOS.
+
+[Download the Node installer](http://nodejs.org/download/).
+
+##### Step 3: Install a Git client
+
+KSS-node is hosted on [Github](https://github.com/). 
+Originally developed to simplify sharing code, GitHub has grown into the largest code host in the world.
+At the heart of GitHub is an open source version control system 
+(VCS) called [Git](http://git-scm.com/book/en/Getting-Started-Git-Basics).
+
+It's important that you stay up-to-date with any changes to the KSS-node code repository. 
+
+The easiest way to do this is to install a Git client.
+
+Install the Git client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
+
+##### Step 4: Install the KSS binary
+
+1. Install the KSS ([Knyle Style Sheets, ala Kyle Neath, Design Director at Github](http://warpspire.com/posts/kss/)) binary
+
+##### Step 5: Install the KSS-Node dependencies
+
+1. Install the kss-node dependencies
+
+##### OS X
+
+1. Install the [GitHub GUI for Mac](http://mac.github.com/)
+1. Launch the Githib application
+1. Sign in to Github (create an account if haven't done so already). 
+1. Clone our fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
+1. Open Terminal
+1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `sudo npm install -g kss`
+1. Navigate to your local kss-node directory (step 3), eg: `cd /Users/Dan/github/kss-node/`, then use the Node Package Manager to install the kss-node dependencies: `sudo npm install -g`, (`-g` = global, ie copy files to `/usr/local/lib/node_modules/kss/`) 
+
+##### Windows 7
+
+1. Install the [GitHub GUI for Windows](﻿http://windows.github.com/)
+1. Launch the Githib application, then click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
+1. Sign in to Github (create an account if haven't done so already). 
+1. Clone my bug-fixed fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Windows' button. This will add '﻿dotherightthing/kss-node' to your local repositories. Then close the Github application
+1. Open a Command Prompt: Start > Run > `cmd` > Enter
+1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `npm install -g kss`
+1. Navigate to your local kss-node directory (step 3), eg: `cd ﻿C:\Files\Websites\GitHub\kss-node`, then use the Node Package Manager to install the kss-node dependencies: `npm install -g`, (`-g` = global, ie copy files to `???`)
+
+#### Set up the styleguide structure in your project
+
+Please note that this is *in addition to* checking out our kss-node fork to your development computer.
+
+1. Move your site stylesheets to a separate folder if they are not already in one, eg: `/path/to/resources/styles`
+1. Create a 'styleguide' folder within your project. Typically this would be a sibling of the folder which contains your site stylesheets. eg: `/path/to/resources/styleguide`
+1. Create a dynamic project template page, that will pull in the external styleguide 'template'. This file should be similar to your existing site templates, in that it should include all project assets such as CSS, JS etc, and use the same structural markup. A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
+
+#### Populate the styleguide structure by regenerating the styleguide
+
+##### OS X
+
+I've created a small Automator application which handles population of the styleguide folder including regeneration of the styleguide.
+
+The first time you use the application with any project, you will need to create a configuration file:
+
+1. Create a configuration file for the application by making a copy of the `config-demo.plist` file and naming this so that you remember which project it is for (as you could end up having different configuration files for different projects). Configuration files live in `/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
+1. Open up your configuration file in a text editor. The file uses an XML structure. Update the `<string>` values to suit your project.
+
+Once ytou configuration file is set up:
+
+1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+
+##### Windows 7
+
+TODO: I need to add step-by-step instructions here
+
+### View the generated styleguide
+
+You may now view the documentation via your custom template, eg `/demo-dotherightthing/html/styleguide.php`.
+
 #### Commenting your stylesheets, KSS-style
 
 First up let's create an item in the Styleguide table of contents (TOC):
@@ -161,69 +272,6 @@ There are a handful of `styleguide-` name-spaced classes available for use when 
 1. `.styleguide-clear` - clears preceding floats
 1. `.styleguide-nofloat` - disables floating on the element
 1. `.styleguide-hidden` - hides the element
-
-#### Install the required software
-
-To use KSS, you will need to do the following:
-
-1. Install a LAMP stack, so that you can run PHP scripts. *Installation of a LAMP stack is not covered in this documentation.*
-1. Install node.js - node.js aka 'Node' is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications, that run in the backend, outside a browser. 
-1. Install some sort of Git client to access our patched kss-node repo on github.com
-1. Install the KSS ([Knyle Style Sheets, ala Kyle Neath, Design Director at Github](http://warpspire.com/posts/kss/)) binary
-1. Install the kss-node dependencies
-
-##### OS X
-
-1. Install [node.js](http://nodejs.org/) 
-1. Install the [GitHub GUI for Mac](http://mac.github.com/)
-1. Launch the Githib application
-1. Sign in to Github (create an account if haven't done so already). 
-1. Clone our fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
-1. Open Terminal
-1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `sudo npm install -g kss`
-1. Navigate to your local kss-node directory (step 3), eg: `cd /Users/Dan/github/kss-node/`, then use the Node Package Manager to install the kss-node dependencies: `sudo npm install -g`, (`-g` = global, ie copy files to `/usr/local/lib/node_modules/kss/`) 
-
-##### Windows 7
-
-1. Install [node.js](http://nodejs.org/).
-1. Install the [GitHub GUI for Windows](﻿http://windows.github.com/)
-1. Launch the Githib application, then click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
-1. Sign in to Github (create an account if haven't done so already). 
-1. Clone my bug-fixed fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Windows' button. This will add '﻿dotherightthing/kss-node' to your local repositories. Then close the Github application
-1. Open a Command Prompt: Start > Run > `cmd` > Enter
-1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `npm install -g kss`
-1. Navigate to your local kss-node directory (step 3), eg: `cd ﻿C:\Files\Websites\GitHub\kss-node`, then use the Node Package Manager to install the kss-node dependencies: `npm install -g`, (`-g` = global, ie copy files to `???`)
-
-#### Set up the styleguide structure in your project
-
-Please note that this is *in addition to* checking out our kss-node fork to your development computer.
-
-1. Move your site stylesheets to a separate folder if they are not already in one, eg: `/path/to/resources/styles`
-1. Create a 'styleguide' folder within your project. Typically this would be a sibling of the folder which contains your site stylesheets. eg: `/path/to/resources/styleguide`
-1. Create a dynamic project template page, that will pull in the external styleguide 'template'. This file should be similar to your existing site templates, in that it should include all project assets such as CSS, JS etc, and use the same structural markup. A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
-
-#### Populate the styleguide structure by regenerating the styleguide
-
-##### OS X
-
-I've created a small Automator application which handles population of the styleguide folder including regeneration of the styleguide.
-
-The first time you use the application with any project, you will need to create a configuration file:
-
-1. Create a configuration file for the application by making a copy of the `config-demo.plist` file and naming this so that you remember which project it is for (as you could end up having different configuration files for different projects). Configuration files live in `/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
-1. Open up your configuration file in a text editor. The file uses an XML structure. Update the `<string>` values to suit your project.
-
-Once ytou configuration file is set up:
-
-1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
-
-##### Windows 7
-
-TODO: I need to add step-by-step instructions here
-
-### View the generated styleguide
-
-You may now view the documentation via your custom template, eg `/demo-dotherightthing/html/styleguide.php`.
 
 #### Known issues
 
