@@ -63,7 +63,9 @@ and identifying what is in 'the box of bits'
 
 ## Setup and usage instructions for developers 
  
-### Getting started
+### A) Getting started
+
+When first using KSS-Node, it's necessary to ensure that some technologies are installed on your computer.
 
 #### Step 1: Install a LAMP stack
 
@@ -101,84 +103,146 @@ Originally developed to simplify sharing code, GitHub has grown into the largest
 At the heart of GitHub is an open source version control system 
 (VCS) called [Git](http://git-scm.com/book/en/Getting-Started-Git-Basics).
 
-It's important that you stay up-to-date with any changes to the KSS-node code repository. 
+It's important that you stay up-to-date with any changes to our fork of the KSS-node code repository. 
 
 The easiest way to do this is to install a Git client.
 
 Download and install the GitHub client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
 
-#### Step 4: Install the KSS binary
+#### Step 4: Download our code
 
-1. Install the KSS binary
-
-#### Step 5: Install the KSS-Node dependencies
-
-1. Install the kss-node dependencies
-
-TO FINISH
-
-##### OS X
-
-1. Launch the Githib application
+1. Launch the Github application
+1. If using Windows, click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
 1. Sign in to Github (create an account if haven't done so already). 
-1. Clone our fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Mac' button.
-1. Open Terminal
-1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `sudo npm install -g kss`
-1. Navigate to your local kss-node directory (step 3), eg: `cd /Users/Dan/github/kss-node/`, then use the Node Package Manager to install the kss-node dependencies: `sudo npm install -g`, (`-g` = global, ie copy files to `/usr/local/lib/node_modules/kss/`) 
+1. Clone our fork of kss-node by clicking the 'Clone in Windows' or 'Clone in Mac' button, as appropriate.
+1. `dotherightthing/kss-node` will be added to your local repositories
+1. Close the Github application
 
-##### Windows 7
+#### Step 5: Install the KSS binary
 
-1. Launch the Githib application, then click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
-1. Sign in to Github (create an account if haven't done so already). 
-1. Clone my bug-fixed fork of [kss-node, 'A NodeJS Implementation of KSS'](https://github.com/dotherightthing/kss-node) by clicking the 'Clone in Windows' button. This will add '﻿dotherightthing/kss-node' to your local repositories. Then close the Github application
-1. Open a Command Prompt: Start > Run > `cmd` > Enter
-1. Use the Node Package Manager (NPM, installed with step 1) to install the KSS binary, by running `npm install -g kss`
-1. Navigate to your local kss-node directory (step 3), eg: `cd ﻿C:\Files\Websites\GitHub\kss-node`, then use the Node Package Manager to install the kss-node dependencies: `npm install -g`, (`-g` = global, ie copy files to `???`)
+1. Open Terminal (OS X) or a Command Prompt (Windows: `Start > Run > `cmd` > Enter`)
+1. Type `sudo npm install -g kss` (OS X) or `npm install -g kss` (OS X) and press `Enter`
+1. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the KSS binary
+1. Leave Terminal (OS X) or the Command Prompt (Windows) open for Step 6
 
-#### Set up the styleguide structure in your project
+#### Step 6: Install the KSS-Node dependencies
 
-Please note that this is *in addition to* checking out our kss-node fork to your development computer.
+1. Navigate to your local kss-node directory using Terminal or a Command Prompt:
+1. Type `cd` ('Change Directory') followed by a space and then the path to the location you 
+downloaded our code to, eg `cd /Users/Dan/github/kss-node/` (OS X) or `cd ﻿C:\Files\Websites\GitHub\kss-node` (Windows)
+1. Type `sudo npm install -g` (OS X) or `npm install -g` (Windows) and press `Enter`
+`. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the kss-node dependencies. The 
+`-g` ('global') flag tells OS X to copy the files to `/usr/local/lib/node_modules/kss/
+
+### B) Per-project set-up
+
+Please ensure that you have completed (A) Getting started, before starting your project set-up.
+
+When setting up a new website, or adding a styleguide to an existing site, there are a few 
+set-up tasks that you need to perform.
+
+#### Step 1: Set up the Styleguide structure
 
 1. Move your site stylesheets to a separate folder if they are not already in one, eg: `/path/to/resources/styles`
-1. Create a 'styleguide' folder within your project. Typically this would be a sibling of the folder which contains your site stylesheets. eg: `/path/to/resources/styleguide`
-1. Create a dynamic project template page, that will pull in the external styleguide 'template'. This file should be similar to your existing site templates, in that it should include all project assets such as CSS, JS etc, and use the same structural markup. A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
+1. Create a 'styleguide' folder within your project. 
+Typically this would be a sibling of the folder which contains your site stylesheets, 
+eg: `/path/to/resources/styleguide`
+1. Create a dynamic project template page, that will pull in the external styleguide 'template'. 
+This file should be similar to your existing site templates, in that it should include all project assets such as 
+CSS, JS etc, and use the same structural markup. 
+A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
 
-#### Populate the styleguide structure by regenerating the styleguide
+TODO: I'll commit separate boilerplate files to this project as I find time.
 
-##### OS X
+#### Step 2: Create a configuration file
 
-I've created a small Automator application which handles population of the styleguide folder including regeneration of the styleguide.
+I've created a small Automator application (OS X only) which handles population of the Styleguide folder, 
+including regeneration of the styleguide.
+
+If you're using Windows (as some of our contractors are), 
+you'll need to ask someone on a Mac to complete this step for you.
+
+TODO: create a .bat (batch) file to allow project setup via Window.
 
 The first time you use the application with any project, you will need to create a configuration file:
 
-1. Create a configuration file for the application by making a copy of the `config-demo.plist` file and naming this so that you remember which project it is for (as you could end up having different configuration files for different projects). Configuration files live in `/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
-1. Open up your configuration file in a text editor. The file uses an XML structure. Update the `<string>` values to suit your project.
+1. Create a configuration file for the application by making a copy of the `config-demo.plist` file,  
+renaming this so that you remember which project it is for (as you could end up having different configuration 
+files for different projects). Configuration files live in 
+`/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
+1. Open up your configuration file in a text editor. The file uses an XML structure. 
+Update the various `<string>` values to suit your project.
+1. Save and close the configuration file
 
-Once ytou configuration file is set up:
+### C) Using the generator to create or recreate a Styleguide
+
+#### Step 1: Run the generator
 
 1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+1. The application will open the directory containing your configuration files
+1. Double-click a configuration file to use those options
+1. When the generator has finished running, you will have the option to close the application 
+or open the styleguide in a web browser
 
-##### Windows 7
+TODO: add steps to install aLaunch
 
-TODO: I need to add step-by-step instructions here
-
-### View the generated styleguide
+#### Step 2: View the generated styleguide
 
 You may now view the documentation via your custom template, eg `/demo-dotherightthing/html/styleguide.php`.
 
-#### Commenting your stylesheets, KSS-style
+#### Step 3: Debugging common problems
 
-First up let's create an item in the Styleguide table of contents (TOC):
+1. Some modifiers are not output in the styleguide
+  1. Check that the modifier is followed by a description: `.mymodifier - my description`
+  1. Remove any empty lines from the KSS code
+1. Styleguide is generated but the styleguide page is blank
+  1. Navigate to the styleguide homepage then select the desired page from the dropdown, 
+this will eliminate the possibility that the desired index comment has been removed from the stylesheets
+  1. Remove any empty lines from the end of the stylesheet files
+ 
+### D) Authoring KSS
+
+#### Create a Styleguide section
+
+Sections are created with the text: `Styleguide N`, where 'N' is the number of the section.
+
+This creates an entry in the topmost dropdown menu in your styleguide.
+
+If your site can dynamically merge stylesheets, it's a good idea to have a separate stylesheet for each section of
+the Styleguide. This makes it easy to find styles when viewing a Styleguide.
+
+For example:
+
+* typography.css = `Styleguide 1`
+* scaffolding.css = `Styleguide 2`
+* forms.css = `Styleguide 3`
+
+The example code below demonstrates the code that should appear at the top of your stylesheet. 
+
+Please note the following:
+
+* multiline comment syntax is used
+* the text after the opening comment will appear in the menu
+* we include the name of the source file for easy debugging
+* there is a short description
+* there is no Markup block (we'll see this later)
+* we finish with the TOC (Table of Contents) index, with no trailing period
 
 ```css
-/* <- start KSS comment block
-Button styles <- name of the section for the styleguide jump links
+/*
+Typography
 
-Lorem ipsum dolor sit anet. <- description which appears below the topmost heading when this TOC item is selected
+src: typography.css
 
-Styleguide  1 <- index for generated TOC (table of contents)
-end KSS comment block -> */ 
+Text styles
+
+Styleguide  1
+*/ 
 ```
+
+#### Create a Styleguide sub-section
+
+TO FINISH
 
 Now let's start documenting the individual components. Here's an example, please pay special attention to the use of line breaks and new lines.
 
@@ -308,11 +372,4 @@ There are a handful of `styleguide-` name-spaced classes available for use when 
 1. `.styleguide-nofloat` - disables floating on the element
 1. `.styleguide-hidden` - hides the element
 
-#### Known issues
 
-1. Some modifiers are not output in the styleguide
-  1. Check that the modifier is followed by a description: `.mymodifier - my description`
-	1. Remove any empty lines from the KSS code
-1. Styleguide is generated but the styleguide page is blank
-  1. Navigate to the styleguide homepage then select the desired page from the dropdown, this will eliminate the possibility that the desired index comment has been removed from the stylesheets
-  1. Remove any empty lines from the end of the stylesheet files
