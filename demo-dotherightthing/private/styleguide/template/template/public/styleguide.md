@@ -2,9 +2,6 @@
 
 ## What is KSS?
 
-KSS Node was created by Kyle Neath ([kneath](https://github.com/kneath/)) 
-and is maintained on [Github](https://github.com/kneath/kss).
-
 KSS is an acronym which stands for 'Knyle Style Sheets'. 'Knyle' is a combination of 'Kyle' + 'Neath'. 
 Kyle Neath is the Design Director at Github. 
 Read [Kyle's introduction to Knyle Style Sheets](http://warpspire.com/posts/kss/).
@@ -13,6 +10,9 @@ KSS involves adding structured comments to CSS files to generate a **Living Styl
 These comments create an easily navigable index, 
 live HTML/CSS demos which demonstrate the available style variants, 
 and a place to store any notes which would be useful to the client or fellow developers.
+
+KSS Node was created by Kyle Neath ([kneath](https://github.com/kneath/)) 
+and is maintained on [Github](https://github.com/kneath/kss).
 
 ## What is KSS Node?
 
