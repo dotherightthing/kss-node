@@ -18,8 +18,10 @@ KSS Node is maintained at [https://github.com/hughsk/kss-node](https://github.co
 
 ## What's different in this fork?
 
-* Some minor bug fixes which allow Subversion to be used for version control (rather than Git)
-* Bundled OS X app for regenerating styleguide without using the command line
+This fork has been tweaked to fit in with out workflow at [Chrometoaster](http://www.chrometoaster.com).
+
+* Some minor bug fixes which allow Subversion to be used for version control, rather than Git
+* Bundled OS X app for regenerating styleguides without using the command line
 * Bundled OS X app uses XML configuration files to allow easy switching between projects
 * Boilerplate for integration into PHP-based CMSes (Content Management Systems)
 * Front-end maximises the available screen real estate
