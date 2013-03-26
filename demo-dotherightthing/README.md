@@ -46,7 +46,6 @@ plus XML configuration files to allow easy switching between projects
 This fork was created by Dan Smith ([dotherightthing](https://github.com/dotherightthing/)) 
 and is maintained in [Github](https://github.com/dotherightthing/kss-node).
 
-
 ## Benefits of using KSS
 
 ### Clarity:
@@ -121,9 +120,9 @@ The easiest way to do this is to install a Git client.
 
 Download and install the GitHub client for [Mac](http://mac.github.com/) or [Windows](http://windows.github.com/).
 
-#### Step 4: Download our code
+#### Step 4: Download a copy of our code
 
-1. Launch the Github application
+1. Launch the Github client application
 1. If using Windows, click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
 1. Sign in to Github (create an account if haven't done so already). 
 You must be signed in, in order to complete the cloning step.
@@ -133,7 +132,16 @@ You must be signed in, in order to complete the cloning step.
 [Cloning](http://gitref.org/creating/#clone) allows you to grab a copy of a project, 
 so you can look at it or use the code.
 1. `dotherightthing/kss-node` will be added to your local repositories
-1. Close the Github application
+1. Close the Github client application
+
+#### Step 4a: Update your copy of code
+
+1. Launch the Github client application
+1. In the list of cloned 'Repositories', double-click the `dotherightthing/kss-node` item
+1. Click the `Sync Branch` button, in the top right-hand corner of the Github client application
+
+Note: After updating, you should regenerate any Styleguides that you are maintaining, 
+so that the changes are pulled through to your respective projects.
 
 #### Step 5: Install the KSS binary
 
@@ -411,7 +419,6 @@ As time allows I'd like to address the following:
 1. This documentation - Add some way to check that the correct version of the KSS binary is installed
 1. This documentation - Add some information on keep the KSS binary up to date
 1. This documentation - Add some information on keep the KSS Node dependencies up to date
-1. This documentation - Add some information on keep the clone up to date via the Github client
 1. This documentation - Add a diagram explaining how the system works, so that the role of the generator, 
 KSS template and PHP boilerplate are clarified
 1. This documentation - Add steps to install and configure aLaunch
