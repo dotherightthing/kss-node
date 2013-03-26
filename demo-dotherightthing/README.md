@@ -8,8 +8,8 @@ Boilerplate for reuse on [Chrometoaster](http://www.chrometoaster.com)'s PHP-bas
 
 * Thanks to Kyle Neath ([kneath](https://github.com/kneath/)) for inventing KSS.
 * Thanks to Hugh Kennedy ([hughsk](https://github.com/hughsk/)) for his work on getting kss-node up and running.
-* As some work time was spent refining this, I should also thank 
-[Chrometoaster](http://www.chrometoaster.com) for their support in this endeavour.
+* Thanks to my employer [Chrometoaster](http://www.chrometoaster.com), for allowing me time to work on this boilerplate, 
+and their interest in new technologies such as KSS.
 
 ## What is KSS?
 
