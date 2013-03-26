@@ -14,9 +14,9 @@ and a place to make any notes which would be useful to the client or fellow deve
 
 KSS Node is a NodeJS implementation of KSS. 
 
-KSS Node is maintained at [https://github.com/hughsk/kss-node](https://github.com/hughsk/kss-node).
+KSS Node was created by Hugh Kennedy ([hughsk](https://github.com/hughsk/)) and is maintained in [Github](https://github.com/hughsk/kss-node).
 
-## What's different in this fork?
+## What's different in this fork?)
 
 This fork has been tweaked to suit our workflow at [Chrometoaster](http://www.chrometoaster.com).
 
