@@ -153,9 +153,11 @@ downloaded our code to, eg `cd /Users/Dan/github/kss-node/` (OS X) or `cd ﻿C:\
 `. This will tell NPM (the Node Package Manager, installed with NodeJS) to install the kss-node dependencies. The 
 `-g` ('global') flag tells OS X to copy the files to `/usr/local/lib/node_modules/kss/
 
+TODO: how to check for updates
+
 ### B) Per-project set-up
 
-Please ensure that you have completed (A) Getting started, before starting your project set-up.
+Please ensure that you have completed (A) 'Getting started', before starting your project set-up.
 
 When setting up a new website, or adding a styleguide to an existing site, there are a few 
 set-up tasks that you need to perform.
