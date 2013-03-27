@@ -444,6 +444,8 @@ from the documentation
 1. This documentation - Add steps to install and configure aLaunch
 1. This documentation - Document the config file
 1. Generator - create a .bat (batch) file, or Adobe Air app to allow project setup via Windows
+1. Generator - test what happens when this is run on `.scss` files
+1. Generator - test what happens when this is run on `.less` files
 1. Boilerplate - add separate boilerplate files (Drupal, Wordpress, Silverstripe, etc)
 1. Boilerplate - rename the project directory from `demo-dotherightthing` to `php-boilerplate`, or something similar
 1. Configuration file - Add an option to include jQuery, in case it is not available in the parent project
