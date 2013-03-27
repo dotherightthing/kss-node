@@ -147,7 +147,7 @@ so you can look at it or use the code.
 1. `dotherightthing/kss-node` will be added to your local repositories
 1. Close the Github client application
 
-#### Step 4a: Update your copy of code
+#### Step 4a: Update your copy of our code
 
 1. Launch the Github client application
 1. In the list of cloned 'Repositories', double-click the `dotherightthing/kss-node` item
