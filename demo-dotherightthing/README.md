@@ -459,8 +459,8 @@ As time allows I'd like to address the following:
 1. This documentation - Add some way to check that the correct version of Node is installed
 1. This documentation - Add some way to check that the correct version of the Github client is installed
 1. This documentation - Add some way to check that the correct version of the KSS binary is installed
-1. This documentation - Add some information on keep the KSS binary up to date
-1. This documentation - Add some information on keep the KSS Node dependencies up to date
+1. This documentation - Add some information on keeping the KSS binary up to date
+1. This documentation - Add some information on keeping the KSS Node dependencies up to date
 1. This documentation - Add a diagram explaining how the system works, so that the role of the generator, 
 KSS template and PHP boilerplate are clarified
 1. This documentation - Screencast summary
