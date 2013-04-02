@@ -210,18 +210,41 @@ Update the various `<string>` values to suit your project.
 
 ### C) Using the generator to create or recreate a Styleguide
 
-#### Step 1: Run the generator
+#### Step 1: Set up a toolbar shortcut to the run the generator (OS X only)
 
-1. Run `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
-1. The application will open the directory containing your configuration files
+1. Install [aLaunch](http://mactips-lib.net/m/software/alaunch/en/main.html)
+1. On the top toolbar click on the pencil icon and select *Preferences*
+1. Select *Item list*
+1. In the left hand pane, select the Group named *Fast launch*
+1. In the right hand pane, click the `+` icon
+1. Browse to the `regenerate-styleguide.app` that lives in the kss-node repository that you cloned from GitHub 
+to your local machine, eg: `kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+1. Click *OK*
+
+#### Step 2a: Run the generator from the toolbar shortcut
+
+1. Click the pencil icon and select *regenerate styleguide*
+1. OS X: The generator will open a Finder window in the background
+1. OS X: Press `Command+Tab` to tab to the Finder icon, then release so that the window moves to the foreground
+1. The application has opened the directory containing your configuration files
 1. Double-click a configuration file to use those options
 
-#### Step 2: View the generated styleguide
+#### Step 2b: Run the generator without the toolbar shortcut
+
+1. Browse to the `regenerate-styleguide.app` that lives in the kss-node repository that you cloned from GitHub 
+to your local machine, eg: `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+1. Double-click on the app to run it
+1. OS X: The generator will open a Finder window in the background
+1. OS X: Press `Command+Tab` to tab to the Finder icon, then release so that the window moves to the foreground
+1. The application has opened the directory containing your configuration files
+1. Double-click a configuration file to use those options
+
+#### Step 3: View the generated styleguide
 
 1. When the generator has finished running, you will have the option to close the application 
 or open the styleguide in a web browser
 
-#### Step 3: Debugging common problems
+#### Step 4: Debugging common problems
 
 1. Some modifiers are not output in the styleguide
   1. Check that the modifier is followed by a description: `.mymodifier - my description`
@@ -441,8 +464,6 @@ As time allows I'd like to address the following:
 KSS template and PHP boilerplate are clarified
 1. This documentation - Revise the demo to match the examples in the documentation, and link to this
 from the documentation
-1. This documentation - Add steps to install and configure aLaunch
-1. This documentation - Document the config file
 1. Generator - create a .bat (batch) file, or Adobe Air app to allow project setup via Windows
 1. Generator - test what happens when this is run on `.scss` files
 1. Generator - test what happens when this is run on `.less` files
