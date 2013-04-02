@@ -1,28 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-   <key>docroot_kssnode_path</key>
-   <string>/Users/Dan/github/kss-node</string>
+ <dict>
+	 <!-- OPTION #1 -->
+	 <key>docroot_kssnode_path</key>
+	 <!-- The path to the kss-node repository that you cloned from GitHub to your local machine -->
+	 <!-- eg: /Users/Dan/github/kss-node -->
+	 <!-- eg: /Users/Foo/kss-node -->
+	 <string>/Users/Dan/github/kss-node</string>
+	 <!-- OPTION #2 -->
 	 <key>project_domain</key>
-	 <string>http://kss</string>	 	 
-   <key>project_docroot_styleguide_path</key>
-   <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/styleguide</string>
-   <key>project_docroot_styles_path</key>
-   <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/demo-styles</string>	
+	 <!-- The URL you enter into your browser to view your site's homepage -->
+	 <!-- eg: http://mysite.com -->
+	 <!-- eg: http://192.168.0.145.xip.io -->
+	 <string>http://kss</string>
+	 <!-- OPTION #3 -->
+	 <key>project_docroot_styleguide_path</key>
+	 <!-- The absolute path to your website's styleguide folder on your local machine -->
+	 <!-- eg: /Users/Dan/github/kss-node/demo-dotherightthing/public/styleguide -->
+	 <!-- eg: /Users/Foo/websites/mysite/htdocs/resources/styleguide -->
+	 <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/styleguide</string>
+	 <!-- OPTION #4 -->
+	 <key>project_docroot_styles_path</key>
+	 <!-- The absolute path to your website's CSS folder on your local machine -->
+	 <!-- eg: /Users/Dan/github/kss-node/demo-dotherightthing/public/demo-styles -->
+	 <!-- eg: /Users/Foo/websites/mysite/htdocs/resources/styles -->
+	 <!-- eg: /Users/Foo/websites/mysite/htdocs/css -->
+	 <string>/Users/Dan/github/kss-node/demo-dotherightthing/public/demo-styles</string>
+	 <!-- OPTION #5 -->
 	 <key>project_name</key>
-	 <string>Styleguide Demo</string>	 	  
+	 <!-- The name of your website, which will appear at the top of your Styleguide pages -->
+	 <!-- eg: Styleguide Demo -->
+	 <!-- eg: MySite -->
+	 <string>Styleguide Demo</string>
+	 <!-- OPTION #6 -->
 	 <key>project_styleguide_rewrite_breadcrumbs</key>
+	 <!-- Experimental! Toggle on/off rewriting of your website's breadcrumbs, to include a link to the Styleguide -->
+	 <!-- default: false -->
 	 <string>false</string>
+	 <!-- OPTION #7 -->
 	 <key>project_styleguide_rewrite_title</key>
+	 <!-- Experimental! Toggle on/off rewriting of your website's title element, to include a reference to the Styleguide -->
+	 <!-- default: true -->
 	 <string>true</string>
+	 <!-- OPTION #8 -->
 	 <key>project_styleguide_section_prefix</key>
-	 <string>?section=</string>	 
+	 <!-- The string that is appended to your styleguide URL, to access different pages of the styleguide -->
+	 <!-- Note! This should not be changed as this value is currently hardcoded into the PHP boilerplate -->
+	 <!-- default: ?section= -->
+	 <string>?section=</string>
+	 <!-- OPTION #9 -->
 	 <key>project_styleguide_viewport_width</key>
-	 <string>1024</string>		 
+	 <!-- The pixel width of your website's content area, less internal padding -->
+	 <!-- eg: 960 -->
+	 <!-- eg: 1024 -->
+	 <string>1024</string>
+	 <!-- OPTION #10 -->
 	 <key>project_webroot_styleguide_path</key>
-	 <string>/demo-dotherightthing/public/styleguide/demo.php</string>			
+	 <!-- The path to your styleguide page, as a root-relative URL -->
+	 <!-- eg: /demo-dotherightthing/public/styleguide/demo.php -->
+	 <!-- eg: /resources/statics/styleguide.php -->
+	 <!-- eg: /demos/styleguide -->
+	 <!-- eg: /styleguide -->
+	 <string>/demo-dotherightthing/public/styleguide/demo.php</string>
+	 <!-- OPTION #11 -->
 	 <key>project_webroot_styles_path</key>
-	 <string>/demo-dotherightthing/public/demo-styles</string>	 
-</dict>
+	 <!-- The path to your styles folder, as a root-relative URL -->
+	 <!-- eg: /demo-dotherightthing/public/demo-styles -->
+	 <!-- eg: /resources/styles -->
+	 <!-- eg: /sites/all/themes/mytheme/css -->
+	 <string>/demo-dotherightthing/public/demo-styles</string>
+ </dict>
 </plist>
