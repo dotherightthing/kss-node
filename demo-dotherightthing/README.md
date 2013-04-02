@@ -463,6 +463,7 @@ As time allows I'd like to address the following:
 1. This documentation - Add some information on keep the KSS Node dependencies up to date
 1. This documentation - Add a diagram explaining how the system works, so that the role of the generator, 
 KSS template and PHP boilerplate are clarified
+1. This documentation - Screencast summary
 1. This documentation - Revise the demo to match the examples in the documentation, and link to this
 from the documentation
 1. Generator - create a .bat (batch) file, or Adobe Air app to allow project setup via Windows
