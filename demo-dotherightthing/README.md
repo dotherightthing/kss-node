@@ -202,10 +202,11 @@ The first time you use the application with any project, you will need to create
 
 1. Create a configuration file for the application by making a copy of the [config-demo.plist](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/private/styleguide/user/config-demo.plist) file,  
 renaming this so that you remember which project it is for (as you could end up having different configuration 
-files for different projects). Configuration files live in 
-`/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
-1. Open up your configuration file in a text editor. The file uses an XML structure. 
-Update the various `<string>` values to suit your project.
+files for different projects). Configuration files live in the kss-node repository that you cloned from GitHub 
+to your local machine, eg: `/Users/Foo/kss-node/demo-dotherightthing/private/styleguide/user/`.
+1. Open up your configuration file in a text editor. The file uses an XML structure and is commented to indicate 
+the `<string>` value that is expected for each configuration option.
+1. Update the various `<string>` values to suit your project.
 1. Save and close the configuration file
 
 ### C) Using the generator to create or recreate a Styleguide
@@ -218,7 +219,7 @@ Update the various `<string>` values to suit your project.
 1. In the left hand pane, select the Group named *Fast launch*
 1. In the right hand pane, click the `+` icon
 1. Browse to the `regenerate-styleguide.app` that lives in the kss-node repository that you cloned from GitHub 
-to your local machine, eg: `kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+to your local machine, eg: `/Users/Foo/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
 1. Click *OK*
 
 #### Step 2a: Run the generator from the toolbar shortcut
@@ -232,7 +233,7 @@ to your local machine, eg: `kss-node/demo-dotherightthing/private/styleguide/upd
 #### Step 2b: Run the generator without the toolbar shortcut
 
 1. Browse to the `regenerate-styleguide.app` that lives in the kss-node repository that you cloned from GitHub 
-to your local machine, eg: `/path/to/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
+to your local machine, eg: `/Users/Foo/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
 1. Double-click on the app to run it
 1. OS X: The generator will open a Finder window in the background
 1. OS X: Press `Command+Tab` to tab to the Finder icon, then release so that the window moves to the foreground
