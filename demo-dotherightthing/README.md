@@ -200,7 +200,7 @@ you'll need to ask someone on a Mac to complete this step for you.
 
 The first time you use the application with any project, you will need to create a configuration file:
 
-1. Create a configuration file for the application by making a copy of the `config-demo.plist` file,  
+1. Create a configuration file for the application by making a copy of the [config-demo.plist](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/private/styleguide/user/config-demo.plist) file,  
 renaming this so that you remember which project it is for (as you could end up having different configuration 
 files for different projects). Configuration files live in 
 `/path/to/kss-node/demo-dotherightthing/private/styleguide/user/`.
