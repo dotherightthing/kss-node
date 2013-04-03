@@ -72,6 +72,8 @@ and is maintained in [Github](https://github.com/dotherightthing/kss-node).
 before authoring new styles
 * exposing modifiers encourages development of reusable components that can be skinned
 * reused and resuable code = less code to download, less code to maintain
+* ensure that styles render in full in MSIE6-9 by avoiding the 
+[4095x selector limit in MSIE6-9](http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/internet-explorer-stylesheet-rule-selector-import-sheet-limit-maximum.aspx)
 * automatic styleguide generation is many times more efficient than manually building a PDF or HTML styleguide, 
 and being responsible for its maintenance
 
