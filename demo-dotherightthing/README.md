@@ -144,7 +144,7 @@ Download and install the GitHub client for [Mac](http://mac.github.com/) or [Win
 1. Sign in to Github (create an account if haven't done so already). 
 You must be signed in, in order to complete the cloning step.
 1. Navigate to the our kss-node project homepage: 
-[https://github.com/dotherightthing/kss-node/](https://github.com/dotherightthing/kss-node/)
+<https://github.com/dotherightthing/kss-node/>
 1. Clone our fork of kss-node by clicking the 'Clone in Windows' or 'Clone in Mac' button, as appropriate. 
 [Cloning](http://gitref.org/creating/#clone) allows you to grab a copy of a project, 
 so you can look at it or use the code.
@@ -192,7 +192,7 @@ eg: `/path/to/resources/styleguide`
 1. Create a dynamic project template page, that will pull in the external styleguide 'template'. 
 This file should be similar to your existing site templates, in that it should include all project assets such as 
 CSS, JS etc, and use the same structural markup. 
-Boilerplate files are available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide).
+Boilerplate files are available at <https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide>
 
 #### Step 2: Create a configuration file
 
