@@ -37,13 +37,10 @@
 		// END KSS STYLEGUIDE
 	}
 	
-	// 2. Create Includes/StyleguidePage.ss which outputs 
-	
-	$Styleguide
+	// 2. Create /themes/THEME_NAME/templates/Includes/StyleguidePage.ss
+	// Include $Styleguide in this file
 	
 	// 3. Create a 'Styleguide' page in the CMS, at /styleguide
-	
-	// 4. Add whatever is required for /silverstripe to call the Styleguide page		
 	
 */
 	
