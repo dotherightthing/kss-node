@@ -37,7 +37,10 @@
 		// END KSS STYLEGUIDE
 	}
 	
-	// 2. Create /themes/THEME_NAME/templates/Includes/StyleguidePage.ss
+	// 2. Create 
+	// /themes/THEME_NAME/templates/StyleguidePage.ss
+	// or
+	// /themes/THEME_NAME/templates/Includes/StyleguidePage.ss
 	// Include $Styleguide in this file
 	
 	// 3. Create a 'Styleguide' page in the CMS, at /styleguide
