@@ -2,8 +2,6 @@
 
 Boilerplate for reuse on [Chrometoaster](http://www.chrometoaster.com)'s PHP-based client projects. 
 
-*Last updated 26.03.2013*
-
 ##Credits
 
 * Thanks to Kyle Neath ([kneath](https://github.com/kneath/)) for inventing KSS.
