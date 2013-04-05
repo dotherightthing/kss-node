@@ -263,6 +263,9 @@ this will eliminate the possibility that the desired index comment has been remo
   1. Sub-sections should be named as: `Styleguide 7.1` (not `Styleguide 7.1.` or `Styleguide 7.1.0` 
 which registers as a sub-sub-section)
   1. Sub-sub-sections should be named as: `Styleguide 7.1.1` (not `Styleguide 7.1.1.`)
+1. Only the styleguide index page generates
+  1. If retrofitting an older project that makes extensive use of `@import "foo.css";` in 'importer' stylesheets, 
+you may need to target the `imported` folder, instead of the parent `styles`/`css` folder   
  
 ### D) Authoring KSS
 
