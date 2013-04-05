@@ -222,6 +222,7 @@
 	}
 	
 	h1.styleguide-main-title {
+		color: #000 !important;
 		font-size: 50px !important;
 		margin: 40px 0 30px !important; 	
 	}
@@ -262,7 +263,11 @@
 		color: #000 !important; /* was 333 */
 		font-size: 14px !important;
 		line-height: 20px !important;
-		margin: 0 0 10px !important;
+		margin: 0 0 10px !important;		
+	}
+	.styleguide-description h2 {
+		font-size: 18px !important;	
+		margin-top: 30px !important;
 	}
 	.styleguide-example {
 		position: relative;
@@ -361,12 +366,12 @@
 
 	.styleguide-back-to-top a {
 		display: block;
-		padding: 5px;
+		padding: 7px;
 		text-align: center;
 		background: #666;
-		color: #fff;
+		color: #fff !important;
 		text-decoration: none;
-		font-size: 11px;
+		font-size: 13px;
 	}
 
 /* helpers useful in styleguides */
@@ -454,11 +459,12 @@
 
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
-	list-style: decimal;
-  margin: 0 0 0 33px; /* IE indents via margin-left */
+	list-style: decimal !important;
+  margin: 0 0 0 33px !important; /* IE indents via margin-left */
 }
 ol.linenums li {
-  padding-left: 12px;
+  padding-left: 12px !important;
+	margin-left: 0 !important;
   color: #bebec5;
   line-height: 20px;
   text-shadow: 0 1px 0 #fff;
