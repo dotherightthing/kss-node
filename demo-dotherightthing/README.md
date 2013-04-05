@@ -32,6 +32,8 @@ and is maintained in [Github](https://github.com/hughsk/kss-node).
 
 ## What's different in this fork?
 
+<small>What the fork?</small>
+
 [Forking](https://help.github.com/articles/fork-a-repo) allows a developer to contribute to another 
 developer's Github project, or grab their code as the starting point for their own Github project.
 
