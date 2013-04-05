@@ -190,7 +190,7 @@ eg: `/path/to/resources/styleguide`
 1. Create a dynamic project template page, that will pull in the external styleguide 'template'. 
 This file should be similar to your existing site templates, in that it should include all project assets such as 
 CSS, JS etc, and use the same structural markup. 
-A boilerplate file is available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide/demo.php).
+Boilerplate files are available at [https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide](https://github.com/dotherightthing/kss-node/blob/master/demo-dotherightthing/public/styleguide).
 
 #### Step 2: Create a configuration file
 
