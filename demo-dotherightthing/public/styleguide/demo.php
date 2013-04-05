@@ -39,7 +39,7 @@
 	
 	// 2. Create Includes/StyleguidePage.ss which outputs 
 	
-	$Silverstripe
+	$Styleguide
 	
 	// 3. Create a 'Styleguide' page in the CMS, at /styleguide
 	
