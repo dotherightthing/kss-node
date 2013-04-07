@@ -463,6 +463,7 @@ This boilerplate is a work-in-progress.
 
 As time allows I'd like to address the following:
 
+1. Boilerplate - Integrate DI's Silverstripe module emailed 8.4.2013
 1. This documentation - Add some way to check that the correct version of Node is installed
 1. This documentation - Add some way to check that the correct version of the Github client is installed
 1. This documentation - Add some way to check that the correct version of the KSS binary is installed
