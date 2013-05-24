@@ -143,7 +143,7 @@ Download and install the GitHub client for [Mac](http://mac.github.com/) or [Win
 1. If using Windows, click 'tools' > 'options' to see where your 'default storage directory' is, or to change this
 1. Sign in to Github (create an account if haven't done so already). 
 You must be signed in, in order to complete the cloning step.
-1. Navigate to the our kss-node project homepage: 
+1. Navigate to our kss-node project homepage: 
 <https://github.com/dotherightthing/kss-node/>
 1. Clone our fork of kss-node by clicking the 'Clone in Windows' or 'Clone in Mac' button, as appropriate. 
 [Cloning](http://gitref.org/creating/#clone) allows you to grab a copy of a project, 
