@@ -11,7 +11,7 @@
 	1. Create > Page > Go
 	1. Click on the page's 'Content' tab
 		1. Page name: Styleguide
-		1. Styleguide: Styleguide
+		1. Navigation label: Styleguide
   1. Click on the page's 'Behaviour' tab
 		1. Page type: select 'Styleguide Page'
 		1. Deselect 'Show in menus?'
