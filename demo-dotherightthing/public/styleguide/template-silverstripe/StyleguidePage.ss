@@ -1,9 +1,8 @@
-
     <div id="content">
       <div><a class="screen" name="maincontent" id="maincontent"></a></div>
       <div id="content-liner">
 				<h3>$Title</h3>
-     Stylez
+
 				$Styleguide
 
       </div>
@@ -17,6 +16,6 @@
 
     <div id="tools" class="nav">
       <ul>
-        <li><a href="#top"><img src="/resources/ui/images/form-elements/buttons/back-to-top-off.gif" alt="Back to top. " width="109" height="20" /></a></li>
+        <li><a href="#top">Back to top</a></li>
       </ul>
     </div>
