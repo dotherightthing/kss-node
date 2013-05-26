@@ -8,7 +8,7 @@
 	1. Copy this file` to `/YOUR_THEME_NAME/templates/Layout/`
 1. `/PROJECT_NAME/_config.php`
 	1. Add this line: `Styleguide::$directory = '/resources/styleguide';`
-	1. Update the line you just added if your path is different
+	1. Update the line you just added if your directory path is different
 1. Log in to the Silverstripe backend and create a page named 'Styleguide':
 	1. Navigate to `http://YOUR_WEBSITE/dev/build` so that Silverstripe is aware of the new page type
 	1. Create > Page > Go
