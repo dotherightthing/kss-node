@@ -6,6 +6,7 @@
 	1. Copy this file` to `/YOUR_THEME_NAME/code/pages/`
 1. `StyleguidePage.ss`:
 	1. Copy this file` to `/YOUR_THEME_NAME/templates/Layout/`
+	1. Edit this page to better match `/YOUR_THEME_NAME/templates/Layout/Page.ss`
 1. `/PROJECT_NAME/_config.php`
 	1. Add this line: `Styleguide::$directory = '/resources/styleguide';`
 	1. Update the line you just added if your directory path is different
