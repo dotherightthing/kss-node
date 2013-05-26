@@ -11,8 +11,11 @@
 	1. Navigate to `http://YOUR_WEBSITE/dev/build` so that Silverstripe is aware of the new page type
 	1. Create > Page > Go
 	1. Click on the page's 'Content' tab
-		1. Page name: Styleguide
-		1. Navigation label: Styleguide
+		1. Click on the 'Main' sub tab
+			1. Page name: Styleguide
+			1. Navigation label: Styleguide
+		1. Click on the 'Metadata' sub tab 
+			1. URL: match this to the `project_webroot_styleguide_path` setting in your `plist` config file, eg 'styleguide'
   1. Click on the page's 'Behaviour' tab
 		1. Page type: select 'Styleguide Page'
 		1. Deselect 'Show in menus?'
