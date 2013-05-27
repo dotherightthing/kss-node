@@ -23,6 +23,7 @@
 		1. Page type: select 'Styleguide Page'
 		1. Deselect 'Show in menus?'
 		1. Deselect 'Show in search?'
+		1. If there is a 'PageClass' field, add a custom class if desired, eg `t-styleguide` or `styleguide-page`
 	1. Click Save and Publish
 1. Navigate to `http://YOUR_WEBSITE/?flush=1`
 	
