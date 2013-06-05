@@ -454,6 +454,7 @@ There are a handful of `styleguide-` name-spaced classes available for use when 
 1. `.styleguide-block-20` - forces display block and a height of 20 pixels
 1. `.styleguide-block-50` - forces display block and a height of 50 pixels
 1. `.styleguide-clear` - clears preceding floats
+1. `.styleguide-divider` - break an example in two, useful for explanatory headings
 1. `.styleguide-nofloat` - disables floating on the element
 1. `.styleguide-hidden` - hides the element
 
