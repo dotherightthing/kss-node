@@ -268,6 +268,18 @@ which registers as a sub-sub-section)
 1. Only the styleguide index page generates
   1. If retrofitting an older project that makes extensive use of `@import "foo.css";` in 'importer' stylesheets, 
 you may need to target the `imported` folder, instead of the parent `styles`/`css` folder   
+
+#####Error: Cannot call method 'match' of undefined
+
+This was caused by this malformed KSS comment:
+
+    /*
+    Markup:
+    <section class="build-block-header">
+        <div class="image"><!-- full-width background image --></div>
+        <div class="container"><!-- fixed width wrapper --></div>
+    </section>
+    */
  
 ### D) Authoring KSS
 
