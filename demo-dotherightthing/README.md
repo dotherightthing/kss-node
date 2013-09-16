@@ -494,3 +494,4 @@ from the documentation
 1. Boilerplate - rename the project directory from `demo-dotherightthing` to `php-boilerplate`, or something similar
 1. Configuration file - Add an option to include jQuery, in case it is not available in the parent project
 1. Github - apply to merge changes with the original kss-node project, if appropriate
+1. Generator - doesn't work when the config file contains paths with spaces, even when these are escaped or quoted
