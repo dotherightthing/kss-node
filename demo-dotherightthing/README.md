@@ -225,6 +225,7 @@ the `<string>` value that is expected for each configuration option.
 1. Browse to the `regenerate-styleguide.app` that lives in the kss-node repository that you cloned from GitHub 
 to your local machine, eg: `/Users/Foo/kss-node/demo-dotherightthing/private/styleguide/update/regenerate-styleguide.app`
 1. Click *OK*
+1. In  the 'General' tag, check 'Auto Launch at Startup'
 
 #### Step 2a: Run the generator from the toolbar shortcut
 
